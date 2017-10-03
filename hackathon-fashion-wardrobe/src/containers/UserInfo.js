@@ -7,12 +7,7 @@ class UserInfo extends Component {
     if (!this.props.loggedIn) {
       content = <p>Please log in or register.</p>;
     } else if (this.props.user) {
-      content = (
-        <dl>
-          <dt>Full Name</dt>
-          <dd>{this.props.user.full_name}</dd>
-        </dl>
-      );
+      content = <dl />;
     }
 
     let error = this.props.error;

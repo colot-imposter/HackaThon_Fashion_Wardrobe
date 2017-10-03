@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-//import from "./styles/App.css";
-
 import Login from "../containers/Login.js";
 import Register from "../containers/Register.js";
 import UserInfo from "../containers/UserInfo.js";
