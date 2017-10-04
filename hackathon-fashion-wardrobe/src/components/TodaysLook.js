@@ -7,6 +7,33 @@ import UserInfo from "../containers/UserInfo.js";
 
 import { loadTokenFromCookie } from "../actions/actions";
 
+const styles = {
+  todaypreview: {
+    display: 'inline-block',
+    width: '50px',
+    height: '50px',
+    padding: '5px',
+
+  //   ':hover': {
+  //     border: '1px solid black'
+  //   },
+  //
+  //   '@media (max-width: 200px)': {
+  //     width: '100%',
+  //
+  //     ':hover': {
+  //       background: 'white',
+  //     }
+  //   }
+  // },
+  // primary: {
+  //   background: 'green'
+  // },
+  // warning: {
+  //   background: 'yellow'
+  },
+};
+
 export default class TodaysLook extends Component {
   render() {
     return (
@@ -24,10 +51,12 @@ export default class TodaysLook extends Component {
         <div>
           <h3>Filter</h3>
           <a onClick={this.handleClickForLengthFilter}>Sleeve Length</a>
+          <br></br>
           <a onClick={this.handleClickForLengthFilter}>Item Weight</a>
+            <br></br>
           <a onClick={this.handleClickForLengthFilter}>Color</a>
         </div>
-        <div>
+        <div className="styles.todaypreview">
           <img
             src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
             alt="unicorn shirt"
