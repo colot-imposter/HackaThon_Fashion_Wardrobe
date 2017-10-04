@@ -11,7 +11,8 @@ const initialState = {
   token: null,
   user: null,
   loading: 0,
-  error: null
+  error: null,
+  images: []
 };
 
 const reducer = (state = initialState, action) => {

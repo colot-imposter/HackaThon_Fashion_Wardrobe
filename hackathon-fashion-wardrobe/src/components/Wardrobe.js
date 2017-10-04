@@ -40,8 +40,10 @@ export default class Wardrobe extends Component {
       }
   }
 
+
+
   componentWillMount = () => {
-    this.setState({images: []}, function () {
+    this.setState({images: [this.props.images]}, function () {
       this.props.updatedWardrobe(this.state.images);
     })
   }
@@ -61,6 +63,9 @@ export default class Wardrobe extends Component {
             <br></br>
             <a onClick={this.handleClickForColorFilter}>Color</a>
           </div>
+          <div>
+            <ImageDisplay />
+/>          </div>
         <div className="todaypreview" style={styles.clothingpreview}>
           <img
           src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
