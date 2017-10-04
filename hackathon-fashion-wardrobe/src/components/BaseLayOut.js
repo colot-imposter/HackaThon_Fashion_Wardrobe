@@ -46,6 +46,9 @@ export default class BaseLayout extends Component {
             <NavLink style={nav} exact to="/">
               HOME!
             </NavLink>
+            <NavLink style={nav} to="/temp">
+              TEMP
+            </NavLink>
           </div>
           <br />
           <NavLink style={nav} to="/login">
