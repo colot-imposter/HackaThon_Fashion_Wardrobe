@@ -16,10 +16,7 @@ import Login from "./containers/Login.js";
 
 const store = createStore(
   reducer,
-  compose(
-    applyMiddleware(reduxThunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+    applyMiddleware(reduxThunk)
 );
 
 ReactDOM.render(
