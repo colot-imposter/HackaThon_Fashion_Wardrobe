@@ -33,6 +33,10 @@ return (
         </label>
         <input type="submit" value="Add Item" />
       </form>
+      <div className="description">
+      <p> * insert image of short long and no sleeve top </p>
+      <p> * insert image of light mid and heavy weight top </p>
+      </div>
   )
 }
 }
