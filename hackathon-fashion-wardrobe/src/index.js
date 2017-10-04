@@ -14,7 +14,8 @@ import LogOut from "./components/LogOut.js";
 import Register from "./containers/Register.js";
 import Login from "./containers/Login.js";
 import Temp from "./components/TEMP.js";
-
+import Wardrobe from "./components/Wardrobe"
+import TodaysLook from "./components/TodaysLook"
 const store = createStore(
   reducer,
     applyMiddleware(reduxThunk)
@@ -32,6 +33,8 @@ ReactDOM.render(
             <Route path="/register" component={Register} />
             {/* temporary link to render logged-in components */}
             <Route path="/temp" component={Temp} />
+            <Route path="/todayslook" component={TodaysLook}/>
+            <Route path="/Wardrobe" component={Wardrobe}/>
             <Route path="/logout" component={LogOut} />
           </Switch>
         </div>
