@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import ImageDisplay from "../containers/WardrobeDisplay.js";
+import users from "../data/userData.js";
+import WardrobeDisplay from "../containers/WardrobeDisplay.js";
 
 const styles =  {
   clothingpreview:{
@@ -15,65 +16,70 @@ const styles =  {
       'margin-left': 'auto',
       border: '1px solid black'
     },
-  //
-  //   '@media (max-width: 200px)': {
-  //     width: '100%',
-  //
-  //     ':hover': {
-  //       background: 'white',
-  //     }
-  //   }
-  // },
-  // primary: {
-  //   background: 'green'
-  // },
-  // warning: {
-  //   background: 'yellow'
-
 };
 
+
+
 export default class Wardrobe extends Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-          images: []
-      }
-  }
-
-
-
-  componentWillMount = () => {
-    this.setState({images: [this.props.images]}, function () {
-      this.props.updatedWardrobe(this.state.images);
-    })
-  }
-
+  // constructor(props) {
+  //     super(props);
   render() {
     return (
-    <div>
-      <div className="steps">
-        <h1>Wardrobe</h1>
-      </div>
-      <div className= 'previewbody' style= {styles.previewbody}>
         <div>
-          <h3>Filter</h3>
-            <a to="/" onClick={this.handleClickForLengthFilter}>Sleeve Length</a>
-            <br></br>
-            <a to="/" onClick={this.handleClickForLengthWeight}>Item Weight</a>
-            <br></br>
-            <a onClick={this.handleClickForColorFilter}>Color</a>
-          </div>
-          <div>
-            <ImageDisplay />
-/>          </div>
-        <div className="todaypreview" style={styles.clothingpreview}>
-          <img
-          src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
-          alt="unicorn shirt"
-        />
+          {users.map(clothingItem => {
+          // if (clothingItem.category === "equipment")
+              return <WardrobeDisplay key={users.courtney.image}   product={clothingItem} />;
+            })}
+          <br />
         </div>
-      </div>
-    </div>
-    );
+      );
+    }
   }
-}
+
+
+
+// export default class Wardrobe extends Component {
+//   constructor(props) {
+//       super(props);
+//       this.state = {
+//           images: []
+//       }
+//   }
+//
+//
+//
+//   componentWillMount = () => {
+//     this.setState({images: [this.props.images]}, function () {
+//       this.props.updatedWardrobe(this.state.images);
+//     })
+//   }
+
+//   render() {
+//     return (
+//     <div>
+//       <div className="steps">
+//         <h1>Wardrobe</h1>
+//       </div>
+//       <div className= 'previewbody' style= {styles.previewbody}>
+//         <div>
+//           <h3>Filter</h3>
+//             <a to="/" onClick={this.handleClickForLengthFilter}>Sleeve Length</a>
+//             <br></br>
+//             <a to="/" onClick={this.handleClickForLengthWeight}>Item Weight</a>
+//             <br></br>
+//             <a onClick={this.handleClickForColorFilter}>Color</a>
+//           </div>
+//           <div>
+//             <ImageDisplay />
+// />          </div>
+//         <div className="todaypreview" style={styles.clothingpreview}>
+//           <img
+//           src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
+//           alt="unicorn shirt"
+//         />
+//         </div>
+//       </div>
+//     </div>
+//     );
+//   }
+// }
