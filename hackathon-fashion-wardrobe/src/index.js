@@ -14,11 +14,11 @@ import LogOut from "./components/LogOut.js";
 import Register from "./containers/Register.js";
 import Login from "./containers/Login.js";
 import Temp from "./components/TEMP.js";
+import User_Dashboard from "./components/User_Dashboard.js";
+import Wardrobe from "./components/Wardrobe.js";
+import TodaysLook from "./components/TodaysLook.js";
 
-const store = createStore(
-  reducer,
-    applyMiddleware(reduxThunk)
-);
+const store = createStore(reducer, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
   <Provider store={store}>
@@ -33,6 +33,10 @@ ReactDOM.render(
             {/* temporary link to render logged-in components */}
             <Route path="/temp" component={Temp} />
             <Route path="/logout" component={LogOut} />
+            <Route path="/User_Dashboard" component={User_Dashboard} />
+            <Route path="/Wardrobe" component={Wardrobe} />
+            <Route path="/TodaysLook" component={TodaysLook} />
+            /userid/length /userid/weight /userid/color
           </Switch>
         </div>
       </BaseLayout>

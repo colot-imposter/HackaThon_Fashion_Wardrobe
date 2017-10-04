@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import styles from "../styles/App.css";
 
 export default class BaseLayout extends Component {
   render() {
@@ -51,9 +52,32 @@ export default class BaseLayout extends Component {
             </NavLink>
           </div>
           <br />
-          <NavLink style={nav} to="/login">
+          {/* <NavLink style={nav} to="/login">
             Log In/Sign Up!
-          </NavLink>
+          </NavLink> */}
+          <div className="hamburger">
+            <img
+              src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png"
+              className="hamburgerMenu"
+            />
+            <ul>
+              <li>
+                <NavLink style={nav} exact to="/User_Dashboard">
+                  User Dashboard
+                </NavLink>
+              </li>
+              <li>
+                <NavLink style={nav} to="/Wardrobe">
+                  Wardrobe
+                </NavLink>
+              </li>
+              <li>
+                <NavLink style={nav} to="/TodaysLook">
+                  TodaysLook
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div>

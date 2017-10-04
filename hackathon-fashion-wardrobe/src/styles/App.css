@@ -23,6 +23,22 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hamburgerMenu {
+  height: 3em;
+}
+
+.hamburger ul {
+  opacity: 0;
+  list-style-type: none;
+}
+.hamburger:hover ul {
+  opacity: 1;
 }
