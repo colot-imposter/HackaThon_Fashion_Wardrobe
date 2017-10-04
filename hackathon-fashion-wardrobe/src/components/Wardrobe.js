@@ -33,6 +33,21 @@ const styles =  {
 };
 
 export default class Wardrobe extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          images: []
+      }
+  }
+
+
+
+  componentWillMount = () => {
+    this.setState({images: [this.props.images]}, function () {
+      this.props.updatedWardrobe(this.state.images);
+    })
+  }
+
   render() {
     return (
     <div>
@@ -44,22 +59,17 @@ export default class Wardrobe extends Component {
           <h3>Filter</h3>
             <a to="/" onClick={this.handleClickForLengthFilter}>Sleeve Length</a>
             <br></br>
-            <a to="/" onClick={this.handleClickForLengthFilter}>Item Weight</a>
+            <a to="/" onClick={this.handleClickForLengthWeight}>Item Weight</a>
             <br></br>
-            <a onClick={this.handleClickForLengthFilter}>Color</a>
+            <a onClick={this.handleClickForColorFilter}>Color</a>
           </div>
+          <div>
+            <ImageDisplay />
+/>          </div>
         <div className="todaypreview" style={styles.clothingpreview}>
           <img
           src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
           alt="unicorn shirt"
-        />
-          <img
-          src="https://i.ebayimg.com/thumbs/images/m/mf3_QAnDftcZvIljSorxC2g/s-l225.jpg"
-          alt="yellow top"
-        />
-          <img
-          src="https://cdn-img-2.wanelo.com/p/665/4d5/377/0da4e007e21051127aa5901/x354-q80.jpg"
-          alt="here for the boos"
         />
         </div>
       </div>
