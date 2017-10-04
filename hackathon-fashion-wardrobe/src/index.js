@@ -13,7 +13,8 @@ import UserInfo from "./containers/UserInfo.js";
 import LogOut from "./components/LogOut.js";
 import Register from "./containers/Register.js";
 import Login from "./containers/Login.js";
-import Temp from "./components/TEMP.js";
+import Temp from "./components/TEMP.js"
+import User_Dashboard from "./components/User_Dashboard.js";
 import Wardrobe from "./components/Wardrobe"
 import TodaysLook from "./components/TodaysLook"
 const store = createStore(
@@ -36,6 +37,9 @@ ReactDOM.render(
             <Route path="/todayslook" component={TodaysLook}/>
             <Route path="/Wardrobe" component={Wardrobe}/>
             <Route path="/logout" component={LogOut} />
+            <Route path="/User_Dashboard" component={User_Dashboard} />
+            <Route path="/Wardrobe" component={Wardrobe} />
+            <Route path="/TodaysLook" component={TodaysLook} />
           </Switch>
         </div>
       </BaseLayout>
