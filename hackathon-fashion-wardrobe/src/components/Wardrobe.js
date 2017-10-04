@@ -1,5 +1,36 @@
 import React, { Component } from "react";
-import Link from
+import ImageDisplay from "../containers/WardrobeDisplay.js";
+
+const styles =  {
+  clothingpreview:{
+    display: 'inline-flex',
+    width: '10px',
+    // height: '50px',
+    border: '1px solid black',
+    padding: '5px'},
+  previewbody:{
+    display:'inline-flex'
+  },
+    header: {
+      'margin-left': 'auto',
+      border: '1px solid black'
+    },
+  //
+  //   '@media (max-width: 200px)': {
+  //     width: '100%',
+  //
+  //     ':hover': {
+  //       background: 'white',
+  //     }
+  //   }
+  // },
+  // primary: {
+  //   background: 'green'
+  // },
+  // warning: {
+  //   background: 'yellow'
+
+};
 
 export default class Wardrobe extends Component {
   render() {
@@ -11,11 +42,11 @@ export default class Wardrobe extends Component {
       <div className= 'previewbody' style= {styles.previewbody}>
         <div>
           <h3>Filter</h3>
-            <Link to="/" onClick={this.handleClickForLengthFilter}>Sleeve Length</Link>
+            <a to="/" onClick={this.handleClickForLengthFilter}>Sleeve Length</a>
             <br></br>
-            <Link to="/" onClick={this.handleClickForLengthFilter}>Item Weight</Link>
+            <a to="/" onClick={this.handleClickForLengthFilter}>Item Weight</a>
             <br></br>
-            <Link onClick={this.handleClickForLengthFilter}>Color</Link>
+            <a onClick={this.handleClickForLengthFilter}>Color</a>
           </div>
         <div className="todaypreview" style={styles.clothingpreview}>
           <img
