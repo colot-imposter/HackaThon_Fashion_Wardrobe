@@ -7,16 +7,20 @@ import UserInfo from "../containers/UserInfo.js";
 
 import { loadTokenFromCookie } from "../actions/actions";
 
-const styles = {
-  todaypreview: {
-    display: 'inline-block',
-    width: '50px',
-    height: '50px',
-    padding: '5px',
-
-  //   ':hover': {
-  //     border: '1px solid black'
-  //   },
+const styles =  {
+  clothingpreview:{
+    display: 'inline-flex',
+    width: '10px',
+    // height: '50px',
+    border: '1px solid black',
+    padding: '5px'},
+  previewbody:{
+    display:'inline-flex'
+  },
+    header: {
+      'margin-left': 'auto',
+      border: '1px solid black'
+    },
   //
   //   '@media (max-width: 200px)': {
   //     width: '100%',
@@ -31,14 +35,14 @@ const styles = {
   // },
   // warning: {
   //   background: 'yellow'
-  },
+
 };
 
 export default class TodaysLook extends Component {
   render() {
     return (
       <div className="todaysWeather">
-        <div className="grid-50-50">
+        <div className="header">
           <h1>Today's Weather</h1>
         </div>
         <div>
@@ -48,27 +52,29 @@ export default class TodaysLook extends Component {
             alt="Its Sunny!"
           />
         </div>
-        <div>
-          <h3>Filter</h3>
-          <a onClick={this.handleClickForLengthFilter}>Sleeve Length</a>
-          <br></br>
-          <a onClick={this.handleClickForLengthFilter}>Item Weight</a>
-            <br></br>
-          <a onClick={this.handleClickForLengthFilter}>Color</a>
-        </div>
-        <div className="styles.todaypreview">
-          <img
+        <div className= 'previewbody' style= {styles.previewbody}>
+          <div>
+            <h3>Filter</h3>
+              <a onClick={this.handleClickForLengthFilter}>Sleeve Length</a>
+              <br></br>
+              <a onClick={this.handleClickForLengthFilter}>Item Weight</a>
+              <br></br>
+              <a onClick={this.handleClickForLengthFilter}>Color</a>
+            </div>
+          <div className="todaypreview" style={styles.clothingpreview}>
+            <img
             src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
             alt="unicorn shirt"
           />
-          <img
+            <img
             src="https://i.ebayimg.com/thumbs/images/m/mf3_QAnDftcZvIljSorxC2g/s-l225.jpg"
             alt="yellow top"
           />
-          <img
+            <img
             src="https://cdn-img-2.wanelo.com/p/665/4d5/377/0da4e007e21051127aa5901/x354-q80.jpg"
             alt="here for the boos"
           />
+          </div>
         </div>
       </div>
     );
