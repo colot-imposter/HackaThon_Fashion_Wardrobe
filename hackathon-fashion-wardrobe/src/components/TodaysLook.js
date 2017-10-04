@@ -55,11 +55,11 @@ export default class TodaysLook extends Component {
         <div className= 'previewbody' style= {styles.previewbody}>
           <div>
             <h3>Filter</h3>
-              <a onClick={this.handleClickForLengthFilter}>Sleeve Length</a>
+              <Link to="/" onClick={this.handleClickForLengthFilter}>Sleeve Length</Link>
               <br></br>
-              <a onClick={this.handleClickForLengthFilter}>Item Weight</a>
+              <Link to="/" onClick={this.handleClickForLengthFilter}>Item Weight</Link>
               <br></br>
-              <a onClick={this.handleClickForLengthFilter}>Color</a>
+              <Link onClick={this.handleClickForLengthFilter}>Color</Link>
             </div>
           <div className="todaypreview" style={styles.clothingpreview}>
             <img
