@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../styles/App.css";
+import hamPic from "../styles/imgs/hamburgerMenu.png";
+import logo from "../styles/imgs/Logo.png";
 
 export default class BaseLayout extends Component {
   render() {
@@ -45,10 +47,8 @@ export default class BaseLayout extends Component {
         <div style={navs}>
           <div style={dru}>
             <NavLink style={nav} exact to="/">
-              HOME!
-            </NavLink>
-            <NavLink style={nav} to="/temp">
-              TEMP
+              <img src={logo} className="hangerLogo" />
+              HOME
             </NavLink>
           </div>
           <br />
@@ -56,10 +56,7 @@ export default class BaseLayout extends Component {
             Log In/Sign Up!
           </NavLink> */}
           <div className="hamburger">
-            <img
-              src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png"
-              className="hamburgerMenu"
-            />
+            <img src={hamPic} className="hamburgerMenu" />
             <ul>
               <li>
                 <NavLink style={nav} exact to="/User_Dashboard">

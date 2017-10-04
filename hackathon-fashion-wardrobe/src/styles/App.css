@@ -42,3 +42,7 @@
 .hamburger:hover ul {
   opacity: 1;
 }
+
+.hangerLogo {
+  height: 4em;
+}
