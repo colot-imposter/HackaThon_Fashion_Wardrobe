@@ -3,13 +3,16 @@ import React, { Component } from "react";
 export default class WardrobeDisplay extends Component {
   render() {
     const { clothingItem } = this.props;
+    console.log('this.props', this.props);
+    console.log('clothingItem.courtney.image', clothingItem.courtney.image);
     return (
       <div>
+
         <img
           className=""
           style={{ height: 100, float: "left", marginRight: 10 }}
-          src={require(`../images/${clothingItem.image}`)}
-          alt="product image"
+          src={require(`../styles/imgs/shirts/${clothingItem.courtney.image}`)}
+          alt="clothing image"
         />
       </div>
     );
