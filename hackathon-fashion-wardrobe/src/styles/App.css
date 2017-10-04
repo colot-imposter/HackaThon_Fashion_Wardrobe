@@ -46,3 +46,15 @@
 .hangerLogo {
   height: 4em;
 }
+.today:hover h2 {
+  color: #FF8D82;
+  font-size: 30px;
+}
+.all:hover h2 {
+  color: #FF8D82;
+  font-size: 30px;
+}
+.add:hover h2 {
+  color: #FF8D82;
+  font-size: 30px;
+}

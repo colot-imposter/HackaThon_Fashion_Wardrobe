@@ -46,9 +46,8 @@ export default class BaseLayout extends Component {
       <div style={whole} className="BaseLayout">
         <div style={navs}>
           <div style={dru}>
-            <NavLink style={nav} exact to="/">
+            <NavLink style={nav} exact to="/User_Dashboard">
               <img src={logo} className="hangerLogo" />
-              HOME
             </NavLink>
           </div>
           <br />
