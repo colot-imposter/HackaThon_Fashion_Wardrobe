@@ -35,41 +35,54 @@ padding:"20px"
 };
 
 export default class Wardrobe extends Component {
-//   constructor(props) {
-//       super(props);
-//
-//   this.state = {
-//     clothingItem: [],
-//   }
-//
-//       this.LengthFilter = this.LengthFilter.bind(this);
-//       this.WeightFilter = this.WeightFilter.bind(this);
-//       this.ColorFilter = this.ColorFilter.bind(this);
-//
-// }
-//
-// LengthFilter(e) {
-//   this.setState(
-//     {
-//       clothingItem: e.target.value,
-//     })
-// }
+  constructor(props) {
+      super(props);
+
+  this.state = {
+    clothingItem: [],
+  }
+
+      this.LengthFilter = this.LengthFilter.bind(this);
+      // this.WeightFilter = this.WeightFilter.bind(this);
+      // this.ColorFilter = this.ColorFilter.bind(this);
+
+}
+
+LengthFilter(e) {
+  this.setState(
+    {
+      clothingItem: e.target.value,
+    })
+}
 
   render() {
+
+    // users.map(clothingItem) => {
+    //    if (clothingItem === "short")
+    //    console.log('hit1');
+    //   return( <WardrobeDisplay key={clothingItem.image} clothingItem={clothingItem.sleeves.short}/>
+    // })
+
     return (
+
+
         <div className='page' style={pagestyle}>
           <div className='filters' style={filterstyle}>
            <h3>Filter</h3>
-             <a onClick={this.LengthFilter}>Sleeve Length</a>
+           <form>
+             <a onClick={this.LengthFilter} value="short">Sleeve Length</a>
             <br></br>
              <a onClick={this.WeightFilter}>Item Weight</a>
              <br></br>
              <a onClick={this.ColorFilter}>Color</a>
+             </form>
            </div>
           <div className='clothingpreview'style={imgstyle}>
-          {users.map(clothingItem => {
-            return <div style={{width:"100px",padding:"10px"}}><WardrobeDisplay key={clothingItem.image} clothingItem={clothingItem}/></div>;
-            })}
+          {users.map(pop => {
+             if (pop.sleeves === "short"){
+            return <div style={{width:"100px",padding:"10px"}}><WardrobeDisplay key={pop.image} clothingItem={pop}/></div>;
+          }}
+        )}
           </div>
         </div>
       );
