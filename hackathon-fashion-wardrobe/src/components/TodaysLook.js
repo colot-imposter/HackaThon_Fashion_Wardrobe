@@ -10,6 +10,8 @@ import { loadTokenFromCookie } from "../actions/actions";
 
 const API_KEY = apiKey;
 console.log(API_KEY);
+const countrycode = 'us';
+const zipcode = '78701';
 
 const styles =  {
   clothingpreview:{
@@ -43,6 +45,21 @@ const styles =  {
 };
 
 export default class TodaysLook extends Component {
+  constructor(props){
+    super(props);
+
+  let imageUrl = `api.openweathermap.org/data/2.5/weather?zip=${zipcode},${countrycode}`;
+
+  fetch(imageUrl)
+    .then(r => r.json())
+    .then((data) => {
+      console.log(data.photos)
+      this.setState({
+        images: data.photos
+      });
+    })
+  }
+
   render() {
     return (
       <div className="todaysWeather">
