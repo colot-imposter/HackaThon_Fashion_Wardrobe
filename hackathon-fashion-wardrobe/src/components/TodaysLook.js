@@ -8,6 +8,9 @@ import apiKey from './apiKey';
 
 import { loadTokenFromCookie } from "../actions/actions";
 
+const API_KEY = apiKey;
+console.log(API_KEY);
+
 const styles =  {
   clothingpreview:{
     display: 'inline-flex',
