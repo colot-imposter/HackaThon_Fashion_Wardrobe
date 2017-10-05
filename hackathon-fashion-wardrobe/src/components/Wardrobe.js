@@ -1,7 +1,15 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import users from "../data/userData.js";
+import WardrobeDisplay from "../containers/WardrobeDisplay.js";
+>>>>>>> fe5b41994a2daf59372fd428d74a22f415cceed0
+=======
 import users from "../data/userData.js";
 import WardrobeDisplay from "../containers/WardrobeDisplay.js";
 
+>>>>>>> 3b2668cf1f65e420626abc5a68f13d51214ef710
 
 const styles =  {
   clothingpreview:{
@@ -19,7 +27,13 @@ const styles =  {
     },
 };
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+export default class Wardrobe extends Component {
+=======
+=======
 
+>>>>>>> 3b2668cf1f65e420626abc5a68f13d51214ef710
 
 
 export default class Wardrobe extends Component {
@@ -42,7 +56,11 @@ export default class Wardrobe extends Component {
 //       clothingItem: e.target.value,
 //     })
 // }
+<<<<<<< HEAD
+>>>>>>> fe5b41994a2daf59372fd428d74a22f415cceed0
+=======
 
+>>>>>>> 3b2668cf1f65e420626abc5a68f13d51214ef710
 
   render() {
     return (
@@ -51,7 +69,19 @@ export default class Wardrobe extends Component {
            <h3>Filter</h3>
              <a onClick={this.LengthFilter}>Sleeve Length</a>
             <br></br>
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <a onClick={this.handleClickForColorFilter}>Color</a>
+          </div>
+        <div className="todaypreview" style={styles.clothingpreview}>
+          <img
+          src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
+          alt="unicorn shirt"
+        />
+=======
+=======
 
+>>>>>>> 3b2668cf1f65e420626abc5a68f13d51214ef710
              <a onClick={this.WeightFilter}>Item Weight</a>
              <br></br>
              <a onClick={this.ColorFilter}>Color</a>
@@ -63,6 +93,10 @@ export default class Wardrobe extends Component {
             })}
           </div>
           <br />
+<<<<<<< HEAD
+>>>>>>> fe5b41994a2daf59372fd428d74a22f415cceed0
+=======
+>>>>>>> 3b2668cf1f65e420626abc5a68f13d51214ef710
         </div>
       );
     }
