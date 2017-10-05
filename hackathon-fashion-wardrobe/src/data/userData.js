@@ -8,7 +8,7 @@ const users = [
   {
   image: "black-shortsleeve-light.jpeg",
     color: "black",
-    sleeves: "long",
+    sleeves: "short",
     weight: "light"
   },
   {
@@ -43,13 +43,13 @@ const users = [
   }
   ,{
   image: "maroon-longsleeve-heavy.jpeg",
-    color: "maroon",
+    color: "red",
     sleeves: "long",
     weight: "heavy"
   }
   ,{
   image: "maroon-sleevless-light.jpeg",
-    color: "maroon",
+    color: "red",
     sleeves: "none",
     weight: "light"
   }
