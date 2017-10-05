@@ -9,7 +9,7 @@ export default class Home extends Component {
       textDecoration:"none",
       fontFamily:"Ubuntu, sans-serif",
       display:"flex",
-      flexDirection:"column",
+      flexDirection:"row",
       alignItems:"center",
       alignText:"center",
       color:"#837095"
@@ -19,22 +19,23 @@ export default class Home extends Component {
       flexDirection:"row",
       alignItems:"center",
       alignText:"center",
+      justifyContent:"center"
     }
     return (
       <div className="steps" style={stepstyle}>
         <div className="step1" style={imgstyle}>
           <h2> Step 1: Upload Clothes</h2>
-          <img src={step1} className="step1" style={{width:'150px',padding:"120px"}} />
+          <img src={step1} className="step1" style={{width:'150px',paddingRight:"50px"}} />
           <br />
         </div>
         <div className="step2" style={imgstyle}>
           <h2> Step 2: Checkout Todays Look</h2>
-          <img src={step2} className="step2" style={{height:'150px', padding:"120px"}} />
+          <img src={step2} className="step2" style={{height:'150px', paddingRight:"50px"}} />
           <br />
         </div>
         <div className="step3" style={imgstyle}>
           <h2> Step 3: Get Stylin'</h2>
-          <img src={step3} className="step3" style={{width:'150px',padding:"120px"}} />
+          <img src={step3} className="step3" style={{width:'150px',paddingRight:"50px"}} />
         </div>
       </div>
     );
