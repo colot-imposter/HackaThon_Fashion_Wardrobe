@@ -4,8 +4,14 @@ import { connect } from "react-redux";
 import Login from "../containers/Login.js";
 import Register from "../containers/Register.js";
 import UserInfo from "../containers/UserInfo.js";
+import apiKey from './apiKey';
 
 import { loadTokenFromCookie } from "../actions/actions";
+
+const API_KEY = apiKey;
+console.log(API_KEY);
+const countrycode = 'us';
+const zipcode = '78701';
 
 const styles =  {
   clothingpreview:{
@@ -39,6 +45,35 @@ const styles =  {
 };
 
 export default class TodaysLook extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      temperature: "",
+    }
+
+    componentDidMount() {
+      let weather_temperature = `api.openweathermap.org/data/2.5/weather?zip=${zipcode},${countrycode}`;
+      // Fetch data from API
+        fetch(weather_temperature)
+        .then(r => r.json())
+        .then((data) => {
+        this.setState({temperature: data.main.temp})
+      });
+    }
+
+  // let weather_temperature = `api.openweathermap.org/data/2.5/weather?zip=${zipcode},${countrycode}`;
+
+  // fetch(weather_temperature)
+    // .then(r => r.json())
+    // .then((data) => {
+  //     console.log(data.main.temp)
+  //     this.setState({
+  //       temperature: data.main.temp
+  //     });
+  //   })
+  }
+
   render() {
     return (
       <div className="todaysWeather">
