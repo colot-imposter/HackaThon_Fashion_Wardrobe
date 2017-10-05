@@ -5,6 +5,9 @@ import Login from "../containers/Login.js";
 import Register from "../containers/Register.js";
 import UserInfo from "../containers/UserInfo.js";
 import apiKey from './apiKey';
+import img1 from '../styles/imgs/shirts/blue-shortsleeve-light.jpeg'
+import img2 from '../styles/imgs/shirts/white-sleevless-light.jpeg'
+import img3 from '../styles/imgs/shirts/black-shortsleeve-light.jpeg'
 
 import { loadTokenFromCookie } from "../actions/actions";
 
@@ -13,37 +16,44 @@ console.log(API_KEY);
 const countrycode = 'us';
 const zipcode = '78701';
 
-const styles =  {
-  clothingpreview:{
-    display: 'inline-flex',
-    width: '10px',
-    // height: '50px',
-    border: '1px solid black',
-    padding: '5px'},
-  previewbody:{
-    display:'inline-flex'
-  },
-    header: {
-      'margin-left': 'auto',
-      border: '1px solid black'
-    },
-  //
-  //   '@media (max-width: 200px)': {
-  //     width: '100%',
-  //
-  //     ':hover': {
-  //       background: 'white',
-  //     }
-  //   }
-  // },
-  // primary: {
-  //   background: 'green'
-  // },
-  // warning: {
-  //   background: 'yellow'
-
+let clothesstyle =  {
+display:"flex",
+flexDirection:"row",
 };
 
+let tempstyle =  {
+display:"flex",
+flexDirection:"row-reverse",
+justifyContent:"end",
+color:"#837095",
+fontFamily:"Ubuntu, sans-serif",
+};
+
+let headstyle =  {
+display:"flex",
+flexDirection:"column",
+color:"#837095",
+fontFamily:"Ubuntu, sans-serif",
+paddingRight:"20px"
+};
+
+let filterstyle =  {
+display:"flex",
+fontFamily:"Ubuntu, sans-serif",
+flexDirection:"column",
+paddingRight:'155px',
+color:"#837095",
+fontSize:"20px"
+};
+
+let pagestyle =  {
+display:"flex",
+flexDirection:"row",
+padding:'20px',
+alignItems:"center",
+alignText:"center",
+justifyContent:"center"
+};
 export default class TodaysLook extends Component {
   constructor(props){
     super(props);
@@ -82,42 +92,40 @@ export default class TodaysLook extends Component {
 
     return (
       <div className="todaysWeather">
-        <div className="header">
-          <h1>Today's Weather</h1>
+      <div className="weather" style={tempstyle}>
+        <div className="header" style={headstyle}>
+          <h1>Todays Weather</h1>
+        <div style={{paddingLeft:"20px",paddingRight:"20px", paddingTop:"0px"}}>
+        <h2>{this.state.temperature}</h2>
+        </div>
         </div>
         <div>
-
-          {this.state.temperature}
-          <h2>HI COURTNEY WEATHER IN THIS DIV YO</h2>
-        </div>
-        <div>
-          {/* <p>{api.temperatureInFarhenheit}</p> */}
-          <img
+          <img style={{width:"75px", paddingRight:"20px"}}
             src="https://thesunshine.co/assets/img/sun.png"
-            alt="Its Sunny!"
-          />
+            alt="Its Sunny!"/>
         </div>
-        <div className= 'previewbody' style= {styles.previewbody}>
-          <div>
-            <h3>Filter</h3>
-              <a to="/" onClick={this.handleClickForLengthFilter}>Sleeve Length</a>
-              <br></br>
-              <a to="/" onClick={this.handleClickForLengthFilter}>Item Weight</a>
-              <br></br>
-              <a onClick={this.handleClickForLengthFilter}>Color</a>
-            </div>
-          <div className="todaypreview" style={styles.clothingpreview}>
-            <img
-            src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
-            alt="unicorn shirt"
+        </div>
+        <div className= 'previewbody' style={pagestyle}>
+        <div className='filters' style={filterstyle}>
+         <h3>Filter</h3>
+           <a onClick={this.LengthFilter}>Sleeve Length</a>
+          <br></br>
+           <a onClick={this.WeightFilter}>Item Weight</a>
+           <br></br>
+           <a onClick={this.ColorFilter}>Color</a>
+         </div>
+          <div className="todaypreview" style={clothesstyle}>
+            <img style={{width:"200px", height:"200px"}}
+            src={img1}
+            alt="blue-shortsleeve-light"
           />
-            <img
-            src="https://i.ebayimg.com/thumbs/images/m/mf3_QAnDftcZvIljSorxC2g/s-l225.jpg"
-            alt="yellow top"
+            <img style={{width:"200px", height:"200px"}}
+            src={img2}
+            alt="white-sleevless-light"
           />
-            <img
-            src="https://cdn-img-2.wanelo.com/p/665/4d5/377/0da4e007e21051127aa5901/x354-q80.jpg"
-            alt="here for the boos"
+            <img style={{width:"200px", height:"200px"}}
+            src={img3}
+            alt="black-shortsleeve-light"
           />
           </div>
         </div>
