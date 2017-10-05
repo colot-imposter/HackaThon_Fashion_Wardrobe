@@ -79,17 +79,6 @@ export default class TodaysLook extends Component {
     }
 
 
-  // let weather_temperature = `api.openweathermap.org/data/2.5/weather?zip=${zipcode},${countrycode}`;
-
-  // fetch(weather_temperature)
-    // .then(r => r.json())
-    // .then((data) => {
-  //     console.log(data.main.temp)
-  //     this.setState({
-  //       temperature: data.main.temp
-  //     });
-  //   })
-
   render() {
 
     return (
