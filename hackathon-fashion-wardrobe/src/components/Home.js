@@ -5,6 +5,7 @@ import step3 from "../styles/imgs/styled.jpg";
 
 export default class Home extends Component {
   render() {
+
     let stepstyle = {
       textDecoration: "none",
       fontFamily: "Ubuntu, sans-serif",
