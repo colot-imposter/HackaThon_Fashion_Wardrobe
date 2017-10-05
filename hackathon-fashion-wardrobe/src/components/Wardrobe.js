@@ -2,34 +2,62 @@ import React, { Component } from "react";
 import users from "../data/userData.js";
 import WardrobeDisplay from "../containers/WardrobeDisplay.js";
 
-// const styles =  {
-//   clothingpreview:{
-//     display: 'inline-flex',
-//     width: '10px',
-//     // height: '50px',
-//     border: '1px solid black',
-//     padding: '5px'},
-//   previewbody:{
-//     display:'inline-flex'
-//   },
-//     header: {
-//       'margin-left': 'auto',
-//       border: '1px solid black'
-//     },
-// };
+const styles =  {
+  clothingpreview:{
+    display: 'inline-flex',
+    width: '10px',
+    // height: '50px',
+    // border: '1px solid black',
+    padding: '5px'},
+  previewbody:{
+    display:'inline-flex'
+  },
+    header: {
+      'margin-left': 'auto',
+      border: '1px solid black'
+    },
+};
 
 
 
 export default class Wardrobe extends Component {
-  // constructor(props) {
-  //     super(props);
+//   constructor(props) {
+//       super(props);
+//
+//   this.state = {
+//     clothingItem: [],
+//   }
+//
+//       this.LengthFilter = this.LengthFilter.bind(this);
+//       this.WeightFilter = this.WeightFilter.bind(this);
+//       this.ColorFilter = this.ColorFilter.bind(this);
+//
+// }
+//
+// LengthFilter(e) {
+//   this.setState(
+//     {
+//       clothingItem: e.target.value,
+//     })
+// }
+
   render() {
     return (
         <div>
+          <div className='clothingpreview' style={styles.clothingpreview}>
+           <h3>Filter</h3>
+             <a onClick={this.LengthFilter}>Sleeve Length</a>
+            <br></br>
+             <a onClick={this.WeightFilter}>Item Weight</a>
+             <br></br>
+             <a onClick={this.ColorFilter}>Color</a>
+           </div>
+          <div>
           {users.map(clothingItem => {
             // if (clothingItem.image === "")
               return <WardrobeDisplay key={clothingItem.image} clothingItem={clothingItem} />;
             })}
+          </div>
           <br />
         </div>
       );
