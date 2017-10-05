@@ -27,6 +27,7 @@ flexDirection:"row-reverse",
 justifyContent:"end",
 color:"#837095",
 fontFamily:"Ubuntu, sans-serif",
+paddingTop:20
 };
 
 let headstyle =  {
@@ -98,24 +99,16 @@ export default class TodaysLook extends Component {
         </div>
         </div>
         <div className= 'previewbody' style={pagestyle}>
-        <div className='filters' style={filterstyle}>
-         <h3>Filter</h3>
-           <a onClick={this.LengthFilter}>Sleeve Length</a>
-          <br></br>
-           <a onClick={this.WeightFilter}>Item Weight</a>
-           <br></br>
-           <a onClick={this.ColorFilter}>Color</a>
-         </div>
           <div className="todaypreview" style={clothesstyle}>
-            <img style={{width:"200px", height:"200px"}}
+            <img style={{width:"200px", height:"200px",paddingRight:"40px"}}
             src={img1}
             alt="blue-shortsleeve-light"
           />
-            <img style={{width:"200px", height:"200px"}}
+            <img style={{width:"200px", height:"200px",paddingRight:"40px"}}
             src={img2}
             alt="white-sleevless-light"
           />
-            <img style={{width:"200px", height:"200px"}}
+            <img style={{width:"200px", height:"200px",paddingRight:"40px"}}
             src={img3}
             alt="black-shortsleeve-light"
           />

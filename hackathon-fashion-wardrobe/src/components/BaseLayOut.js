@@ -15,9 +15,12 @@ export default class BaseLayout extends Component {
       justifyContent: "space-around",
       textAlign: "center",
       fontSize: 20,
-      margin: 15,
       fontFamily:"Ubuntu, sans-serif",
-      color:"#837095"
+      color:"#837095",
+      borderBottomWidth:"5px",
+      borderBottomColor:"#837095",
+      borderBottomStyle:"solid",
+      height:"100px"
     };
 
     let dru = {
@@ -43,6 +46,7 @@ export default class BaseLayout extends Component {
       backgroundColor:"#837095",
       color: "white"
     };
+    let ham={color:"#837095",display:"flex",flexDirection:"row",justifyContent:"center",alignItems:"center",margin:0}
 
     return (
       <div style={whole} className="BaseLayout">
@@ -53,8 +57,8 @@ export default class BaseLayout extends Component {
             </NavLink>
           </div>
           <br />
-          <div className="hamburger">
-            <img src={hamPic} className="hamburgerMenu" style={{color:"#837095"}}/>
+          <div className="hamburger" style={ham}>
+            <img src={hamPic} className="hamburgerMenu" style={ham}/>
             <ul>
               <li>
                 <NavLink style={nav} exact to="/User_Dashboard">
