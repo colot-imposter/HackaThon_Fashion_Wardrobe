@@ -48,14 +48,18 @@ export default class TodaysLook extends Component {
   constructor(props){
     super(props);
 
-  let imageUrl = `api.openweathermap.org/data/2.5/weather?zip=${zipcode},${countrycode}`;
+    this.state = {
+      temperature: "",
+    }
 
-  fetch(imageUrl)
+  let weather_temperature = `api.openweathermap.org/data/2.5/weather?zip=${zipcode},${countrycode}`;
+
+  fetch(weather_temperature)
     .then(r => r.json())
     .then((data) => {
-      console.log(data.photos)
+      console.log(data.main.temp)
       this.setState({
-        images: data.photos
+        temperature: data.main.temp
       });
     })
   }
