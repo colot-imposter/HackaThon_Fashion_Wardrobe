@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../styles/App.css";
-import hamPic from "../styles/imgs/hamburgerMenu.png";
+import hamPic from "../styles/imgs/hamburgerpurple.png";
 import logo from "../styles/imgs/Logo.png";
 
 export default class BaseLayout extends Component {
@@ -15,7 +15,9 @@ export default class BaseLayout extends Component {
       justifyContent: "space-around",
       textAlign: "center",
       fontSize: 20,
-      margin: 15
+      margin: 15,
+      fontFamily:"Ubuntu, sans-serif",
+      color:"#837095"
     };
 
     let dru = {
@@ -24,7 +26,7 @@ export default class BaseLayout extends Component {
 
     let nav = {
       textDecoration: "none",
-      color: "black"
+      color:"#837095"
     };
 
     let footer = {
@@ -38,7 +40,7 @@ export default class BaseLayout extends Component {
       height: "20px",
       width: "100%",
       zIndex: 2,
-      backgroundColor: "black",
+      backgroundColor:"#837095",
       color: "white"
     };
 
@@ -47,15 +49,12 @@ export default class BaseLayout extends Component {
         <div style={navs}>
           <div style={dru}>
             <NavLink style={nav} exact to="/User_Dashboard">
-              <img src={logo} className="hangerLogo" />
+              <img src={logo} className="hangerLogo"/>
             </NavLink>
           </div>
           <br />
-          {/* <NavLink style={nav} to="/login">
-            Log In/Sign Up!
-          </NavLink> */}
           <div className="hamburger">
-            <img src={hamPic} className="hamburgerMenu" />
+            <img src={hamPic} className="hamburgerMenu" style={{color:"#837095"}}/>
             <ul>
               <li>
                 <NavLink style={nav} exact to="/User_Dashboard">

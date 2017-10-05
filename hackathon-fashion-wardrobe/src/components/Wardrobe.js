@@ -3,23 +3,36 @@ import WardrobeDisplay from "../containers/WardrobeDisplay.js";
 import users from "../data/userData.js";
 
 
-const styles =  {
-  clothingpreview:{
-    display: 'inline-flex',
-    width: '10px',
-    // height: '50px',
-    // border: '1px solid black',
-    padding: '5px'},
-  previewbody:{
-    display:'inline-flex'
-  },
-    header: {
-      'margin-left': 'auto',
-      border: '1px solid black'
-    },
+let clothesstyle =  {
+display:"flex",
+flexDirection:"row",
 };
 
+let filterstyle =  {
+display:"flex",
+fontFamily:"Ubuntu, sans-serif",
+flexDirection:"column",
+paddingRight:'105px',
+color:"#837095",
+fontSize:"20px"
+};
 
+let pagestyle =  {
+display:"flex",
+flexDirection:"row",
+padding:'20px',
+alignItems:"center",
+alignText:"center",
+justifyContent:"center"
+};
+
+let imgstyle =  {
+display:"flex",
+flexDirection:"row",
+width:'600px',
+flexWrap:"wrap",
+padding:"20px"
+};
 
 export default class Wardrobe extends Component {
 //   constructor(props) {
@@ -44,30 +57,20 @@ export default class Wardrobe extends Component {
 
   render() {
     return (
-        <div>
-          <div className='clothingpreview' style={styles.clothingpreview}>
+        <div className='page' style={pagestyle}>
+          <div className='filters' style={filterstyle}>
            <h3>Filter</h3>
              <a onClick={this.LengthFilter}>Sleeve Length</a>
             <br></br>
-            <a onClick={this.handleClickForColorFilter}>Color</a>
-          </div>
-        <div className="todaypreview" style={styles.clothingpreview}>
-          <img
-          src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
-          alt="unicorn shirt"
-        />
-
              <a onClick={this.WeightFilter}>Item Weight</a>
              <br></br>
              <a onClick={this.ColorFilter}>Color</a>
            </div>
-          <div>
+          <div className='clothingpreview'style={imgstyle}>
           {users.map(clothingItem => {
-            // if (clothingItem.image === "")
-              return <WardrobeDisplay key={clothingItem.image} clothingItem={clothingItem} />;
+            return <div style={{width:"100px",padding:"10px"}}><WardrobeDisplay key={clothingItem.image} clothingItem={clothingItem}/></div>;
             })}
           </div>
-          <br />
         </div>
       );
     }
