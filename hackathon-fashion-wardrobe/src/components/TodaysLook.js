@@ -60,6 +60,7 @@ export default class TodaysLook extends Component {
 
     this.state = {
       temperature: "",
+      conditions:""
     }
 
 }
@@ -72,7 +73,8 @@ export default class TodaysLook extends Component {
           .then((data) => {
             console.log(data);
             console.log(data.main.temp)
-            this.setState({temperature: data.main.temp})
+            console.log( (1.8 *((data.main.temp)  - 273)) + 32.);
+            this.setState({temperature: ((1.8 *((data.main.temp)  - 273)) + 32.).toFixed(0), conditions: data.weather[0].description})
       })
     }
 
@@ -96,7 +98,8 @@ export default class TodaysLook extends Component {
         <div className="header" style={headstyle}>
           <h1>Todays Weather</h1>
         <div style={{paddingLeft:"20px",paddingRight:"20px", paddingTop:"0px"}}>
-        <h2>{this.state.temperature}</h2>
+        <h2>{this.state.temperature} Degrees</h2>
+        <h2>{this.state.conditions}</h2>
         </div>
         </div>
         <div>
