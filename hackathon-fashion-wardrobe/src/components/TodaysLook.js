@@ -51,16 +51,21 @@ export default class TodaysLook extends Component {
     this.state = {
       temperature: "",
     }
-  }
 
+}
     componentDidMount() {
-      let weather_temperature = `api.openweathermap.org/data/2.5/weather?zip=${zipcode},${countrycode}`;
-        fetch(weather_temperature)
-        .then(r => r.json())
-        .then((data) => {
-        this.setState({temperature: data.main.temp})
+
+      let url = `http://api.openweathermap.org/data/2.5/weather?q= austin,${countrycode}&appid=${API_KEY}`;
+
+        fetch(url)
+          .then(r => r.json())
+          .then((data) => {
+            console.log(data);
+            console.log(data.main.temp)
+            this.setState({temperature: data.main.temp})
       })
     }
+
 
   // let weather_temperature = `api.openweathermap.org/data/2.5/weather?zip=${zipcode},${countrycode}`;
 
@@ -74,8 +79,6 @@ export default class TodaysLook extends Component {
   //   })
 
   render() {
-    let temp = this.state.temperature;
-    let temperature = temp.map((temperature) => {
 
     return (
       <div className="todaysWeather">
@@ -83,10 +86,12 @@ export default class TodaysLook extends Component {
           <h1>Today's Weather</h1>
         </div>
         <div>
-          {temperature}
+
+          {this.state.temperature}
           <h2>HI COURTNEY WEATHER IN THIS DIV YO</h2>
         </div>
         <div>
+          {/* <p>{api.temperatureInFarhenheit}</p> */}
           <img
             src="https://thesunshine.co/assets/img/sun.png"
             alt="Its Sunny!"
@@ -106,11 +111,45 @@ export default class TodaysLook extends Component {
             src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
             alt="unicorn shirt"
           />
-            </div>
+            <img
+            src="https://i.ebayimg.com/thumbs/images/m/mf3_QAnDftcZvIljSorxC2g/s-l225.jpg"
+            alt="yellow top"
+          />
+            <img
+            src="https://cdn-img-2.wanelo.com/p/665/4d5/377/0da4e007e21051127aa5901/x354-q80.jpg"
+            alt="here for the boos"
+          />
           </div>
         </div>
-      )
-    }
+      </div>
     );
   }
 }
+
+// class App extends Component {
+//   componentWillMount() {
+//     const loadToken = this.props.loadToken;
+//     loadToken();
+//   }
+//   render() {
+//     return (
+//       <div className="App">
+//         <div className="grid-50-50">
+//           <h1>Youre About to Have a Nice Wardrobe</h1>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
+
+// const mapStateToProps = state => {
+//   return {};
+// };
+//
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     loadToken: () => dispatch(loadTokenFromCookie())
+//   };
+// };
+//
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
