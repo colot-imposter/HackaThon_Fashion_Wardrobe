@@ -51,15 +51,15 @@ export default class TodaysLook extends Component {
     this.state = {
       temperature: "",
     }
+  }
 
     componentDidMount() {
       let weather_temperature = `api.openweathermap.org/data/2.5/weather?zip=${zipcode},${countrycode}`;
-      // Fetch data from API
         fetch(weather_temperature)
         .then(r => r.json())
         .then((data) => {
         this.setState({temperature: data.main.temp})
-      });
+      })
     }
 
   // let weather_temperature = `api.openweathermap.org/data/2.5/weather?zip=${zipcode},${countrycode}`;
@@ -72,16 +72,21 @@ export default class TodaysLook extends Component {
   //       temperature: data.main.temp
   //     });
   //   })
-  }
 
   render() {
+    let temp = this.state.temperature;
+    let temperature = temp.map((temperature) => {
+
     return (
       <div className="todaysWeather">
         <div className="header">
           <h1>Today's Weather</h1>
         </div>
         <div>
-          {/* <p>{api.temperatureInFarhenheit}</p> */}
+          {temperature}
+          <h2>HI COURTNEY WEATHER IN THIS DIV YO</h2>
+        </div>
+        <div>
           <img
             src="https://thesunshine.co/assets/img/sun.png"
             alt="Its Sunny!"
@@ -100,14 +105,6 @@ export default class TodaysLook extends Component {
             <img
             src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
             alt="unicorn shirt"
-          />
-            <img
-            src="https://i.ebayimg.com/thumbs/images/m/mf3_QAnDftcZvIljSorxC2g/s-l225.jpg"
-            alt="yellow top"
-          />
-            <img
-            src="https://cdn-img-2.wanelo.com/p/665/4d5/377/0da4e007e21051127aa5901/x354-q80.jpg"
-            alt="here for the boos"
           />
           </div>
         </div>
