@@ -2,78 +2,69 @@ import React, { Component } from "react";
 import WardrobeDisplay from "../containers/WardrobeDisplay.js";
 import users from "../data/userData.js";
 
-
-let clothesstyle =  {
-display:"flex",
-flexDirection:"row",
+let clothesstyle = {
+  display: "flex",
+  flexDirection: "row"
 };
 
-let filterstyle =  {
-display:"flex",
-fontFamily:"Ubuntu, sans-serif",
-flexDirection:"column",
-paddingRight:'105px',
-color:"#837095",
-fontSize:"20px"
+let filterstyle = {
+  display: "flex",
+  fontFamily: "Ubuntu, sans-serif",
+  flexDirection: "column",
+  paddingRight: "105px",
+  color: "#837095",
+  fontSize: "20px"
 };
 
-let pagestyle =  {
-display:"flex",
-flexDirection:"row",
-padding:'20px',
-alignItems:"center",
-alignText:"center",
-justifyContent:"center"
+let pagestyle = {
+  display: "flex",
+  flexDirection: "row",
+  padding: "20px",
+  alignItems: "center",
+  alignText: "center",
+  justifyContent: "center"
 };
 
-let imgstyle =  {
-display:"flex",
-flexDirection:"row",
-width:'600px',
-flexWrap:"wrap",
-padding:"20px"
+let imgstyle = {
+  display: "flex",
+  flexDirection: "row",
+  width: "600px",
+  flexWrap: "wrap",
+  padding: "20px"
 };
 
 export default class Wardrobe extends Component {
   constructor(props) {
-      super(props);
+    super(props);
 
-  this.state = {
-    clothingItem: [],
+    this.state = {
+      clothingItem: []
+    };
+
+    this.LengthFilter = this.LengthFilter.bind(this);
+    this.WeightFilter = this.WeightFilter.bind(this);
+    this.ColorFilter = this.ColorFilter.bind(this);
   }
 
-      this.LengthFilter = this.LengthFilter.bind(this);
-      this.WeightFilter = this.WeightFilter.bind(this);
-     this.ColorFilter = this.ColorFilter.bind(this);
+  LengthFilter(e) {
+    this.setState({
+      sleeves: e.target.value
+    });
+    console.log("clothingItem", e.target.value);
+  }
+  WeightFilter(e) {
+    this.setState({
+      weight: e.target.value
+    });
+  }
 
-}
-
-LengthFilter(e) {
-  this.setState(
-    {
-      clothingItem: e.target.value,
-
-
-    })
-console.log("clothingItem", e.target.value);
-
-}
-WeightFilter(e) {
-  this.setState(
-    {
-      weight: e.target.value,
-    })
-}
-
-ColorFilter(e) {
-  this.setState(
-    {
-      color: e.target.value,
-    })
-}
+  ColorFilter(e) {
+    this.setState({
+      color: e.target.value
+    });
+  }
 
   render() {
-
     // users.map(clothingItem) => {
     //    if (clothingItem === "short")
     //    console.log('hit1');
@@ -81,64 +72,86 @@ ColorFilter(e) {
     // })
 
     return (
-        <div className='page' style={pagestyle}>
-          <div className='filters' style={filterstyle}>
-           <h3>Filter</h3>
-           <form>
-
-             <select onChange={this.LengthFilter} id="sleevelength" value={this.state.value}>
-               <option value="">Sleeve Length</option>
-               <option value="short">Short</option>
-               <option value="long">Long</option>
-               <option value="none">None</option>
-             </select>
-            <br></br>
-             <select onChange={this.WeightFilter} id="WeightFilter" value={this.state.value}>
-               <option value="">Fabric Weight</option>
-               <option value="light">Light</option>
-               <option value="medium">Medium</option>
-               <option value="heavy">Heavy</option>
-             </select>
-             <br></br>
-             <select onChange={this.ColorFilter} id="sleevelength" value={this.state.value}>
-               <option value="">Color</option>
-               <option value="blue">Blue</option>
-               <option value="black">Black</option>
-               <option value="gray">Gray</option>
-               <option value="white">White</option>
-               <option value="red">Red</option>
-             </select>
-            <br></br>
-             </form>
-           </div>
-          <div className='clothingpreview'style={imgstyle}>
-
-            {users.map(pop => {
-               if (pop.sleeves === this.state.clothingItem){
-                 console.log('popooooooo', this.state.clothingItem);
-              return <div style={{width:"100px",padding:"10px"}}><WardrobeDisplay key={pop.image} clothingItem={pop}/></div>;
-            }
-              if (pop.color === this.state.color){
-              console.log('popooooooo', this.state.color);
-           return <div style={{width:"100px",padding:"10px"}}><WardrobeDisplay key={pop.image} clothingItem={pop}/></div>;
-         }
-
-         if (pop.weight === this.state.weight){
-      return <div style={{width:"100px",padding:"10px"}}><WardrobeDisplay key={pop.image} clothingItem={pop}/></div>;
-    }
-              }
-          )}
-
-          {users.map(clothingItem => {
-            return <div style={{width:"100px",padding:"10px"}}><WardrobeDisplay key={clothingItem.image} clothingItem={clothingItem}/></div>;
-            })}
-          </div>
+      <div className="page" style={pagestyle}>
+        <div className="filters" style={filterstyle}>
+          <h3>Filter</h3>
+          <form>
+            <select
+              onChange={this.LengthFilter}
+              id="sleevelength"
+              value={this.state.value}
+            >
+              <option value="">Sleeve Length</option>
+              <option value="short">Short</option>
+              <option value="long">Long</option>
+              <option value="none">None</option>
+            </select>
+            <br />
+            <select
+              onChange={this.WeightFilter}
+              id="WeightFilter"
+              value={this.state.value}
+            >
+              <option value="">Fabric Weight</option>
+              <option value="light">Light</option>
+              <option value="medium">Medium</option>
+              <option value="heavy">Heavy</option>
+            </select>
+            <br />
+            <select
+              onChange={this.ColorFilter}
+              id="color"
+              value={this.state.value}
+            >
+              <option value="">Color</option>
+              <option value="blue">Blue</option>
+              <option value="black">Black</option>
+              <option value="gray">Gray</option>
+              <option value="white">White</option>
+              <option value="red">Red</option>
+            </select>
+            <br />
+          </form>
         </div>
-      );
-    }
+        <div className="clothingpreview" style={imgstyle}>
+          {users.map(pop => {
+            if (pop.color === this.state.color) {
+              console.log("popooooooo", this.state.color);
+
+              return (
+                <div style={{ width: "100px", padding: "10px" }}>
+                  <WardrobeDisplay key={pop.image} clothingItem={pop} />
+                </div>
+              );
+            }
+
+            if (pop.sleeves === this.state.sleeves) {
+              return (
+                <div style={{ width: "100px", padding: "10px" }}>
+                  <WardrobeDisplay key={pop.image} clothingItem={pop} />
+                </div>
+              );
+            }
+
+            if (pop.weight === this.state.weight) {
+              return (
+              <div style={{ width: "100px", padding: "10px" }}>
+                <WardrobeDisplay key={pop.image} clothingItem={pop} />
+              </div>
+              )
+            }
+            if (this.state.weight === "") {
+              return;
+              <div style={{ width: "100px", padding: "10px" }}>
+                <WardrobeDisplay key={pop.image} clothingItem={pop} />
+              </div>;
+            }
+          })}
+        </div>
+      </div>
+    );
   }
-
-
+}
 
 // export default class Wardrobe extends Component {
 //   constructor(props) {
