@@ -4,14 +4,14 @@ export default class WardrobeDisplay extends Component {
   render() {
     const { clothingItem } = this.props;
     console.log('this.props', this.props);
-    console.log('clothingItem.courtney.image', clothingItem.courtney.image);
+    console.log('clothingItem.image', clothingItem.image);
     return (
       <div>
 
         <img
           className=""
           style={{ height: 100, float: "left", marginRight: 10 }}
-          src={require(`../styles/imgs/shirts/${clothingItem.courtney.image}`)}
+          src={require(`../styles/imgs/shirts/${clothingItem.image}`)}
           alt="clothing pic"
         />
       </div>

@@ -27,8 +27,8 @@ export default class Wardrobe extends Component {
     return (
         <div>
           {users.map(clothingItem => {
-            if (clothingItem.courtney.image === "")
-              return <WardrobeDisplay key={clothingItem.courtney.image} clothingItem={clothingItem} />;
+            if (clothingItem.image === "black-longsleeve-light.jpeg")
+              return <WardrobeDisplay key={clothingItem.image} clothingItem={clothingItem} />;
             })}
           <br />
         </div>

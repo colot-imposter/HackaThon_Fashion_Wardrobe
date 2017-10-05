@@ -1,5 +1,4 @@
 const users = [
-  {courtney : [
     {
     image: "black-longsleeve-light.jpeg",
     color: "black",
@@ -78,7 +77,6 @@ const users = [
     sleeves: "none",
     weight: "light"
   }
-]}
 ]
 
 export default users;
