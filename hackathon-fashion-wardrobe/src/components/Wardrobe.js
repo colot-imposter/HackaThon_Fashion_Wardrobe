@@ -81,8 +81,6 @@ ColorFilter(e) {
     // })
 
     return (
-
-
         <div className='page' style={pagestyle}>
           <div className='filters' style={filterstyle}>
            <h3>Filter</h3>
@@ -114,6 +112,7 @@ ColorFilter(e) {
              </form>
            </div>
           <div className='clothingpreview'style={imgstyle}>
+
             {users.map(pop => {
                if (pop.sleeves === this.state.clothingItem){
                  console.log('popooooooo', this.state.clothingItem);
@@ -129,6 +128,10 @@ ColorFilter(e) {
     }
               }
           )}
+
+          {users.map(clothingItem => {
+            return <div style={{width:"100px",padding:"10px"}}><WardrobeDisplay key={clothingItem.image} clothingItem={clothingItem}/></div>;
+            })}
           </div>
         </div>
       );

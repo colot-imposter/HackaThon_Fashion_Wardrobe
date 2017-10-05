@@ -47,14 +47,37 @@
   height: 4em;
 }
 .today:hover h2 {
-  color: #FF8D82;
+  color: #ff8d82;
   font-size: 30px;
 }
 .all:hover h2 {
-  color: #FF8D82;
+  color: #ff8d82;
   font-size: 30px;
 }
 .add:hover h2 {
-  color: #FF8D82;
+  color: #ff8d82;
   font-size: 30px;
+}
+/* Photo Banner */
+
+#scrollPics div {
+  display: flex;
+  align-content: center;
+  width: 800px;
+  height: 500px;
+  padding-top: 15px;
+  overflow: auto;
+}
+#scrollPics h2 {
+  padding: 20%;
+}
+#scrollPics img {
+  width: 300px;
+}
+
+.photobanner {
+  display: flex;
+  background-color: #ebdced;
+  overflow: auto;
+  white-space: nowrap;
 }

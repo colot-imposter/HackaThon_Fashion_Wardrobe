@@ -20,7 +20,7 @@ export default class Dashboard extends Component {
     return (
       <div className="container" style={dashstyle}>
         <div className="welcome">
-          <h1> Welcome User</h1>
+          <h1> Welcome Courtney</h1>
           <br />
         </div>
         <div className="today">
