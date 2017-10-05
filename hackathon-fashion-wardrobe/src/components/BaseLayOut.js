@@ -78,7 +78,7 @@ export default class BaseLayout extends Component {
         <div>
           {this.props.children}
           <div>
-            <footer style={footer}>Wardrobe</footer>
+            <footer style={footer}>Tunic inc.</footer>
           </div>
         </div>
       </div>
