@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import users from "../data/userData.js";
 import WardrobeDisplay from "../containers/WardrobeDisplay.js";
 
+
 const styles =  {
   clothingpreview:{
     display: 'inline-flex',
@@ -17,6 +18,7 @@ const styles =  {
       border: '1px solid black'
     },
 };
+
 
 
 
@@ -41,6 +43,7 @@ export default class Wardrobe extends Component {
 //     })
 // }
 
+
   render() {
     return (
         <div>
@@ -48,6 +51,7 @@ export default class Wardrobe extends Component {
            <h3>Filter</h3>
              <a onClick={this.LengthFilter}>Sleeve Length</a>
             <br></br>
+
              <a onClick={this.WeightFilter}>Item Weight</a>
              <br></br>
              <a onClick={this.ColorFilter}>Color</a>
