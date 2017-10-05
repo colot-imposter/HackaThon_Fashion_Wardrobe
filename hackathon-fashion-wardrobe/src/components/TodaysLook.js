@@ -4,8 +4,14 @@ import { connect } from "react-redux";
 import Login from "../containers/Login.js";
 import Register from "../containers/Register.js";
 import UserInfo from "../containers/UserInfo.js";
+import apiKey from './apiKey';
 
 import { loadTokenFromCookie } from "../actions/actions";
+
+const API_KEY = apiKey;
+console.log(API_KEY);
+const countrycode = 'us';
+const zipcode = '78701';
 
 const styles =  {
   clothingpreview:{
@@ -39,11 +45,50 @@ const styles =  {
 };
 
 export default class TodaysLook extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      temperature: "",
+    }
+
+}
+    componentDidMount() {
+
+      let url = `http://api.openweathermap.org/data/2.5/weather?q= austin,${countrycode}&appid=${API_KEY}`;
+
+        fetch(url)
+          .then(r => r.json())
+          .then((data) => {
+            console.log(data);
+            console.log(data.main.temp)
+            this.setState({temperature: data.main.temp})
+      })
+    }
+
+
+  // let weather_temperature = `api.openweathermap.org/data/2.5/weather?zip=${zipcode},${countrycode}`;
+
+  // fetch(weather_temperature)
+    // .then(r => r.json())
+    // .then((data) => {
+  //     console.log(data.main.temp)
+  //     this.setState({
+  //       temperature: data.main.temp
+  //     });
+  //   })
+
   render() {
+
     return (
       <div className="todaysWeather">
         <div className="header">
           <h1>Today's Weather</h1>
+        </div>
+        <div>
+
+          {this.state.temperature}
+          <h2>HI COURTNEY WEATHER IN THIS DIV YO</h2>
         </div>
         <div>
           {/* <p>{api.temperatureInFarhenheit}</p> */}
@@ -80,6 +125,7 @@ export default class TodaysLook extends Component {
     );
   }
 }
+
 // class App extends Component {
 //   componentWillMount() {
 //     const loadToken = this.props.loadToken;
