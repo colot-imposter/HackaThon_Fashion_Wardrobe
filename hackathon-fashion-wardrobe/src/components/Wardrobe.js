@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ImageDisplay from "../containers/WardrobeDisplay.js";
 
 const styles =  {
   clothingpreview:{
@@ -33,20 +32,6 @@ const styles =  {
 };
 
 export default class Wardrobe extends Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-          images: []
-      }
-  }
-
-
-
-  componentWillMount = () => {
-    this.setState({images: [this.props.images]}, function () {
-      this.props.updatedWardrobe(this.state.images);
-    })
-  }
 
   render() {
     return (
@@ -63,9 +48,6 @@ export default class Wardrobe extends Component {
             <br></br>
             <a onClick={this.handleClickForColorFilter}>Color</a>
           </div>
-          <div>
-            <ImageDisplay />
-/>          </div>
         <div className="todaypreview" style={styles.clothingpreview}>
           <img
           src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
