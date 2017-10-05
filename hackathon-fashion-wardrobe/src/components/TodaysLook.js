@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Login from "../containers/Login.js";
 import Register from "../containers/Register.js";
 import UserInfo from "../containers/UserInfo.js";
+import apiKey from './apiKey';
 
 import { loadTokenFromCookie } from "../actions/actions";
 
