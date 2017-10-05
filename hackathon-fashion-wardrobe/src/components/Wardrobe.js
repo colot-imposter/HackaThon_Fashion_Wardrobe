@@ -2,21 +2,21 @@ import React, { Component } from "react";
 import users from "../data/userData.js";
 import WardrobeDisplay from "../containers/WardrobeDisplay.js";
 
-const styles =  {
-  clothingpreview:{
-    display: 'inline-flex',
-    width: '10px',
-    // height: '50px',
-    border: '1px solid black',
-    padding: '5px'},
-  previewbody:{
-    display:'inline-flex'
-  },
-    header: {
-      'margin-left': 'auto',
-      border: '1px solid black'
-    },
-};
+// const styles =  {
+//   clothingpreview:{
+//     display: 'inline-flex',
+//     width: '10px',
+//     // height: '50px',
+//     border: '1px solid black',
+//     padding: '5px'},
+//   previewbody:{
+//     display:'inline-flex'
+//   },
+//     header: {
+//       'margin-left': 'auto',
+//       border: '1px solid black'
+//     },
+// };
 
 
 
@@ -27,8 +27,8 @@ export default class Wardrobe extends Component {
     return (
         <div>
           {users.map(clothingItem => {
-          // if (clothingItem.category === "equipment")
-              return <WardrobeDisplay key={users.courtney.image}   product={clothingItem} />;
+            if (clothingItem.courtney.image === "")
+              return <WardrobeDisplay key={clothingItem.courtney.image} clothingItem={clothingItem} />;
             })}
           <br />
         </div>

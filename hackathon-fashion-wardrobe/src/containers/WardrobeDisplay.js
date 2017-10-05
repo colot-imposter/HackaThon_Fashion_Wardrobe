@@ -12,7 +12,7 @@ export default class WardrobeDisplay extends Component {
           className=""
           style={{ height: 100, float: "left", marginRight: 10 }}
           src={require(`../styles/imgs/shirts/${clothingItem.courtney.image}`)}
-          alt="clothing image"
+          alt="clothing pic"
         />
       </div>
     );
