@@ -33,6 +33,12 @@ let imgstyle = {
   padding: "20px"
 };
 
+let dropdown={
+  fontFamily:"Ubuntu, sans-serif",
+  color:"#837095",
+  fontSize:"15px",
+}
+
 export default class Wardrobe extends Component {
   constructor(props) {
     super(props);
@@ -80,6 +86,7 @@ export default class Wardrobe extends Component {
               onChange={this.LengthFilter}
               id="sleevelength"
               value={this.state.value}
+              style={dropdown}
             >
               <option value="">Sleeve Length</option>
               <option value="short">Short</option>
@@ -91,6 +98,7 @@ export default class Wardrobe extends Component {
               onChange={this.WeightFilter}
               id="WeightFilter"
               value={this.state.value}
+              style={dropdown}
             >
               <option value="">Fabric Weight</option>
               <option value="light">Light</option>
@@ -102,6 +110,7 @@ export default class Wardrobe extends Component {
               onChange={this.ColorFilter}
               id="color"
               value={this.state.value}
+              style={dropdown}
             >
               <option value="">Color</option>
               <option value="blue">Blue</option>
