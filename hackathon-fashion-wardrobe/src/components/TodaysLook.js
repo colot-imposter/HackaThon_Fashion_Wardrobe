@@ -106,36 +106,11 @@ export default class TodaysLook extends Component {
             src="http://i3.cpcache.com/product/606802989/unicorn_kids_dark_tshirt.jpg?color=Navy&height=460&width=460&qv=90&Filters="
             alt="unicorn shirt"
           />
+            </div>
           </div>
         </div>
-      </div>
+      )
+    }
     );
   }
 }
-// class App extends Component {
-//   componentWillMount() {
-//     const loadToken = this.props.loadToken;
-//     loadToken();
-//   }
-//   render() {
-//     return (
-//       <div className="App">
-//         <div className="grid-50-50">
-//           <h1>Youre About to Have a Nice Wardrobe</h1>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// const mapStateToProps = state => {
-//   return {};
-// };
-//
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     loadToken: () => dispatch(loadTokenFromCookie())
-//   };
-// };
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(App);
