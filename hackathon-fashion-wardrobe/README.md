@@ -1,4 +1,32 @@
-Live Link: <a href="www.coltondowling.com"> ColtonDowling.com</a>
+<b>WORK IN PROGRESS</b>
+<BR>
+Live Link: <a href=""> Tunic.com</a>
+
+<b>BACK END DATA BASE</b>
+<br>
+Being Created using Spring,
+
+<b>DESIGN</b>
+
+<b>Colors:</b><br>
+<b>peach:</b> #FF8D82<br>
+<b>purple: </b>#60507B<br>
+<b>beige:</b> #FBFAEA<br>
+<b>Logo </b><br>(working logo; improve when spare time available):
+<br>
+
+
+
+<b>APIs:</b>
+
+<b>Weather API:</b> https://home.openweathermap.org/
+
+<b>Back End gitHublink:</b>  https://github.com/FlanaganReidy/wardrobeAPI
+
+
+
+
+
 
 <BR>
 Story Boards of My Pages
@@ -8,7 +36,7 @@ BLANK PAGE
 <BR>
 BLANK PAGE
 <BR>
-<img src="src/styles/read.me_photos/IMG_4382.JPG" width=400>
+<img src="src/styles/read.me_photos/IMG_4382.JPG" width=400 data-rotate="90">
 <BR>
 BLANK PAGE
 <BR>
