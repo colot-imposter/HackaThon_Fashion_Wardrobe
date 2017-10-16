@@ -33,11 +33,11 @@ let imgstyle = {
   padding: "20px"
 };
 
-let dropdown={
-  fontFamily:"Ubuntu, sans-serif",
-  color:"#837095",
-  fontSize:"15px",
-}
+let dropdown = {
+  fontFamily: "Ubuntu, sans-serif",
+  color: "#837095",
+  fontSize: "15px"
+};
 
 export default class Wardrobe extends Component {
   constructor(props) {
@@ -123,8 +123,14 @@ export default class Wardrobe extends Component {
           </form>
         </div>
         <div className="clothingpreview" style={imgstyle}>
+          {/* map over the data to filter out the desired selection */}
+
           {users.map(pop => {
-            if (pop.color === this.state.color) {
+            if (
+              pop.color === this.state.color &&
+              pop.sleeves === this.state.sleeves &&
+              pop.weight === this.state.weight
+            ) {
               console.log("popooooooo", this.state.color);
 
               return (
@@ -132,24 +138,19 @@ export default class Wardrobe extends Component {
                   <WardrobeDisplay key={pop.image} clothingItem={pop} />
                 </div>
               );
-            }
-
-            if (pop.sleeves === this.state.sleeves) {
+            } else if (pop.sleeves === this.state.sleeves) {
               return (
                 <div style={{ width: "100px", padding: "10px" }}>
                   <WardrobeDisplay key={pop.image} clothingItem={pop} />
                 </div>
               );
-            }
-
-            if (pop.weight === this.state.weight) {
+            } else if (pop.weight === this.state.weight) {
               return (
-              <div style={{ width: "100px", padding: "10px" }}>
-                <WardrobeDisplay key={pop.image} clothingItem={pop} />
-              </div>
-              )
-            }
-            if (this.state.weight === "") {
+                <div style={{ width: "100px", padding: "10px" }}>
+                  <WardrobeDisplay key={pop.image} clothingItem={pop} />
+                </div>
+              );
+            } else if (this.state.weight === "") {
               return;
               <div style={{ width: "100px", padding: "10px" }}>
                 <WardrobeDisplay key={pop.image} clothingItem={pop} />
