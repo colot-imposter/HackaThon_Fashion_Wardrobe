@@ -71,9 +71,11 @@ export default class TodaysLook extends Component {
     fetch(url)
       .then(r => r.json())
       .then(data => {
+        const feelsLikeT = data.current.feelslike_f;
         const maxT = data.forecast.forecastday["0"].day.maxtemp_f;
         const avgT = data.forecast.forecastday["0"].day.avgtemp_f;
         const rainInches = data.forecast.forecastday["0"].day.totalprecip_in;
+        console.log("feelsLikeT", feelsLikeT);
         console.log("Full data", data);
         console.log("maxT", maxT);
         console.log("avgT", avgT);
@@ -81,6 +83,7 @@ export default class TodaysLook extends Component {
 
         this.setState({
           temperature: avgT.toFixed(0),
+          feelsLikeTemp: feelsLikeT,
           conditions: data.current.condition.text
         });
       });
@@ -100,6 +103,7 @@ export default class TodaysLook extends Component {
               }}
             >
               <h2>{this.state.temperature} Degrees</h2>
+              <h3>Feels Like {this.state.feelsLikeTemp}</h3>
               <h2>{this.state.conditions}</h2>
             </div>
           </div>
