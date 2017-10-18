@@ -13,7 +13,6 @@ import UserInfo from "./containers/UserInfo.js";
 import LogOut from "./components/LogOut.js";
 import Register from "./containers/Register.js";
 import Login from "./containers/Login.js";
-import Temp from "./components/TEMP.js";
 import User_Dashboard from "./components/User_Dashboard.js";
 import Wardrobe from "./components/Wardrobe";
 import Item from "./components/Item";
@@ -32,7 +31,7 @@ ReactDOM.render(
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             {/* temporary link to render logged-in components */}
-            <Route path="/temp" component={Temp} />
+
             <Route path="/todayslook" component={TodaysLook} />
             <Route path="/Wardrobe" component={Wardrobe} />
             <Route path="/logout" component={LogOut} />

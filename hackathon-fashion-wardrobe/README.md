@@ -48,3 +48,5 @@ We had some great ideas, but they were our ideas, 3 people that lived pretty sim
 <br>
 
 <img src="src/styles/read.me_photos/IMG_4457.JPG" width=180>
+
+npm install boron

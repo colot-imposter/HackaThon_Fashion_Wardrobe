@@ -5,9 +5,11 @@ import Login from "../containers/Login.js";
 import Register from "../containers/Register.js";
 import UserInfo from "../containers/UserInfo.js";
 import apiKey from "./apiKey";
+import MatchTodaysLook from "./MatchTodaysLook.js";
 import img1 from "../styles/imgs/shirts/blue-shortsleeve-light.jpeg";
 import img2 from "../styles/imgs/shirts/white-sleevless-light.jpeg";
 import img3 from "../styles/imgs/shirts/black-shortsleeve-light.jpeg";
+import Modal from "./Modal";
 
 import { loadTokenFromCookie } from "../actions/actions";
 
@@ -105,6 +107,7 @@ export default class TodaysLook extends Component {
               <h2>{this.state.temperature} Degrees</h2>
               <h3>Feels Like {this.state.feelsLikeTemp}</h3>
               <h2>{this.state.conditions}</h2>
+              <Modal />
             </div>
           </div>
           <div>
