@@ -39,7 +39,10 @@ export default class Dashboard extends Component {
           <br />
         </div>
         <div className="add">
-          <Link to="/Item" style={{ textDecoration: "none", color: "#837095" }}>
+          <Link
+            to="/newItem"
+            style={{ textDecoration: "none", color: "#837095" }}
+          >
             <h2> Add A New Item </h2>
           </Link>
         </div>
