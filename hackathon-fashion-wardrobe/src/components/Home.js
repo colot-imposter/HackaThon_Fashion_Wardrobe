@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+
 import step1 from "../styles/imgs/add1.jpg";
 import step2 from "../styles/imgs/outfit.jpg";
 import step3 from "../styles/imgs/styled.jpg";
 
 export default class Home extends Component {
   render() {
-
     let stepstyle = {
       textDecoration: "none",
       fontFamily: "Ubuntu, sans-serif",
@@ -23,6 +24,11 @@ export default class Home extends Component {
     };
     return (
       <div className="steps" style={stepstyle}>
+        {/* Temporary Login Button */}
+        <NavLink exact to="/login">
+          <button> LOGIN</button>
+        </NavLink>
+
         {/* making a scrolling photobanner */}
         <div id="scrollPics">
           <div class="photobanner">

@@ -5,9 +5,13 @@ import Login from "../containers/Login.js";
 import Register from "../containers/Register.js";
 import UserInfo from "../containers/UserInfo.js";
 import apiKey from "./apiKey";
+import MatchTodaysLook from "./MatchTodaysLook.js";
 import img1 from "../styles/imgs/shirts/blue-shortsleeve-light.jpeg";
 import img2 from "../styles/imgs/shirts/white-sleevless-light.jpeg";
 import img3 from "../styles/imgs/shirts/black-shortsleeve-light.jpeg";
+import Modal from "./Modal";
+import newItem from "./newItem";
+import UpdateItem from "./updateItem";
 
 import { loadTokenFromCookie } from "../actions/actions";
 
@@ -117,21 +121,42 @@ export default class TodaysLook extends Component {
         </div>
         <div className="previewbody" style={pagestyle}>
           <div className="todaypreview" style={clothesstyle}>
-            <img
-              style={{ width: "200px", height: "200px", paddingRight: "40px" }}
-              src={img1}
-              alt="blue-shortsleeve-light"
-            />
-            <img
-              style={{ width: "200px", height: "200px", paddingRight: "40px" }}
-              src={img2}
-              alt="white-sleevless-light"
-            />
-            <img
-              style={{ width: "200px", height: "200px", paddingRight: "40px" }}
-              src={img3}
-              alt="black-shortsleeve-light"
-            />
+            <div>
+              <img
+                style={{
+                  width: "200px",
+                  height: "200px",
+                  paddingRight: "40px"
+                }}
+                src={img1}
+                alt="blue-shortsleeve-light"
+              />
+              <Modal />
+            </div>
+            <div>
+              <img
+                style={{
+                  width: "200px",
+                  height: "200px",
+                  paddingRight: "40px"
+                }}
+                src={img2}
+                alt="white-sleevless-light"
+              />
+              <Modal />
+            </div>
+            <div>
+              <img
+                style={{
+                  width: "200px",
+                  height: "200px",
+                  paddingRight: "40px"
+                }}
+                src={img3}
+                alt="black-shortsleeve-light"
+              />
+              <Modal />
+            </div>
           </div>
         </div>
       </div>
