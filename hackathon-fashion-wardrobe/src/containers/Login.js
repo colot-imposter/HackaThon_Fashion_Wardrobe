@@ -42,6 +42,7 @@ class Login extends Component {
       mozBoxShadow: "none ",
       boxShadow: "none",
       color:"#837095",
+      paddingRight:"60px"
     }
     let inputStyle={
       border:"none",
@@ -59,12 +60,20 @@ class Login extends Component {
       paddingBottom:"10px",
       paddingTop:"10px"
     }
+    let allStyle ={
+      display:"flex",
+      flexDirection:"row",
+      justifyContent:"center",
+      alignContent:"center",
+      paddingTop:"40px",
+    }
+
     return (
-      <div style={formStyle} className="Login">
+      <div style = {allStyle}className="Login">
         <div>
           <UserInfo />
         </div>
-        <form style={formStyle} onSubmit={this.login}>
+        <form onSubmit={this.login}>
           <fieldset style={formStyle}>
             <legend style={fontStyle}>
               {this.props.loggedIn ? "Log in as a different user" : "Log in"}
