@@ -6,31 +6,6 @@ import logo from "../styles/imgs/Logo.png";
 
 export default class BaseLayout extends Component {
   render() {
-    let whole = {
-      fontFamily: "Cookie"
-    };
-
-    let navs = {
-      display: "flex",
-      justifyContent: "space-around",
-      textAlign: "center",
-      fontSize: 20,
-      fontFamily:"Ubuntu, sans-serif",
-      color:"#837095",
-      borderBottomWidth:"5px",
-      borderBottomColor:"#837095",
-      borderBottomStyle:"solid",
-      height:"100px"
-    };
-
-    let dru = {
-      fontSize: 30
-    };
-
-    let nav = {
-      textDecoration: "none",
-      color:"#837095"
-    };
 
     let footer = {
       padding: "20px 0px 20px 15px",
@@ -46,46 +21,45 @@ export default class BaseLayout extends Component {
       backgroundColor:"#837095",
       color: "white"
     };
-    let ham={color:"#837095",display:"flex",flexDirection:"row",justifyContent:"center",alignItems:"center",margin:0}
+    let border ={
+  "borderBottomWidth":"3px",
+  "borderBottomColor":"#837095",
+  "borderBottomStyle":"solid",
+  "postion":"relative",
+  "overflow":"hidden"
+}
 
     return (
-      <div style={whole} className="BaseLayout">
-        <div style={navs}>
-          <div style={dru}>
-            <NavLink style={nav} exact to="/User_Dashboard">
-              <img src={logo} className="hangerLogo"/>
-            </NavLink>
-          </div>
-          <br />
-          <div className="hamburger" style={ham}>
-            <img src={hamPic} className="hamburgerMenu" style={ham}/>
-            <ul>
-              <li>
-                <NavLink style={nav} exact to="/User_Dashboard">
-                  User Dashboard
-                </NavLink>
-              </li>
-              <li>
-                <NavLink style={nav} to="/Wardrobe">
-                  Wardrobe
-                </NavLink>
-              </li>
-              <li>
-                <NavLink style={nav} to="/TodaysLook">
-                  TodaysLook
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>
-
+      <div className="BaseLayout">
         <div>
+          <div className="body">
+              <nav className="row navbar navbar-inverse">
+                <div className="container-fluid">
+                <div style={border} className="navbar-header">
+                  <a href="/User_Dashboard"><img src={logo} alt="logo" style={{paddingTop:"15px",paddingLeft:"30px",float:"left",height:"80px"}}></img></a>
+                    <div className="dropdown">
+                      <button className="dropbtn"><img src={hamPic} style={{height:"60px"}} alt="Menu"></img></button>
+                      <div className="dropdown-content">
+                        <a href="/Login">Login</a>
+                        <a href="/">Home</a>
+                        <a href="/TodaysLook">Todays Look</a>
+                        <a href="/Wardrobe">Wardrobe</a>
+                        <a href="/User_Dashboard">Dashboard</a>
+                        <a href="/UpdateAccount">Your Profile</a>
+                        <a href="/Logout">Logout</a>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+
           {this.props.children}
           <div>
             <footer style={footer}>Tunic inc.</footer>
           </div>
-        </div>
-      </div>
+          </div>
+          </div>
+          </div>
     );
   }
 }

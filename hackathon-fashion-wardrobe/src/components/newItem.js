@@ -24,12 +24,35 @@ export default class newItem extends Component {
   }
 
   render() {
+    let formStyle={
+      color:"#837095",
+      display:"flex",
+      flexDirection:"column",
+      fontSize:"20px",
+    }
+    let inputStyle={
+      border:"none",
+      textAlign:"center",
+      display:"flex",
+      flexDirection:"row",
+      fontSize:"20px",
+      color:"#837095",
+      paddingTop:"15px"
+    }
+    let buttonStyle={
+      justifyContent:"center",
+      fontSize:"20px",
+      color:"#837095",
+      width:"70px",
+      marginTop:"20px"
+    }
+
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
+      <div style={formStyle}>
+        <form style={formStyle} onSubmit={this.handleSubmit}>
+          <label style={inputStyle}>
             Sleeve Length:
-            <select
+            <select style={inputStyle}
               value={this.state.sleeveLength}
               onChange={this.handleChange}
             >
@@ -38,9 +61,9 @@ export default class newItem extends Component {
               <option value="No">No Sleeve</option>
             </select>
           </label>
-          <label>
+          <label style={inputStyle}>
             Weight:
-            <select
+            <select style={inputStyle}
               value={this.state.fabricWeight}
               onChange={this.handleChange}
             >
@@ -59,7 +82,7 @@ export default class newItem extends Component {
             <option value="Pattern">Pattern</option>
           </select>
         </label> */}
-          <input type="submit" value="Add Item" />
+          <input style={buttonStyle} type="submit" value="Add Item" />
         </form>
         <div className="description">
           <p> * insert image of short long and no sleeve top </p>

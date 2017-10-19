@@ -32,19 +32,55 @@ class Login extends Component {
   };
 
   render() {
+    let style={
+      color:"#837095",
+
+    }
+    let formStyle={
+      border: "none",
+      webkitBoxShadow: "none ",
+      mozBoxShadow: "none ",
+      boxShadow: "none",
+      color:"#837095",
+      paddingRight:"60px"
+    }
+    let inputStyle={
+      border:"none",
+      borderBottomColor:"#837095",
+      borderBottomStyle:"solid",
+      marginBottom:"15px",
+      textAlign:"center",
+      display:"flex",
+      justifyContent:"center",
+      alignContent:"center",
+      fontSize:"20px"
+    }
+    let fontStyle={
+      fontSize:"30px",
+      paddingBottom:"10px",
+      paddingTop:"10px"
+    }
+    let allStyle ={
+      display:"flex",
+      flexDirection:"row",
+      justifyContent:"center",
+      alignContent:"center",
+      paddingTop:"40px",
+    }
+
     return (
-      <div className="Login">
+      <div style = {allStyle}className="Login">
         <div>
           <UserInfo />
         </div>
         <form onSubmit={this.login}>
-          <fieldset>
-            <legend>
+          <fieldset style={formStyle}>
+            <legend style={fontStyle}>
               {this.props.loggedIn ? "Log in as a different user" : "Log in"}
             </legend>
             <div className="input-single">
               <label>Email</label>
-              <input
+              <input style={inputStyle}
                 type="text"
                 value={this.state.email}
                 onChange={this.updateState("email")}
@@ -52,14 +88,14 @@ class Login extends Component {
             </div>
             <div className="input-single">
               <label>Password</label>
-              <input
+              <input style={inputStyle}
                 type="password"
                 value={this.state.password}
                 onChange={this.updateState("password")}
               />
             </div>
 
-            <button type="submit">Login</button>
+            <button style={style} type="submit">Login</button>
           </fieldset>
         </form>
         <div>

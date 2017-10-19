@@ -5,7 +5,7 @@ class UserInfo extends Component {
   render() {
     let content = null;
     if (!this.props.loggedIn) {
-      content = <p>Please log in or register.</p>;
+      content = <p> </p>;
     } else if (this.props.user) {
       content = <dl />;
     }
