@@ -32,6 +32,9 @@ class Login extends Component {
   };
 
   render() {
+    let style={
+      
+    }
     return (
       <div className="Login">
         <div>
