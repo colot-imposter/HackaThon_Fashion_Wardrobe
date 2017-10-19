@@ -1,13 +1,26 @@
 import React, { Component } from "react";
+import request from "../../node_modules/superagent/superagent";
 
 export default class newItem extends Component {
   constructor(props) {
     super(props);
 
+    this.handleChange = this.handleChange.bind(this);
+
     this.state = {
       sleeveLength: "",
       fabricWeight: ""
     };
+  }
+
+  handleSubmit() {
+    request
+      .post("tunic-wardrobe-api.heroku.com/api/clothing/add")
+      .set("Content-Type", "application/x-www-form-urlencoded")
+      .send({ sleeveLength: "sleeveLength", fabricWeight: "fabricWeight" })
+      .end(function(err, res) {
+        console.log("", res.text);
+      });
   }
 
   render() {
