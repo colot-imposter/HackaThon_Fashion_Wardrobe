@@ -20,24 +20,25 @@ export default class Home extends Component {
       display: "flex",
       flexDirection: "row",
       alignItems: "center",
-      alignText: "center"
+      alignText: "center",
     };
+    let loginstyle ={
+      display: "flex",
+      flexDirection:"row-reverse",
+      color: "#837095",
+      textDecoration:"none",
+      fontFamily: "Ubuntu, sans-serif",
+    }
     return (
       <div className="steps" style={stepstyle}>
-        {/* Temporary Login Button */}
-        <NavLink exact to="/login">
-          <button> LOGIN</button>
-        </NavLink>
-
-        {/* making a scrolling photobanner */}
-        <div id="scrollPics">
-          <div class="photobanner">
+        <div className="scrollPics">
+          <div className="photobanner">
             <h2> Step 1: Upload Clothes</h2>
-            <img class="first" src={step1} alt="" />
+            <img class="first" src={step1} alt="step1" />
             <h2> Step 2: Checkout Todays Look</h2>
-            <img src={step2} alt="" />
+            <img src={step2} alt="step2" />
             <h2> Step 3: Get Stylin'</h2>
-            <img src={step3} alt="" />
+            <img src={step3} alt="step3" />
           </div>
         </div>
       </div>
