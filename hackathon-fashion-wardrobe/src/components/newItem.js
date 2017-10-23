@@ -5,56 +5,116 @@ export default class newItem extends Component {
   constructor(props) {
     super(props);
 
-    this.handleChange = this.handleChange.bind(this);
-
     this.state = {
+      articleName: "",
       sleeveLength: "",
       fabricWeight: ""
     };
+    this.addClothingItem = this.addClothingItem.bind(this);
+    this.handleName = this.handleName.bind(this);
+    this.handleSleeveLength = this.handleSleeveLength.bind(this);
+    this.handleFabricWeight = this.handleFabricWeight.bind(this);
   }
 
-  handleSubmit() {
+  addClothingItem(event) {
     request
-      .post("tunic-wardrobe-api.heroku.com/api/clothing/add")
+      // these .state variables will be plugged into the api to catch the filtered list.
+
+      // let articleName = this.state.articleName;
+      // let sleeveLength = this.state.sleeveLength;
+      // let fabricWeight = this.state.fabricWeight;
+
+      .post("https://tunic-wardrobe-api.herokuapp.com/api/clothing/add")
       .set("Content-Type", "application/x-www-form-urlencoded")
-      .send({ sleeveLength: "sleeveLength", fabricWeight: "fabricWeight" })
+      .send({
+        name: "articleName",
+        sleeveLength: "sleeveLength",
+        fabricWeight: "fabricWeight"
+        // color: "color"
+      })
       .end(function(err, res) {
         console.log("", res.text);
       });
   }
+  // handleColor(e){
+  //   e.preventDefault();
+  //   this.setState({
+  //     color: e.target.value
+  //   });
+  // }
+
+  handleFabricWeight(e) {
+    e.preventDefault();
+    this.setState({
+      fabricWeight: e.target.value
+    });
+  }
+
+  handleSleeveLength(e) {
+    e.preventDefault();
+    this.setState({
+      sleeveLength: e.target.value
+    });
+  }
+
+  handleName(e) {
+    e.preventDefault();
+    this.setState({
+      articleName: e.target.value
+    });
+  }
+
+  componentDidMount() {
+    fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/all")
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(response) {
+        console.log(response);
+      });
+  }
 
   render() {
-    let formStyle={
-      color:"#837095",
-      display:"flex",
-      flexDirection:"column",
-      fontSize:"20px",
-    }
-    let inputStyle={
-      border:"none",
-      textAlign:"center",
-      display:"flex",
-      flexDirection:"row",
-      fontSize:"20px",
-      color:"#837095",
-      paddingTop:"15px"
-    }
-    let buttonStyle={
-      justifyContent:"center",
-      fontSize:"20px",
-      color:"#837095",
-      width:"70px",
-      marginTop:"20px"
-    }
+    let formStyle = {
+      color: "#837095",
+      display: "flex",
+      flexDirection: "column",
+      fontSize: "20px"
+    };
+    let inputStyle = {
+      border: "none",
+      textAlign: "center",
+      display: "flex",
+      flexDirection: "row",
+      fontSize: "20px",
+      color: "#837095",
+      paddingTop: "15px"
+    };
+    let buttonStyle = {
+      justifyContent: "center",
+      fontSize: "20px",
+      color: "#837095",
+      width: "70px",
+      marginTop: "20px"
+    };
 
     return (
       <div style={formStyle}>
-        <form style={formStyle} onSubmit={this.handleSubmit}>
+        <form style={formStyle} onSubmit={this.addClothingItem}>
+          <label style={inputStyle}>
+            <input
+              type="text"
+              onChange={this.handleName}
+              placeholder="Item Name"
+            />
+          </label>
+
           <label style={inputStyle}>
             Sleeve Length:
-            <select style={inputStyle}
+            <select
+              style={inputStyle}
               value={this.state.sleeveLength}
-              onChange={this.handleChange}
+              onChange={this.handleSleeveLength}
             >
               <option value="Short">Short Sleeve</option>
               <option value="Long">Long Sleeve</option>
@@ -63,18 +123,20 @@ export default class newItem extends Component {
           </label>
           <label style={inputStyle}>
             Weight:
-            <select style={inputStyle}
+            <select
+              style={inputStyle}
               value={this.state.fabricWeight}
-              onChange={this.handleChange}
+              onChange={this.handleFabricWeight}
             >
               <option value="Light">Light Weight</option>
               <option value="Medium">Medium Weight</option>
               <option value="Heavy">Heavy Weight</option>
             </select>
           </label>
+
           {/* <label>
           Color:
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select value={this.state.value} onChange={this.handleColor}>
             <option value="Black">Black</option>
             <option value="White">White</option>
             <option value="Red">Red</option>
@@ -82,12 +144,14 @@ export default class newItem extends Component {
             <option value="Pattern">Pattern</option>
           </select>
         </label> */}
-          <input style={buttonStyle} type="submit" value="Add Item" />
+          <button
+            type="submit"
+            onClick={this.props.addClothingItem}
+            style={{ textAlign: "center" }}
+          >
+            Submit
+          </button>
         </form>
-        <div className="description">
-          <p> * insert image of short long and no sleeve top </p>
-          <p> * insert image of light mid and heavy weight top </p>
-        </div>
       </div>
     );
   }
