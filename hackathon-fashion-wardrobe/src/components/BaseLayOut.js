@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-import styles from "../styles/App.css";
 import hamPic from "../styles/imgs/hamburgerpurple.png";
 import logo from "../styles/imgs/Logo.png";
 
@@ -46,6 +44,7 @@ export default class BaseLayout extends Component {
                         <a href="/Wardrobe">Wardrobe</a>
                         <a href="/User_Dashboard">Dashboard</a>
                         <a href="/UpdateAccount">Your Profile</a>
+                        <a href="/weather">Weather</a>
                         <a href="/Logout">Logout</a>
                     </div>
                     </div>
