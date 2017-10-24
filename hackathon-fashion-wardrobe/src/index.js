@@ -17,6 +17,7 @@ import User_Dashboard from "./components/User_Dashboard.js";
 import Wardrobe from "./components/Wardrobe";
 import newItem from "./components/newItem";
 import TodaysLook from "./components/TodaysLook";
+import Weather from "./components/weather";
 
 const store = createStore(reducer, applyMiddleware(reduxThunk));
 
@@ -34,6 +35,7 @@ ReactDOM.render(
 
             <Route path="/todayslook" component={TodaysLook} />
             <Route path="/Wardrobe" component={Wardrobe} />
+            <Route path="/weather" component={Weather}/>
             <Route path="/logout" component={LogOut} />
             <Route path="/User_Dashboard" component={User_Dashboard} />
             <Route path="/newItem" component={newItem} />

@@ -10,13 +10,53 @@ export default class updateItem extends Component {
     };
   }
   render() {
+    let formStyle={
+      color:"#837095",
+      display:"flex",
+      flexDirection:"column",
+      fontSize:"20px",
+      justifyContent:"center"
+    }
+    let inputStyle={
+      border:"none",
+      textAlign:"center",
+      display:"flex",
+      flexDirection:"row",
+      fontSize:"20px",
+      color:"#837095",
+      paddingTop:"15px",
+      paddingRight:"15px",
+      padidngBottom:"15px"
+    }
+    let buttonStyle={
+      display:"flex",
+      flexDirection:"row",
+      justifyContent:"center",
+      fontSize:"15px",
+      color:"#837095",
+      width:"170px",
+      backgroundColor:"white",
+      borderWidth:"1px",
+      borderRadius:"10px",
+      marginTop:"10px",
+      marginBottom:"10px"
+    }
+    let selectStyle={
+      display:"flex",
+      flexDirection:"row",
+      justifyContent:"center",
+      fontSize:"15px",
+      color:"#837095",
+      width:"170px",
+      backgroundColor:"white",
+    }
     return (
       <div>
-        <h1>UPDATE ITEM</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>
+        <h1 style={formStyle}>Update Item</h1>
+        <form onSubmit={this.handleSubmit} style={formStyle}>
+          <label style={inputStyle}>
             Sleeve Length:
-            <select
+            <select style={selectStyle}
               value={this.state.sleeveLength}
               onChange={this.handleChange}
             >
@@ -25,9 +65,9 @@ export default class updateItem extends Component {
               <option value="No">No Sleeve</option>
             </select>
           </label>
-          <label>
+          <label style={inputStyle}>
             Weight:
-            <select
+            <select style={selectStyle}
               value={this.state.fabricWeight}
               onChange={this.handleChange}
             >
@@ -46,9 +86,9 @@ export default class updateItem extends Component {
             <option value="Pattern">Pattern</option>
           </select>
         </label> */}
-          <input type="submit" value="Add Item" />
+          <input style={buttonStyle} type="submit" value="Add Item" />
         </form>
-        <button>DELETE ITEM</button>
+        <button style={buttonStyle}>Delete Item</button>
       </div>
     );
   }
