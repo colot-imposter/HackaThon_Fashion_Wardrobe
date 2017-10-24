@@ -6,36 +6,52 @@ export default class newItem extends Component {
     super(props);
 
     this.state = {
-      articleName: "",
-      sleeveLength: "",
-      fabricWeight: ""
+      articleName: "TEST",
+      sleeveLength: 2,
+      fabricWeight: 2
     };
     this.addClothingItem = this.addClothingItem.bind(this);
     this.handleName = this.handleName.bind(this);
     this.handleSleeveLength = this.handleSleeveLength.bind(this);
     this.handleFabricWeight = this.handleFabricWeight.bind(this);
   }
-
-  addClothingItem(event) {
-    request
-      // these .state variables will be plugged into the api to catch the filtered list.
-
-      // let articleName = this.state.articleName;
-      // let sleeveLength = this.state.sleeveLength;
-      // let fabricWeight = this.state.fabricWeight;
-
-      .post("https://tunic-wardrobe-api.herokuapp.com/api/clothing/add")
-      .set("Content-Type", "application/x-www-form-urlencoded")
-      .send({
-        name: "articleName",
+  addClothingItem() {
+    console.log("hitting");
+    fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/add", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        articleName: "name",
         sleeveLength: "sleeveLength",
         fabricWeight: "fabricWeight"
-        // color: "color"
       })
-      .end(function(err, res) {
-        console.log("", res.text);
-      });
+    }).catch(function() {
+      console.log("error");
+    });
   }
+
+  //_________________
+
+  //    ______________
+  // these .state variables will be plugged into the api to catch the filtered list.
+
+  // let articleName = this.state.articleName;
+  // let sleeveLength = this.state.sleeveLength;
+  // let fabricWeight = this.state.fabricWeight;
+
+  //     .post("https://tunic-wardrobe-api.herokuapp.com/api/clothing/add")
+  //     .set("Content-Type", "application/x-www-form-urlencoded")
+  //     .send({
+  //
+  //       // color: "color"
+  //     })
+  //     .end(function(err, res) {
+  //       console.log("error", res.text);
+  //     });
+  // }
   // handleColor(e){
   //   e.preventDefault();
   //   this.setState({
@@ -46,15 +62,19 @@ export default class newItem extends Component {
   handleFabricWeight(e) {
     e.preventDefault();
     this.setState({
-      fabricWeight: e.target.value
+      fabricWeight: parseInt(e.target.value)
     });
+    console.log("fabricWeight", this.state.fabricWeight);
+    console.log("typeOf", typeof this.state.fabricWeight);
   }
 
   handleSleeveLength(e) {
     e.preventDefault();
     this.setState({
-      sleeveLength: e.target.value
+      sleeveLength: parseInt(e.target.value)
     });
+    console.log("sleeveLength", this.state.sleeveLength);
+    console.log("typeOf", typeof this.state.sleeveLength);
   }
 
   handleName(e) {
@@ -62,6 +82,8 @@ export default class newItem extends Component {
     this.setState({
       articleName: e.target.value
     });
+    console.log("fabricWeight", this.state.articleName);
+    console.log("typeOf", typeof this.state.articleName);
   }
 
   componentDidMount() {
@@ -116,9 +138,9 @@ export default class newItem extends Component {
               value={this.state.sleeveLength}
               onChange={this.handleSleeveLength}
             >
-              <option value="Short">Short Sleeve</option>
-              <option value="Long">Long Sleeve</option>
-              <option value="No">No Sleeve</option>
+              <option value="1">Short Sleeve</option>
+              <option value="2">Long Sleeve</option>
+              <option value="3">No Sleeve</option>
             </select>
           </label>
           <label style={inputStyle}>
@@ -128,9 +150,9 @@ export default class newItem extends Component {
               value={this.state.fabricWeight}
               onChange={this.handleFabricWeight}
             >
-              <option value="Light">Light Weight</option>
-              <option value="Medium">Medium Weight</option>
-              <option value="Heavy">Heavy Weight</option>
+              <option value="1">Light Weight</option>
+              <option value="2">Medium Weight</option>
+              <option value="3">Heavy Weight</option>
             </select>
           </label>
 
