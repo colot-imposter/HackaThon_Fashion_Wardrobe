@@ -38,12 +38,11 @@ export default class BaseLayout extends Component {
                     <div className="dropdown">
                       <button className="dropbtn"><img src={hamPic} style={{height:"60px"}} alt="Menu"></img></button>
                       <div className="dropdown-content">
-                        <a href="/Login">Login</a>
-                        <a href="/">Home</a>
+                        <a href="/User_Dashboard">Dashboard</a>
                         <a href="/TodaysLook">Todays Look</a>
                         <a href="/Wardrobe">Wardrobe</a>
-                        <a href="/User_Dashboard">Dashboard</a>
                         <a href="/UpdateAccount">Your Profile</a>
+                        <a href="/Login">Login</a>
                         <a href="/Logout">Logout</a>
                     </div>
                     </div>
