@@ -41,7 +41,12 @@ let headstyle = {
   fontFamily: "Ubuntu, sans-serif",
   paddingRight: "20px"
 };
-
+let todaysWeatherStyle={
+  textDecoration:"none",
+  fontFamily: "Ubuntu, sans-serif",
+  fontSize:"25px",
+  color: "#837095"
+}
 let filterstyle = {
   display: "flex",
   fontFamily: "Ubuntu, sans-serif",
@@ -98,7 +103,7 @@ export default class TodaysLook extends Component {
       <div className="todaysWeather">
         <div className="weather" style={tempstyle}>
           <div className="header" style={headstyle}>
-            <h1>Todays Weather</h1>
+            <a href="/weather" style={todaysWeatherStyle}>Todays Weather</a>
             <div
               style={{
                 paddingLeft: "20px",

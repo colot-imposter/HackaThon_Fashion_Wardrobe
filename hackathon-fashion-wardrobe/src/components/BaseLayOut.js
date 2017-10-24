@@ -44,7 +44,6 @@ export default class BaseLayout extends Component {
                         <a href="/Wardrobe">Wardrobe</a>
                         <a href="/User_Dashboard">Dashboard</a>
                         <a href="/UpdateAccount">Your Profile</a>
-                        <a href="/weather">Weather</a>
                         <a href="/Logout">Logout</a>
                     </div>
                     </div>
