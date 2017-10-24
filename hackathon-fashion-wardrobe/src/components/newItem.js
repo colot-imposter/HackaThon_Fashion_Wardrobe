@@ -79,7 +79,8 @@ export default class newItem extends Component {
       color: "#837095",
       display: "flex",
       flexDirection: "column",
-      fontSize: "20px"
+      fontSize: "20px",
+      justifyContent:"center"
     };
     let inputStyle = {
       border: "none",
@@ -88,21 +89,35 @@ export default class newItem extends Component {
       flexDirection: "row",
       fontSize: "20px",
       color: "#837095",
-      paddingTop: "15px"
+      paddingTop: "15px",
+      justifyContent:"center",
+      backgroundColor:"white",
     };
     let buttonStyle = {
-      justifyContent: "center",
+      fontSize: "18px",
+      color: "#837095",
+      marginTop: "20px",
+      borderRadius:"30px",
+      backgroundColor:"white",
+      borderColor:"white",
+      boxShadow:"0px",
+      outline:"none",
+    };
+    let textStyle={
+      textAlign: "center",
+      display: "flex",
+      flexDirection: "row",
       fontSize: "20px",
       color: "#837095",
-      width: "70px",
-      marginTop: "20px"
-    };
+      outline:"none",
+    }
+
 
     return (
       <div style={formStyle}>
         <form style={formStyle} onSubmit={this.addClothingItem}>
           <label style={inputStyle}>
-            <input
+            <input style={textStyle}
               type="text"
               onChange={this.handleName}
               placeholder="Item Name"
@@ -147,9 +162,9 @@ export default class newItem extends Component {
           <button
             type="submit"
             onClick={this.props.addClothingItem}
-            style={{ textAlign: "center" }}
+            style={buttonStyle}
           >
-            Submit
+            Add Item
           </button>
         </form>
       </div>
