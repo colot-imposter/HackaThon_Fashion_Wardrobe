@@ -97,6 +97,7 @@ export default class newItem extends Component {
       width: "70px",
       marginTop: "20px"
     };
+    
 
     return (
       <div style={formStyle}>

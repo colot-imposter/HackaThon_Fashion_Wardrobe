@@ -64,6 +64,19 @@ let pagestyle = {
   alignText: "center",
   justifyContent: "center"
 };
+let buttonStyle={
+  display:"flex",
+  flexDirection:"row",
+  justifyContent:"center",
+  fontSize:"15px",
+  color:"#837095",
+  width:"170px",
+  backgroundColor:"white",
+  borderWidth:"1px",
+  borderRadius:"10px",
+  marginTop:"10px",
+  marginBottom:"10px"
+}
 export default class TodaysLook extends Component {
   constructor(props) {
     super(props);
