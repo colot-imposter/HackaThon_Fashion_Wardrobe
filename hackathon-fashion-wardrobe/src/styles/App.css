@@ -56,6 +56,18 @@
   overflow: auto;
   white-space: nowrap;
 }
+
+.steps{
+  text-decoration: none;
+  font-family: Ubuntu, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color:#837095
+}
+/*baselayout style*/
+
 .dropbtn {
     background-color: white;
     color:#837095;
