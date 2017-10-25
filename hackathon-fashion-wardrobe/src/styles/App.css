@@ -157,4 +157,26 @@ footer{
 
  /*logout page*/
 
- 
+ .logoutHead{
+   color: #837095;
+   font-family: Ubuntu, sans-serif;
+   text-align: center;
+ }
+
+ .buttonHead{
+   display: flex;
+   justify-content: center;
+ }
+
+ .logoutButton{
+   display: flex;
+   justify-content: center;
+   font-size: 15px;
+   color: #837095;
+   width: 170px;
+   background-color: white;
+   border-width: 1px;
+   border-radius: 10px;
+   margin: 10px 0px;
+   outline: none;
+ }
