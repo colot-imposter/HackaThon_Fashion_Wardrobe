@@ -5,20 +5,6 @@ import logo from "../styles/imgs/Logo.png";
 export default class BaseLayout extends Component {
   render() {
 
-    let footer = {
-      padding: "20px 0px 20px 15px",
-      display: "flex",
-      justifyContent: "flex-start",
-      position: "fixed",
-      bottom: 0,
-      left: 0,
-      right: 0,
-      height: "20px",
-      width: "100%",
-      zIndex: 2,
-      backgroundColor:"#837095",
-      color: "white"
-    };
     let border ={
   "borderBottomWidth":"3px",
   "borderBottomColor":"#837095",
@@ -52,7 +38,7 @@ export default class BaseLayout extends Component {
 
           {this.props.children}
           <div>
-            <footer style={footer}>Tunic inc.</footer>
+            <footer>Tunic inc.</footer>
           </div>
           </div>
           </div>
