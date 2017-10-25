@@ -25,7 +25,7 @@ export default class Modal extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleOpenModal}>Update Item</button>
+        <button onClick={this.handleOpenModal} className="updateButtonModal">Update Item</button>
         {/* <this.props.IMAGESOURCE>
           will be mapping over our data and */}
         <ReactModal
@@ -36,7 +36,7 @@ export default class Modal extends React.Component {
             <UpdateItem />
           </div>
 
-          <button onClick={this.handleCloseModal}>Close Modal</button>
+          <button onClick={this.handleCloseModal} className="closeModal">Cancel</button>
         </ReactModal>
       </div>
     );
