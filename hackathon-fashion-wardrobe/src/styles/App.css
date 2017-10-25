@@ -129,3 +129,32 @@ footer{
   background-color: #837095;
   color:white;
 }
+
+/*weather page*/
+
+ .tempstyle{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+ }
+
+ .weather{
+   display: flex;
+   flex-direction: column;
+   padding-right: 20px;
+   justify-content: center;
+   color:#837095;
+   font-family: Ubuntu, sans-serif;
+ }
+
+ .timestyle{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   padding-right: 10px;
+   padding-bottom: 15px;
+ }
+
+ /*logout page*/
+
+ 
