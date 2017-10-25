@@ -25,9 +25,9 @@ export default class newItem extends Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        articleName: "name",
-        sleeveLength: "sleeveLength",
-        fabricWeight: "fabricWeight"
+        name: "SUNdayPople",
+        sleeveLength: 2,
+        fabricWeight: 3
       })
     }).catch(function() {
       console.log("error");
@@ -103,7 +103,7 @@ export default class newItem extends Component {
       display: "flex",
       flexDirection: "column",
       fontSize: "20px",
-      justifyContent:"center"
+      justifyContent: "center"
     };
     let inputStyle = {
       border: "none",
@@ -113,34 +113,34 @@ export default class newItem extends Component {
       fontSize: "20px",
       color: "#837095",
       paddingTop: "15px",
-      justifyContent:"center",
-      backgroundColor:"white",
+      justifyContent: "center",
+      backgroundColor: "white"
     };
     let buttonStyle = {
       fontSize: "18px",
       color: "#837095",
       marginTop: "20px",
-      borderRadius:"30px",
-      backgroundColor:"white",
-      borderColor:"white",
-      boxShadow:"0px",
-      outline:"none",
+      borderRadius: "30px",
+      backgroundColor: "white",
+      borderColor: "white",
+      boxShadow: "0px",
+      outline: "none"
     };
-    let textStyle={
+    let textStyle = {
       textAlign: "center",
       display: "flex",
       flexDirection: "row",
       fontSize: "20px",
       color: "#837095",
-      outline:"none",
-    }
-
+      outline: "none"
+    };
 
     return (
       <div style={formStyle}>
         <form style={formStyle} onSubmit={this.addClothingItem}>
           <label style={inputStyle}>
-            <input style={textStyle}
+            <input
+              style={textStyle}
               type="text"
               onChange={this.handleName}
               placeholder="Item Name"

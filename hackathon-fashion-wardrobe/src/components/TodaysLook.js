@@ -41,12 +41,12 @@ let headstyle = {
   fontFamily: "Ubuntu, sans-serif",
   paddingRight: "20px"
 };
-let todaysWeatherStyle={
-  textDecoration:"none",
+let todaysWeatherStyle = {
+  textDecoration: "none",
   fontFamily: "Ubuntu, sans-serif",
-  fontSize:"25px",
+  fontSize: "25px",
   color: "#837095"
-}
+};
 let filterstyle = {
   display: "flex",
   fontFamily: "Ubuntu, sans-serif",
@@ -64,26 +64,27 @@ let pagestyle = {
   alignText: "center",
   justifyContent: "center"
 };
-let buttonStyle={
-  display:"flex",
-  flexDirection:"row",
-  justifyContent:"center",
-  fontSize:"15px",
-  color:"#837095",
-  width:"170px",
-  backgroundColor:"white",
-  borderWidth:"1px",
-  borderRadius:"10px",
-  marginTop:"10px",
-  marginBottom:"10px"
-}
+let buttonStyle = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  fontSize: "15px",
+  color: "#837095",
+  width: "170px",
+  backgroundColor: "white",
+  borderWidth: "1px",
+  borderRadius: "10px",
+  marginTop: "10px",
+  marginBottom: "10px"
+};
 export default class TodaysLook extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       temperature: "",
-      conditions: ""
+      conditions: "",
+      icon: ""
     };
   }
 
@@ -94,19 +95,23 @@ export default class TodaysLook extends Component {
       .then(r => r.json())
       .then(data => {
         const feelsLikeT = data.current.feelslike_f;
+        const icon = data.current.condition.icon;
         const maxT = data.forecast.forecastday["0"].day.maxtemp_f;
         const avgT = data.forecast.forecastday["0"].day.avgtemp_f;
         const rainInches = data.forecast.forecastday["0"].day.totalprecip_in;
+
         console.log("feelsLikeT", feelsLikeT);
         console.log("Full data", data);
         console.log("maxT", maxT);
         console.log("avgT", avgT);
         console.log("total precipation expected", rainInches);
+        console.log("icon", icon);
 
         this.setState({
           temperature: avgT.toFixed(0),
           feelsLikeTemp: feelsLikeT,
-          conditions: data.current.condition.text
+          conditions: data.current.condition.text,
+          icon: icon
         });
       });
   }
@@ -116,7 +121,9 @@ export default class TodaysLook extends Component {
       <div className="todaysWeather">
         <div className="weather" style={tempstyle}>
           <div className="header" style={headstyle}>
-            <a href="/weather" style={todaysWeatherStyle}>Todays Weather</a>
+            <a href="/weather" style={todaysWeatherStyle}>
+              Todays Weather
+            </a>
             <div
               style={{
                 paddingLeft: "20px",
@@ -132,7 +139,7 @@ export default class TodaysLook extends Component {
           <div>
             <img
               style={{ width: "75px", paddingRight: "20px" }}
-              src="https://thesunshine.co/assets/img/sun.png"
+              src={this.state.icon}
               alt="Its Sunny!"
             />
           </div>
