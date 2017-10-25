@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import request from "../../node_modules/superagent/superagent";
 
-import GetAllWardrobe from "./GetAllWardrobe.js";
-
 export default class newItem extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      articleName: "Standard",
-      sleeveLength: 2,
-      fabricWeight: 2
+      name: "",
+      sleeveLength: undefined,
+      fabricWeight: undefined
     };
     this.addClothingItem = this.addClothingItem.bind(this);
     this.handleName = this.handleName.bind(this);
@@ -24,7 +22,7 @@ export default class newItem extends Component {
       .post("https://tunic-wardrobe-api.herokuapp.com/clothing/add")
       .set("Content-Type", "application/x-www-form-urlencoded")
       .send({
-        name: "",
+        name: this.state.name,
         sleeveLength: this.state.sleeveLength,
         fabricWeight: this.state.fabricWeight
       })
@@ -78,23 +76,59 @@ export default class newItem extends Component {
   }
 
   render() {
+    let formStyle = {
+      color: "#837095",
+      display: "flex",
+      flexDirection: "column",
+      fontSize: "20px",
+      justifyContent: "center"
+    };
+    let inputStyle = {
+      border: "none",
+      textAlign: "center",
+      display: "flex",
+      flexDirection: "row",
+      fontSize: "20px",
+      color: "#837095",
+      paddingTop: "15px",
+      justifyContent: "center",
+      backgroundColor: "white"
+    };
+    let buttonStyle = {
+      fontSize: "18px",
+      color: "#837095",
+      marginTop: "20px",
+      borderRadius: "30px",
+      backgroundColor: "white",
+      borderColor: "white",
+      boxShadow: "0px",
+      outline: "none"
+    };
+    let textStyle = {
+      textAlign: "center",
+      display: "flex",
+      flexDirection: "row",
+      fontSize: "20px",
+      color: "#837095",
+      outline: "none"
+    };
 
     return (
-      <div className="newItemForm">
-        <form className="newItemForm" onSubmit={this.addClothingItem}>
-          <label className="newItemInput">
+      <div style={formStyle}>
+        <form style={formStyle} onSubmit={this.addClothingItem}>
+          <label style={inputStyle}>
             <input
-              className="textStyle"
+              style={textStyle}
               type="text"
               onChange={this.handleName}
               placeholder="Item Name"
             />
           </label>
 
-          <label className="newItemInput">
+          <label style={inputStyle}>
             Sleeve Length:
             <select
-              className="newItemInput"
+              style={inputStyle}
               value={this.state.sleeveLength}
               onChange={this.handleSleeveLength}
             >
@@ -103,10 +137,10 @@ export default class newItem extends Component {
               <option value="3">No Sleeve</option>
             </select>
           </label>
-          <label className="newItemInput">
+          <label style={inputStyle}>
             Weight:
             <select
-              className="newItemInput"
+              style={inputStyle}
               value={this.state.fabricWeight}
               onChange={this.handleFabricWeight}
             >
@@ -115,7 +149,7 @@ export default class newItem extends Component {
               <option value="3">Heavy Weight</option>
             </select>
           </label>
-          <GetAllWardrobe />
+
           {/* <label>
           Color:
           <select value={this.state.value} onChange={this.handleColor}>
@@ -129,7 +163,7 @@ export default class newItem extends Component {
           <button
             type="submit"
             onClick={this.props.addClothingItem}
-            className="addItemButton"
+            style={buttonStyle}
           >
             Add Item
           </button>
