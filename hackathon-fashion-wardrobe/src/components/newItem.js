@@ -6,39 +6,49 @@ export default class newItem extends Component {
     super(props);
 
     this.state = {
-      articleName: "TEST",
+      name: "BEST",
       sleeveLength: 2,
-      fabricWeight: 2
+      fabricWeight: 5
     };
     this.addClothingItem = this.addClothingItem.bind(this);
     this.handleName = this.handleName.bind(this);
     this.handleSleeveLength = this.handleSleeveLength.bind(this);
     this.handleFabricWeight = this.handleFabricWeight.bind(this);
   }
-  addClothingItem() {
-    console.log("hitting");
+  addClothingItem = e => {
+    console.log("hitting addClothingItem");
+    e.preventDefault();
+    this.setState({
+      name: e.target.value,
+      sleeveLength: e.target.value,
+      fabricWeight: e.target.value
+    });
     fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/add", {
       method: "POST",
+      body: {
+        name: this.state.name,
+        sleeveLength: this.state.sleeveLength,
+        fabricWeight: this.state.fabricWeight
+      },
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        articleName: "name",
-        sleeveLength: "sleeveLength",
-        fabricWeight: "fabricWeight"
+      }
+    })
+      .then(response => {
+        console.log(response, "yay");
       })
-    }).catch(function() {
-      console.log("error");
-    });
-  }
+      .catch(err => {
+        console.log(err, "boo!");
+      });
+  };
 
   //_________________
 
   //    ______________
   // these .state variables will be plugged into the api to catch the filtered list.
 
-  // let articleName = this.state.articleName;
+  // let name = this.state.name;
   // let sleeveLength = this.state.sleeveLength;
   // let fabricWeight = this.state.fabricWeight;
 
@@ -64,8 +74,9 @@ export default class newItem extends Component {
     this.setState({
       fabricWeight: parseInt(e.target.value)
     });
+    let oppop = this.state.fabricWeight;
     console.log("fabricWeight", this.state.fabricWeight);
-    console.log("typeOf", typeof this.state.fabricWeight);
+    console.log("typeOfisint", Number.isInteger(oppop));
   }
 
   handleSleeveLength(e) {
@@ -74,27 +85,35 @@ export default class newItem extends Component {
       sleeveLength: parseInt(e.target.value)
     });
     console.log("sleeveLength", this.state.sleeveLength);
-    console.log("typeOf", typeof this.state.sleeveLength);
+    console.log("typeOfisint", Number.isInteger(this.state.sleeveLength));
   }
 
   handleName(e) {
     e.preventDefault();
     this.setState({
-      articleName: e.target.value
+      name: e.target.value
     });
-    console.log("fabricWeight", this.state.articleName);
-    console.log("typeOf", typeof this.state.articleName);
+    console.log("fabricWeight", this.state.name);
+    console.log("typeOf", typeof this.state.name);
   }
-
-  componentDidMount() {
-    fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/all")
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(response) {
-        console.log(response);
-      });
-  }
+  //DELETY
+  // componentDidMount() {
+  //   console.log("hitting");
+  //   fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/add", {
+  //     method: "POST",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify({
+  //       name: "name",
+  //       sleeveLength: "sleeveLength",
+  //       fabricWeight: "fabricWeight"
+  //     })
+  //   }).catch(function() {
+  //     console.log("error");
+  //   });
+  // }
 
   render() {
     let formStyle = {
