@@ -15,7 +15,8 @@ export default class newItem extends Component {
     this.handleSleeveLength = this.handleSleeveLength.bind(this);
     this.handleFabricWeight = this.handleFabricWeight.bind(this);
   }
-  addClothingItem() {
+  addClothingItem(event) {
+    event.preventDefault();
     console.log("hitting");
     fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/add", {
       method: "POST",
