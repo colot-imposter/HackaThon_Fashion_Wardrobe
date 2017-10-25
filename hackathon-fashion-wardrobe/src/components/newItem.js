@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import request from "../../node_modules/superagent/superagent";
 
+import GetAllWardrobe from "./GetAllWardrobe.js";
+
 export default class newItem extends Component {
   constructor(props) {
     super(props);
@@ -19,15 +21,15 @@ export default class newItem extends Component {
     event.preventDefault();
     console.log("addint item");
     request
-      .post("https://tunic-wardrobe-api.herokuapp.com/clothing/all")
+      .post("https://tunic-wardrobe-api.herokuapp.com/clothing/add")
       .set("Content-Type", "application/x-www-form-urlencoded")
       .send({
-        name: this.state.name,
+        name: "",
         sleeveLength: this.state.sleeveLength,
         fabricWeight: this.state.fabricWeight
       })
       .catch(function(err, res) {
-        console.log("error", res.text);
+        console.log("error", res);
       });
   }
 
@@ -73,16 +75,6 @@ export default class newItem extends Component {
     });
     console.log("fabricWeight", this.state.articleName);
     console.log("typeOf", typeof this.state.articleName);
-  }
-
-  componentDidMount() {
-    fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/all")
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(response) {
-        console.log(response);
-      });
   }
 
   render() {
@@ -159,7 +151,7 @@ export default class newItem extends Component {
               <option value="3">Heavy Weight</option>
             </select>
           </label>
-
+          <GetAllWardrobe />
           {/* <label>
           Color:
           <select value={this.state.value} onChange={this.handleColor}>

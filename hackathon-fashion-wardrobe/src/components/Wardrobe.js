@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import WardrobeDisplay from "../containers/WardrobeDisplay.js";
 import users from "../data/userData.js";
+import GetAllWardrobe from "./GetAllWardrobe";
 
 let clothesstyle = {
   display: "flex",
@@ -79,6 +80,7 @@ export default class Wardrobe extends Component {
 
     return (
       <div className="page" style={pagestyle}>
+        <GetAllWardrobe />
         <div className="filters" style={filterstyle}>
           <h3>Filter</h3>
           <form>
