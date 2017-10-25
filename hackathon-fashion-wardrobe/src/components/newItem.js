@@ -6,7 +6,7 @@ export default class newItem extends Component {
     super(props);
 
     this.state = {
-      articleName: "TEST",
+      articleName: "Standard",
       sleeveLength: 2,
       fabricWeight: 2
     };
@@ -17,21 +17,18 @@ export default class newItem extends Component {
   }
   addClothingItem(event) {
     event.preventDefault();
-    console.log("hitting");
-    fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/add", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name: "SUNdayPople",
-        sleeveLength: 2,
-        fabricWeight: 3
+    console.log("addint item");
+    request
+      .post("https://tunic-wardrobe-api.herokuapp.com/clothing/all")
+      .set("Content-Type", "application/x-www-form-urlencoded")
+      .send({
+        name: this.state.name,
+        sleeveLength: this.state.sleeveLength,
+        fabricWeight: this.state.fabricWeight
       })
-    }).catch(function() {
-      console.log("error");
-    });
+      .catch(function(err, res) {
+        console.log("error", res.text);
+      });
   }
 
   //_________________
@@ -43,15 +40,6 @@ export default class newItem extends Component {
   // let sleeveLength = this.state.sleeveLength;
   // let fabricWeight = this.state.fabricWeight;
 
-  //     .post("https://tunic-wardrobe-api.herokuapp.com/api/clothing/add")
-  //     .set("Content-Type", "application/x-www-form-urlencoded")
-  //     .send({
-  //
-  //       // color: "color"
-  //     })
-  //     .end(function(err, res) {
-  //       console.log("error", res.text);
-  //     });
   // }
   // handleColor(e){
   //   e.preventDefault();
