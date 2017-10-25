@@ -354,3 +354,39 @@ margin-bottom: 10px;
   text-decoration: none;
   color:#837095;
 }
+
+
+/*wardrobe page*/
+
+.page{
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.filters{
+  display: flex;
+  font-family: Ubuntu, sans-serif;
+  flex-direction: column;
+  padding-right: 105px;
+  color:#837095;
+  font-size: 20px;
+  outline:none;
+}
+
+.wardrobeSelect{
+  font-family: Ubuntu, sans-serif;
+  color: #837095;
+  font-size: 15px;
+  width:125px;
+}
+
+.clothingpreview{
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
