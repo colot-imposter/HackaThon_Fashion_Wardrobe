@@ -10,62 +10,13 @@ export default class updateItem extends Component {
     };
   }
   render() {
-<<<<<<< HEAD
-    let formStyle = {
-      color: "#837095",
-      display: "flex",
-      flexDirection: "column",
-      fontSize: "20px",
-      justifyContent: "center"
-    };
-    let inputStyle = {
-      border: "none",
-      textAlign: "center",
-      display: "flex",
-      flexDirection: "row",
-      fontSize: "20px",
-      color: "#837095",
-      paddingTop: "15px",
-      paddingRight: "15px",
-      padidngBottom: "15px"
-    };
-    let buttonStyle = {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",
-      fontSize: "15px",
-      color: "#837095",
-      width: "170px",
-      backgroundColor: "white",
-      borderWidth: "1px",
-      borderRadius: "10px",
-      marginTop: "10px",
-      marginBottom: "10px"
-    };
-    let selectStyle = {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",
-      fontSize: "15px",
-      color: "#837095",
-      width: "170px",
-      backgroundColor: "white"
-    };
-
-=======
->>>>>>> 0966429a90ee3d58a7ca92a7ec546f07e0f6f9cf
     return (
       <div>
-        <h1 className="updateForm">Update Item</h1>
-        <form onSubmit={this.handleSubmit} className="updateForm">
-          <label className="updateInput">
+        <h1>Update Item</h1>
+        <form onSubmit={this.handleSubmit}>
+          <label>
             Sleeve Length:
-<<<<<<< HEAD
             <select
-              style={selectStyle}
-=======
-            <select className="updateSelect"
->>>>>>> 0966429a90ee3d58a7ca92a7ec546f07e0f6f9cf
               value={this.state.sleeveLength}
               onChange={this.handleChange}
             >
@@ -74,14 +25,9 @@ export default class updateItem extends Component {
               <option value="No">No Sleeve</option>
             </select>
           </label>
-          <label className="updateInput">
+          <label>
             Weight:
-<<<<<<< HEAD
             <select
-              style={selectStyle}
-=======
-            <select className="updateSelect"
->>>>>>> 0966429a90ee3d58a7ca92a7ec546f07e0f6f9cf
               value={this.state.fabricWeight}
               onChange={this.handleChange}
             >
@@ -100,13 +46,9 @@ export default class updateItem extends Component {
             <option value="Pattern">Pattern</option>
           </select>
         </label> */}
-<<<<<<< HEAD
-          <input style={buttonStyle} type="submit" value="Update" />
-=======
-          <input className="updateButton" type="submit" value="Add Item" />
->>>>>>> 0966429a90ee3d58a7ca92a7ec546f07e0f6f9cf
+          <input type="submit" value="Update" />
         </form>
-        <button className="updateButton">Delete Item</button>
+        <button>Delete Item</button>
       </div>
     );
   }

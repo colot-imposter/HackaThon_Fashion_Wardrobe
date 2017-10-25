@@ -3,8 +3,6 @@ import WardrobeDisplay from "../containers/WardrobeDisplay.js";
 import users from "../data/userData.js";
 import GetAllWardrobe from "./GetAllWardrobe";
 
-
-
 export default class Wardrobe extends Component {
   constructor(props) {
     super(props);
@@ -44,14 +42,8 @@ export default class Wardrobe extends Component {
     // })
 
     return (
-<<<<<<< HEAD
-      <div className="page" style={pagestyle}>
-        <GetAllWardrobe />
-        <div className="filters" style={filterstyle}>
-=======
       <div className="page">
         <div className="filters">
->>>>>>> 0966429a90ee3d58a7ca92a7ec546f07e0f6f9cf
           <h3>Filter</h3>
           <form>
             <select
@@ -130,6 +122,9 @@ export default class Wardrobe extends Component {
             }
           })}
         </div>
+
+        {/* HERE we are bringing in the wardrobe items */}
+        <GetAllWardrobe />
       </div>
     );
   }

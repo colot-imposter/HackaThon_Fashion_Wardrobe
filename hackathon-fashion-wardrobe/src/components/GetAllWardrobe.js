@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Modal from "./Modal";
+
 export default class GetAllWardrobe extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +10,7 @@ export default class GetAllWardrobe extends Component {
       wardrobeItems: [],
       name: ""
     };
-    this.componentDidMount = this.componentDidMount.bind(this);
+    // this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount() {
@@ -18,73 +20,26 @@ export default class GetAllWardrobe extends Component {
         return response.json();
       })
       .then(data => {
+        console.log("data", data);
+
+        // this.setState({ wardrobeItems: data });
         this.setState({ wardrobeItems: data });
+        console.log("this.state.wardrobeItems", this.state.wardrobeItems);
       });
   }
 
-  //
-  // componentDidMount() {
-  //   fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/all")
-  //     .then(function(response) {
-  //       return response.json();
-  //     })
-  //     .then(function(json) {
-  //       console.log("this is", json);
-  //       let wardrobeItems = json;
-  //       console.log("wardrobeItems", wardrobeItems);
-  //
-  //       this.setState({ wardrobeItems: wardrobeItems });
-  //     });
-  // }
-
-  // _________________;
-  // componentDidMount() {
-  //   fetch("https://swapi.co/api/vehicles/")
-  //     .then(response => {
-  //       return response.json();
-  //     })
-  //     .then(json => {
-  //       let vehicles = json.results;
-  //       console.log(vehicles);
-  //       this.setState({ vehicles: vehicles });
-  //     });
-  // }
-  // render() {
-  //   let vehicleArray = this.state.vehicles;
-  //   let vehicles = vehicleArray.map(vehicle => {
-  //     return (
-  //       <div key={vehicle.name} className = "col-md-4">
-  //       <div className="card">
-  //         <div className="card-block">
-  //         <h4 className="card-title">Vehicle: {vehicle.name}</h4>
-  //         <h5 className="card-subtitle mb-2 text-muted">Model: {vehicle.model}</h5>
-  //         <div className="card">
-  //         <div className="card-block">
-  //           <h5 className="card-subtitle mb-2 text-muted">Specs</h5>
-  //           <ul className="list-group list-group-flush">
-  //           <li className="list-group-item">Manufacturer: {vehicle.manufacturer}</li>
-  //           <li className="list-group-item">Class: {vehicle.vehicle_class}</li>
-  //           <li className="list-group-item">Passengers: {vehicle.passengers}</li>
-  //           <li className="list-group-item">Crew: {vehicle.crew}</li>
-  //           <li className="list-group-item">Length: {vehicle.length}</li>
-  //           <li className="list-group-item">Max Speed: {vehicle.max_atmosphering_speed}</li>
-  //           <li className="list-group-item">Cargo Capacity: {vehicle.cargo_capacity}</li>
-  //         </ul>
-  //         </div>
-  //         </div>
-  //         </div>
-  //         </div>
-  //       </div>
-  //     );
-  //   });
-  //_________________;
-
   render() {
-    return (
-      <div>
-        <div className="wardrobeItems">
-          <ul>{this.state.wardrobeItems}</ul>
+    let Items = this.state.wardrobeItems.map((item, index) => {
+      return (
+        <div key={index}>
+          <li>{item.name}</li>
+          <Modal />
         </div>
+      );
+    });
+    return (
+      <div className="wardrobeItems">
+        <ul>{Items}</ul>
       </div>
     );
   }
