@@ -147,12 +147,23 @@ footer{
    font-family: Ubuntu, sans-serif;
  }
 
+.timeHead{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
  .timestyle{
    display: flex;
    flex-direction: row;
    justify-content: center;
-   padding-right: 10px;
+   margin-right: 10px;
    padding-bottom: 15px;
+   border-width: 1px;
+   border-color: #837095;
+   border-style: solid;
+   width:50px;
+   text-align: center;
+   align-self: center;
  }
 
  /*logout page*/

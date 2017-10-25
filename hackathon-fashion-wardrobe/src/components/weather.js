@@ -100,7 +100,7 @@ export default class Weather extends Component {
       <h3 className="tempstyle"> Todays Low: {this.state.lowTemp}°</h3>
       <h3 className="tempstyle"> The Sun Will Set at: {this.state.sunset}</h3>
       <h3 className="tempstyle"> Hourly forcast </h3>
-      <div className="timestyle">
+      <div className="timeHead">
       <h4 className="timestyle"> 6 am<br></br>{this.state.hour6}°</h4>
       <h4 className="timestyle"> 7 am<br></br>{this.state.hour7}°</h4>
       <h4 className="timestyle"> 8 am<br></br>{this.state.hour8}°</h4>
