@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import request from "../../node_modules/superagent/superagent";
 
+import GetAllWardrobe from "./GetAllWardrobe.js";
+
 export default class newItem extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      articleName: "TEST",
+      articleName: "Standard",
       sleeveLength: 2,
       fabricWeight: 2
     };
@@ -17,21 +19,18 @@ export default class newItem extends Component {
   }
   addClothingItem(event) {
     event.preventDefault();
-    console.log("hitting");
-    fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/add", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name: "SUNdayPople",
-        sleeveLength: 2,
-        fabricWeight: 3
+    console.log("addint item");
+    request
+      .post("https://tunic-wardrobe-api.herokuapp.com/clothing/add")
+      .set("Content-Type", "application/x-www-form-urlencoded")
+      .send({
+        name: "",
+        sleeveLength: this.state.sleeveLength,
+        fabricWeight: this.state.fabricWeight
       })
-    }).catch(function() {
-      console.log("error");
-    });
+      .catch(function(err, res) {
+        console.log("error", res);
+      });
   }
 
   //_________________
@@ -43,15 +42,6 @@ export default class newItem extends Component {
   // let sleeveLength = this.state.sleeveLength;
   // let fabricWeight = this.state.fabricWeight;
 
-  //     .post("https://tunic-wardrobe-api.herokuapp.com/api/clothing/add")
-  //     .set("Content-Type", "application/x-www-form-urlencoded")
-  //     .send({
-  //
-  //       // color: "color"
-  //     })
-  //     .end(function(err, res) {
-  //       console.log("error", res.text);
-  //     });
   // }
   // handleColor(e){
   //   e.preventDefault();
@@ -85,16 +75,6 @@ export default class newItem extends Component {
     });
     console.log("fabricWeight", this.state.articleName);
     console.log("typeOf", typeof this.state.articleName);
-  }
-
-  componentDidMount() {
-    fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/all")
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(response) {
-        console.log(response);
-      });
   }
 
   render() {
@@ -135,7 +115,7 @@ export default class newItem extends Component {
               <option value="3">Heavy Weight</option>
             </select>
           </label>
-
+          <GetAllWardrobe />
           {/* <label>
           Color:
           <select value={this.state.value} onChange={this.handleColor}>

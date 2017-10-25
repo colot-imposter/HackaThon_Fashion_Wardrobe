@@ -12,11 +12,11 @@ export default class updateItem extends Component {
   render() {
     return (
       <div>
-        <h1 className="updateForm">Update Item</h1>
-        <form onSubmit={this.handleSubmit} className="updateForm">
-          <label className="updateInput">
+        <h1>Update Item</h1>
+        <form onSubmit={this.handleSubmit}>
+          <label>
             Sleeve Length:
-            <select className="updateSelect"
+            <select
               value={this.state.sleeveLength}
               onChange={this.handleChange}
             >
@@ -25,9 +25,9 @@ export default class updateItem extends Component {
               <option value="No">No Sleeve</option>
             </select>
           </label>
-          <label className="updateInput">
+          <label>
             Weight:
-            <select className="updateSelect"
+            <select
               value={this.state.fabricWeight}
               onChange={this.handleChange}
             >
@@ -46,9 +46,9 @@ export default class updateItem extends Component {
             <option value="Pattern">Pattern</option>
           </select>
         </label> */}
-          <input className="updateButton" type="submit" value="Add Item" />
+          <input type="submit" value="Update" />
         </form>
-        <button className="updateButton">Delete Item</button>
+        <button>Delete Item</button>
       </div>
     );
   }

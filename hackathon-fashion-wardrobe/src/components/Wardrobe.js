@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import WardrobeDisplay from "../containers/WardrobeDisplay.js";
 import users from "../data/userData.js";
-
-
+import GetAllWardrobe from "./GetAllWardrobe";
 
 export default class Wardrobe extends Component {
   constructor(props) {
@@ -123,6 +122,9 @@ export default class Wardrobe extends Component {
             }
           })}
         </div>
+
+        {/* HERE we are bringing in the wardrobe items */}
+        <GetAllWardrobe />
       </div>
     );
   }
