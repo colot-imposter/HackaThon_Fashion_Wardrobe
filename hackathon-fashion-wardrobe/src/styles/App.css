@@ -56,6 +56,18 @@
   overflow: auto;
   white-space: nowrap;
 }
+
+.steps{
+  text-decoration: none;
+  font-family: Ubuntu, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color:#837095
+}
+/*baselayout style*/
+
 .dropbtn {
     background-color: white;
     color:#837095;
@@ -64,9 +76,17 @@
     border: none;
     cursor: pointer;
 }
-
+.dropbtn img{
+  height: 60px
+}
 .dropdown {
 float:right;
+}
+.logoimg{
+  padding-top: 15px;
+  padding-left: 30px;
+  float: left;
+  height: 80px;
 }
 
 .dropdown-content {
@@ -93,4 +113,291 @@ color: white;
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+footer{
+  padding: 20px 0px 20px 15px;
+  display: flex;
+  justify-content: flex-start;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  width:100%;
+  z-index: 2;
+  background-color: #837095;
+  color:white;
+}
+
+/*weather page*/
+
+ .tempstyle{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+ }
+
+ .weather{
+   display: flex;
+   flex-direction: column;
+   padding-right: 20px;
+   justify-content: center;
+   color:#837095;
+   font-family: Ubuntu, sans-serif;
+ }
+
+.timeHead{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+ .timestyle{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   margin-right: 10px;
+   padding-bottom: 15px;
+   border-width: 1px;
+   border-color: #837095;
+   border-style: solid;
+   width:50px;
+   text-align: center;
+   align-self: center;
+ }
+
+ /*logout page*/
+
+ .logoutHead{
+   color: #837095;
+   font-family: Ubuntu, sans-serif;
+   text-align: center;
+ }
+
+ .buttonHead{
+   display: flex;
+   justify-content: center;
+ }
+
+ .logoutButton{
+   display: flex;
+   justify-content: center;
+   font-size: 15px;
+   color: #837095;
+   width: 170px;
+   background-color: white;
+   border-width: 1px;
+   border-radius: 10px;
+   margin: 10px 0px;
+   outline: none;
+ }
+
+ /*modal buttons*/
+
+ .updateButtonModal{
+   display: flex;
+   justify-content: center;
+   font-size: 15px;
+   color: #837095;
+   background-color: white;
+   border-width: 1px;
+   border-radius: 10px;
+   outline: none;
+ }
+
+ .closeModal{
+   display: flex;
+   justify-content: center;
+   font-size: 15px;
+   color: #837095;
+   background-color: white;
+   border-width: 1px;
+   border-radius: 10px;
+   outline: none;
+ }
+
+/*new item*/
+
+.newItemForm{
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  justify-content: center;
+  color:#837095
+}
+
+.newItemInput{
+  border: none;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color:#837095;
+  padding-top: 15px;
+  justify-content: center;
+  border-color: white;
+}
+
+.addItemButton{
+  font-size: 18px;
+  color:#837095;
+  margin-top: 20px;
+  border-radius: 30px;
+  background-color: white;
+  border-color: white;
+  box-shadow: 0px;
+  outline: line;
+}
+
+.textStyle{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color:#837095;
+  outline:none
+}
+
+
+/*Todays Look*/
+
+.todaysTemp{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+  color: #837095;
+  font-family: Ubuntu, sans-serif;
+  padding-top: 20px;
+}
+
+.todaysLookHead{
+  display: flex;
+  flex-direction: column;
+  color: #837095;
+  font-family: Ubuntu, sans-serif;
+  padding-top: 20px;
+}
+
+.todaysWeatherStyle{
+  text-decoration: none;
+  font-family: Ubuntu, sans-serif;
+  font-size: 25px;
+  color: #837095;
+}
+
+.weatherIcon img{
+  width: 75px;
+  padding-right: 20px
+}
+.previewbody{
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.todaypreview{
+  display: flex;
+  flex-direction: row;
+}
+
+/*update item page*/
+
+.updateForm{
+  color:#837095;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.updateInput{
+border: none;
+text-align: center;
+display: flex;
+flex-direction: row;
+font-size: 20px;
+color:#837095;
+padding-top: 15px;
+padding-right: 15px;
+padding-bottom: 15px;
+}
+
+.updateButton{
+display: flex;
+flex-direction: row;
+justify-content: center;
+font-size: 15px;
+color:#837095;
+width: 170px;
+background-color: white;
+border-width: 1px;
+border-radius: 10px;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.updateSelect{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  font-size:15px;
+  color:#837095;
+  width:170px;
+  background-color:white;
+}
+
+
+/*user dashboard page*/
+
+.dashboard{
+  text-decoration: none;
+  font-family: Ubuntu, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #837095;
+}
+
+.dashLinks{
+  text-decoration: none;
+  color:#837095;
+}
+
+
+/*wardrobe page*/
+
+.page{
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.filters{
+  display: flex;
+  font-family: Ubuntu, sans-serif;
+  flex-direction: column;
+  padding-right: 105px;
+  color:#837095;
+  font-size: 20px;
+  outline:none;
+}
+
+.wardrobeSelect{
+  font-family: Ubuntu, sans-serif;
+  color: #837095;
+  font-size: 15px;
+  width:125px;
+}
+
+.clothingpreview{
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  flex-wrap: wrap;
+  padding: 20px;
 }

@@ -98,59 +98,23 @@ export default class newItem extends Component {
   }
 
   render() {
-    let formStyle = {
-      color: "#837095",
-      display: "flex",
-      flexDirection: "column",
-      fontSize: "20px",
-      justifyContent: "center"
-    };
-    let inputStyle = {
-      border: "none",
-      textAlign: "center",
-      display: "flex",
-      flexDirection: "row",
-      fontSize: "20px",
-      color: "#837095",
-      paddingTop: "15px",
-      justifyContent: "center",
-      backgroundColor: "white"
-    };
-    let buttonStyle = {
-      fontSize: "18px",
-      color: "#837095",
-      marginTop: "20px",
-      borderRadius: "30px",
-      backgroundColor: "white",
-      borderColor: "white",
-      boxShadow: "0px",
-      outline: "none"
-    };
-    let textStyle = {
-      textAlign: "center",
-      display: "flex",
-      flexDirection: "row",
-      fontSize: "20px",
-      color: "#837095",
-      outline: "none"
-    };
 
     return (
-      <div style={formStyle}>
-        <form style={formStyle} onSubmit={this.addClothingItem}>
-          <label style={inputStyle}>
+      <div className="newItemForm">
+        <form className="newItemForm" onSubmit={this.addClothingItem}>
+          <label className="newItemInput">
             <input
-              style={textStyle}
+              className="textStyle"
               type="text"
               onChange={this.handleName}
               placeholder="Item Name"
             />
           </label>
 
-          <label style={inputStyle}>
+          <label className="newItemInput">
             Sleeve Length:
             <select
-              style={inputStyle}
+              className="newItemInput"
               value={this.state.sleeveLength}
               onChange={this.handleSleeveLength}
             >
@@ -159,10 +123,10 @@ export default class newItem extends Component {
               <option value="3">No Sleeve</option>
             </select>
           </label>
-          <label style={inputStyle}>
+          <label className="newItemInput">
             Weight:
             <select
-              style={inputStyle}
+              className="newItemInput"
               value={this.state.fabricWeight}
               onChange={this.handleFabricWeight}
             >
@@ -185,7 +149,7 @@ export default class newItem extends Component {
           <button
             type="submit"
             onClick={this.props.addClothingItem}
-            style={buttonStyle}
+            className="addItemButton"
           >
             Add Item
           </button>
