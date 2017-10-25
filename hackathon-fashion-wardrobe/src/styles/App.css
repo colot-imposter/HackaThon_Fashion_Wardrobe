@@ -64,9 +64,17 @@
     border: none;
     cursor: pointer;
 }
-
+.dropbtn img{
+  height: 60px
+}
 .dropdown {
 float:right;
+}
+.logoimg{
+  padding-top: 15px;
+  padding-left: 30px;
+  float: left;
+  height: 80px;
 }
 
 .dropdown-content {
@@ -94,6 +102,7 @@ color: white;
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 footer{
   padding: 20px 0px 20px 15px;
   display: flex;
