@@ -25,37 +25,6 @@ let clothesstyle = {
   flexDirection: "row"
 };
 
-let tempstyle = {
-  display: "flex",
-  flexDirection: "row-reverse",
-  justifyContent: "end",
-  color: "#837095",
-  fontFamily: "Ubuntu, sans-serif",
-  paddingTop: 20
-};
-
-let headstyle = {
-  display: "flex",
-  flexDirection: "column",
-  color: "#837095",
-  fontFamily: "Ubuntu, sans-serif",
-  paddingRight: "20px"
-};
-let todaysWeatherStyle = {
-  textDecoration: "none",
-  fontFamily: "Ubuntu, sans-serif",
-  fontSize: "25px",
-  color: "#837095"
-};
-let filterstyle = {
-  display: "flex",
-  fontFamily: "Ubuntu, sans-serif",
-  flexDirection: "column",
-  paddingRight: "155px",
-  color: "#837095",
-  fontSize: "20px"
-};
-
 let pagestyle = {
   display: "flex",
   flexDirection: "row",
@@ -64,19 +33,7 @@ let pagestyle = {
   alignText: "center",
   justifyContent: "center"
 };
-let buttonStyle = {
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "center",
-  fontSize: "15px",
-  color: "#837095",
-  width: "170px",
-  backgroundColor: "white",
-  borderWidth: "1px",
-  borderRadius: "10px",
-  marginTop: "10px",
-  marginBottom: "10px"
-};
+
 export default class TodaysLook extends Component {
   constructor(props) {
     super(props);
@@ -119,33 +76,26 @@ export default class TodaysLook extends Component {
   render() {
     return (
       <div className="todaysWeather">
-        <div className="weather" style={tempstyle}>
-          <div className="header" style={headstyle}>
-            <a href="/weather" style={todaysWeatherStyle}>
+        <div className="todaysTemp">
+          <div className="header" className="todaysLookHead">
+            <a href="/weather" className="todaysWeatherStyle">
               Todays Weather
             </a>
-            <div
-              style={{
-                paddingLeft: "20px",
-                paddingRight: "20px",
-                paddingTop: "0px"
-              }}
-            >
+            <div>
               <h2>{this.state.temperature} Degrees</h2>
               <h3>Feels Like {this.state.feelsLikeTemp}</h3>
               <h2>{this.state.conditions}</h2>
             </div>
           </div>
-          <div>
+          <div className="weatherIcon">
             <img
-              style={{ width: "75px", paddingRight: "20px" }}
               src={this.state.icon}
-              alt="Its Sunny!"
+              alt={this.state.conditions}
             />
           </div>
         </div>
-        <div className="previewbody" style={pagestyle}>
-          <div className="todaypreview" style={clothesstyle}>
+        <div className="previewbody">
+          <div className="todaypreview">
             <div>
               <img
                 style={{

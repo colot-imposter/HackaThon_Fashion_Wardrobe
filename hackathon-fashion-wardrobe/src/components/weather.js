@@ -17,27 +17,6 @@ console.log(API_KEY);
 const countrycode = "us";
 const zipcode = "78704";
 
-let tempstyle = {
-  display: "flex",
-  flexDirection: "row",
-  justifyContent:"center"
-};
-
-let headstyle = {
-  display: "flex",
-  flexDirection: "column",
-  color: "#837095",
-  fontFamily: "Ubuntu, sans-serif",
-  paddingRight: "20px",
-  justifyContent:"center"
-};
-let timestyle={
-  display:"flex",
-  flexDirection:"row",
-  justifyContent:"center",
-  paddingRight:"10px",
-  paddingBottom:"10px"
-}
 
 export default class Weather extends Component {
   constructor(props) {
@@ -112,30 +91,30 @@ export default class Weather extends Component {
   }
   render(){
     return(
-      <div className="weather" style={headstyle}>
-      <h2 style={tempstyle}> Weather In {this.state.city},{this.state.state}</h2>
-      <h2 style={tempstyle}> Currnet Temperature: {this.state.temperature}°</h2>
-      <h3 style={tempstyle}>Feels Like:  {this.state.feelsLikeTemp}°</h3>
-      <h3 style={tempstyle}> Conditions Outside: {this.state.conditions} </h3>
-      <h3 style={tempstyle}> Todays High: {this.state.highTemp}°</h3>
-      <h3 style={tempstyle}> Todays Low: {this.state.lowTemp}°</h3>
-      <h3 style={tempstyle}> The Sun Will Set at: {this.state.sunset}</h3>
-      <h3 style={tempstyle}> Hourly forcast </h3>
-      <div style={timestyle}>
-      <h4 style={timestyle}> 6 am<br></br>{this.state.hour6}°</h4>
-      <h4 style={timestyle}> 7 am<br></br>{this.state.hour7}°</h4>
-      <h4 style={timestyle}> 8 am<br></br>{this.state.hour8}°</h4>
-      <h4 style={timestyle}> 9 am<br></br>{this.state.hour9}°</h4>
-      <h4 style={timestyle}> 10 am<br></br>{this.state.hour10}°</h4>
-      <h4 style={timestyle}> 11 am<br></br>{this.state.hour11}°</h4>
-      <h4 style={timestyle}> 12 pm<br></br>{this.state.hour12}°</h4>
-      <h4 style={timestyle}> 1 pm<br></br>{this.state.hour13}°</h4>
-      <h4 style={timestyle}> 2 pm<br></br>{this.state.hour14}°</h4>
-      <h4 style={timestyle}> 3 pm<br></br>{this.state.hour15}°</h4>
-      <h4 style={timestyle}> 4 pm<br></br>{this.state.hour16}°</h4>
-      <h4 style={timestyle}> 5 pm<br></br>{this.state.hour17}°</h4>
-      <h4 style={timestyle}> 6 pm<br></br>{this.state.hour18}°</h4>
-      <h4 style={timestyle}> 7 pm<br></br>{this.state.hour19}°</h4>
+      <div className="weather">
+      <h2 className="tempstyle"> Weather In {this.state.city},{this.state.state}</h2>
+      <h2 className="tempstyle"> Currnet Temperature: {this.state.temperature}°</h2>
+      <h3 className="tempstyle">Feels Like:  {this.state.feelsLikeTemp}°</h3>
+      <h3 className="tempstyle"> Conditions Outside: {this.state.conditions} </h3>
+      <h3 className="tempstyle"> Todays High: {this.state.highTemp}°</h3>
+      <h3 className="tempstyle"> Todays Low: {this.state.lowTemp}°</h3>
+      <h3 className="tempstyle"> The Sun Will Set at: {this.state.sunset}</h3>
+      <h3 className="tempstyle"> Hourly forcast </h3>
+      <div className="timeHead">
+      <h4 className="timestyle"> 6 am<br></br>{this.state.hour6}°</h4>
+      <h4 className="timestyle"> 7 am<br></br>{this.state.hour7}°</h4>
+      <h4 className="timestyle"> 8 am<br></br>{this.state.hour8}°</h4>
+      <h4 className="timestyle"> 9 am<br></br>{this.state.hour9}°</h4>
+      <h4 className="timestyle"> 10 am<br></br>{this.state.hour10}°</h4>
+      <h4 className="timestyle"> 11 am<br></br>{this.state.hour11}°</h4>
+      <h4 className="timestyle"> 12 pm<br></br>{this.state.hour12}°</h4>
+      <h4 className="timestyle"> 1 pm<br></br>{this.state.hour13}°</h4>
+      <h4 className="timestyle"> 2 pm<br></br>{this.state.hour14}°</h4>
+      <h4 className="timestyle"> 3 pm<br></br>{this.state.hour15}°</h4>
+      <h4 className="timestyle"> 4 pm<br></br>{this.state.hour16}°</h4>
+      <h4 className="timestyle"> 5 pm<br></br>{this.state.hour17}°</h4>
+      <h4 className="timestyle"> 6 pm<br></br>{this.state.hour18}°</h4>
+      <h4 className="timestyle"> 7 pm<br></br>{this.state.hour19}°</h4>
 
 
 

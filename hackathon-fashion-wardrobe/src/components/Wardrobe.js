@@ -3,42 +3,7 @@ import WardrobeDisplay from "../containers/WardrobeDisplay.js";
 import users from "../data/userData.js";
 import GetAllWardrobe from "./GetAllWardrobe";
 
-let clothesstyle = {
-  display: "flex",
-  flexDirection: "row"
-};
 
-let filterstyle = {
-  display: "flex",
-  fontFamily: "Ubuntu, sans-serif",
-  flexDirection: "column",
-  paddingRight: "105px",
-  color: "#837095",
-  fontSize: "20px"
-};
-
-let pagestyle = {
-  display: "flex",
-  flexDirection: "row",
-  padding: "20px",
-  alignItems: "center",
-  alignText: "center",
-  justifyContent: "center"
-};
-
-let imgstyle = {
-  display: "flex",
-  flexDirection: "row",
-  width: "600px",
-  flexWrap: "wrap",
-  padding: "20px"
-};
-
-let dropdown = {
-  fontFamily: "Ubuntu, sans-serif",
-  color: "#837095",
-  fontSize: "15px"
-};
 
 export default class Wardrobe extends Component {
   constructor(props) {
@@ -79,16 +44,21 @@ export default class Wardrobe extends Component {
     // })
 
     return (
+<<<<<<< HEAD
       <div className="page" style={pagestyle}>
         <GetAllWardrobe />
         <div className="filters" style={filterstyle}>
+=======
+      <div className="page">
+        <div className="filters">
+>>>>>>> 0966429a90ee3d58a7ca92a7ec546f07e0f6f9cf
           <h3>Filter</h3>
           <form>
             <select
               onChange={this.LengthFilter}
               id="sleevelength"
               value={this.state.value}
-              style={dropdown}
+              className="wardrobeSelect"
             >
               <option value="">Sleeve Length</option>
               <option value="short">Short</option>
@@ -100,7 +70,7 @@ export default class Wardrobe extends Component {
               onChange={this.WeightFilter}
               id="WeightFilter"
               value={this.state.value}
-              style={dropdown}
+              className="wardrobeSelect"
             >
               <option value="">Fabric Weight</option>
               <option value="light">Light</option>
@@ -112,7 +82,7 @@ export default class Wardrobe extends Component {
               onChange={this.ColorFilter}
               id="color"
               value={this.state.value}
-              style={dropdown}
+              className="wardrobeSelect"
             >
               <option value="">Color</option>
               <option value="blue">Blue</option>
@@ -124,7 +94,7 @@ export default class Wardrobe extends Component {
             <br />
           </form>
         </div>
-        <div className="clothingpreview" style={imgstyle}>
+        <div className="clothingpreview">
           {/* map over the data to filter out the desired selection */}
 
           {users.map(pop => {

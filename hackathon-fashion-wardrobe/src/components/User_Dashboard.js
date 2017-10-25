@@ -4,27 +4,14 @@ import styles from "../styles/App.css";
 
 export default class Dashboard extends Component {
   render() {
-    let dashstyle = {
-      textDecoration: "none",
-      fontFamily: "Ubuntu, sans-serif",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      alignText: "center",
-      color: "#837095"
-    };
-    let linkstyle = {
-      textDecoration: "none",
-      color: "#837095"
-    };
     return (
-      <div className="container" style={dashstyle}>
+      <div className="dashboard">
         <div className="welcome">
           <h1> Welcome Colton</h1>
           <br />
         </div>
         <div className="today">
-          <Link to="/TodaysLook" style={linkstyle}>
+          <Link to="/TodaysLook" className="dashLinks">
             <h2> See Todays Look </h2>
           </Link>
           <br />
@@ -32,8 +19,7 @@ export default class Dashboard extends Component {
         <div className="all">
           <Link
             to="/Wardrobe"
-            style={{ textDecoration: "none", color: "#837095" }}
-          >
+            className="dashLinks">
             <h2> View Your Closet </h2>
           </Link>
           <br />
@@ -41,8 +27,7 @@ export default class Dashboard extends Component {
         <div className="add">
           <Link
             to="/newItem"
-            style={{ textDecoration: "none", color: "#837095" }}
-          >
+            className="dashLinks">
             <h2> Add A New Item </h2>
           </Link>
         </div>

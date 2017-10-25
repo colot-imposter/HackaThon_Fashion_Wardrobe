@@ -10,6 +10,7 @@ export default class updateItem extends Component {
     };
   }
   render() {
+<<<<<<< HEAD
     let formStyle = {
       color: "#837095",
       display: "flex",
@@ -51,14 +52,20 @@ export default class updateItem extends Component {
       backgroundColor: "white"
     };
 
+=======
+>>>>>>> 0966429a90ee3d58a7ca92a7ec546f07e0f6f9cf
     return (
       <div>
-        <h1 style={formStyle}>Update Item</h1>
-        <form onSubmit={this.handleSubmit} style={formStyle}>
-          <label style={inputStyle}>
+        <h1 className="updateForm">Update Item</h1>
+        <form onSubmit={this.handleSubmit} className="updateForm">
+          <label className="updateInput">
             Sleeve Length:
+<<<<<<< HEAD
             <select
               style={selectStyle}
+=======
+            <select className="updateSelect"
+>>>>>>> 0966429a90ee3d58a7ca92a7ec546f07e0f6f9cf
               value={this.state.sleeveLength}
               onChange={this.handleChange}
             >
@@ -67,10 +74,14 @@ export default class updateItem extends Component {
               <option value="No">No Sleeve</option>
             </select>
           </label>
-          <label style={inputStyle}>
+          <label className="updateInput">
             Weight:
+<<<<<<< HEAD
             <select
               style={selectStyle}
+=======
+            <select className="updateSelect"
+>>>>>>> 0966429a90ee3d58a7ca92a7ec546f07e0f6f9cf
               value={this.state.fabricWeight}
               onChange={this.handleChange}
             >
@@ -89,9 +100,13 @@ export default class updateItem extends Component {
             <option value="Pattern">Pattern</option>
           </select>
         </label> */}
+<<<<<<< HEAD
           <input style={buttonStyle} type="submit" value="Update" />
+=======
+          <input className="updateButton" type="submit" value="Add Item" />
+>>>>>>> 0966429a90ee3d58a7ca92a7ec546f07e0f6f9cf
         </form>
-        <button style={buttonStyle}>Delete Item</button>
+        <button className="updateButton">Delete Item</button>
       </div>
     );
   }

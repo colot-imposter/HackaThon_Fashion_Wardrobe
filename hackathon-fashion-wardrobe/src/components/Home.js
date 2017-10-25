@@ -7,30 +7,11 @@ import step3 from "../styles/imgs/styled.jpg";
 
 export default class Home extends Component {
   render() {
-    let stepstyle = {
-      textDecoration: "none",
-      fontFamily: "Ubuntu, sans-serif",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      alignText: "center",
-      color: "#837095"
-    };
-    let imgstyle = {
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "center",
-      alignText: "center",
-    };
-    let loginstyle ={
-      display: "flex",
-      flexDirection:"row-reverse",
-      color: "#837095",
-      textDecoration:"none",
-      fontFamily: "Ubuntu, sans-serif",
-    }
+
+
+
     return (
-      <div className="steps" style={stepstyle}>
+      <div className="steps">
         <div className="scrollPics">
           <div className="photobanner">
             <h2> Step 1: Upload Clothes</h2>
