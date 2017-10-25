@@ -336,3 +336,21 @@ margin-bottom: 10px;
   width:170px;
   background-color:white;
 }
+
+
+/*user dashboard page*/
+
+.dashboard{
+  text-decoration: none;
+  font-family: Ubuntu, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #837095;
+}
+
+.dashLinks{
+  text-decoration: none;
+  color:#837095;
+}
