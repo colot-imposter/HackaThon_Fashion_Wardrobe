@@ -139,9 +139,9 @@ export default class newItem extends Component {
               onChange={this.handleSleeveLength}
             >
               <option value={null}>Select Sleeve Length</option>
-              <option value="1">Short Sleeve</option>
+              <option value="3">Short Sleeve</option>
               <option value="2">Long Sleeve</option>
-              <option value="3">No Sleeve</option>
+              <option value="1">No Sleeve</option>
             </select>
           </label>
           <label style={inputStyle}>
@@ -152,9 +152,9 @@ export default class newItem extends Component {
               onChange={this.handleFabricWeight}
             >
               <option value={null}>Select Fabric Weight</option>
-              <option value="1">Light Weight</option>
+              <option value="3">Light Weight</option>
               <option value="2">Medium Weight</option>
-              <option value="3">Heavy Weight</option>
+              <option value="1">Heavy Weight</option>
             </select>
           </label>
 
