@@ -8,12 +8,16 @@ export default class newItem extends Component {
     this.state = {
       name: "",
       sleeveLength: undefined,
-      fabricWeight: undefined
+      fabricWeight: undefined,
+      mood: "",
+      color: ""
     };
     this.addClothingItem = this.addClothingItem.bind(this);
     this.handleName = this.handleName.bind(this);
     this.handleSleeveLength = this.handleSleeveLength.bind(this);
     this.handleFabricWeight = this.handleFabricWeight.bind(this);
+    this.handleMood = this.handleMood.bind(this);
+    this.handleColor = this.handleColor.bind(this);
   }
   addClothingItem(event) {
     event.preventDefault();
@@ -24,37 +28,42 @@ export default class newItem extends Component {
       .send({
         name: this.state.name,
         sleeveLength: this.state.sleeveLength,
-        fabricWeight: this.state.fabricWeight
+        fabricWeight: this.state.fabricWeight,
+        mood: this.state.mood,
+        color: this.state.color
       })
       .catch(function(err, res) {
         console.log("error", res);
       });
   }
 
-  //_________________
-
-  //    ______________
   // these .state variables will be plugged into the api to catch the filtered list.
 
   // let articleName = this.state.articleName;
   // let sleeveLength = this.state.sleeveLength;
   // let fabricWeight = this.state.fabricWeight;
+  handleMood(e) {
+    e.preventDefault();
+    this.setState({
+      mood: e.target.value
+    });
+    console.log("this.state.mood", this.state.mood);
+  }
 
-  // }
-  // handleColor(e){
-  //   e.preventDefault();
-  //   this.setState({
-  //     color: e.target.value
-  //   });
-  // }
+  handleColor(e) {
+    e.preventDefault();
+    this.setState({
+      color: e.target.value
+    });
+    console.log("this.state.color", this.state.color);
+  }
 
   handleFabricWeight(e) {
     e.preventDefault();
     this.setState({
       fabricWeight: parseInt(e.target.value)
     });
-    console.log("fabricWeight", this.state.fabricWeight);
-    console.log("typeOf", typeof this.state.fabricWeight);
+    console.log("this.state.fabricWeight", this.state.fabricWeight);
   }
 
   handleSleeveLength(e) {
@@ -62,17 +71,14 @@ export default class newItem extends Component {
     this.setState({
       sleeveLength: parseInt(e.target.value)
     });
-    console.log("sleeveLength", this.state.sleeveLength);
-    console.log("typeOf", typeof this.state.sleeveLength);
   }
 
   handleName(e) {
     e.preventDefault();
     this.setState({
-      articleName: e.target.value
+      name: e.target.value
     });
-    console.log("fabricWeight", this.state.articleName);
-    console.log("typeOf", typeof this.state.articleName);
+    console.log("this.state.name", this.state.name);
   }
 
   render() {
@@ -132,9 +138,10 @@ export default class newItem extends Component {
               value={this.state.sleeveLength}
               onChange={this.handleSleeveLength}
             >
-              <option value="1">Short Sleeve</option>
+              <option value={null}>Select Sleeve Length</option>
+              <option value="3">Short Sleeve</option>
               <option value="2">Long Sleeve</option>
-              <option value="3">No Sleeve</option>
+              <option value="1">No Sleeve</option>
             </select>
           </label>
           <label style={inputStyle}>
@@ -144,22 +151,39 @@ export default class newItem extends Component {
               value={this.state.fabricWeight}
               onChange={this.handleFabricWeight}
             >
-              <option value="1">Light Weight</option>
+              <option value={null}>Select Fabric Weight</option>
+              <option value="3">Light Weight</option>
               <option value="2">Medium Weight</option>
-              <option value="3">Heavy Weight</option>
+              <option value="1">Heavy Weight</option>
             </select>
           </label>
 
-          {/* <label>
-          Color:
-          <select value={this.state.value} onChange={this.handleColor}>
-            <option value="Black">Black</option>
-            <option value="White">White</option>
-            <option value="Red">Red</option>
-            <option value="Blue">Blue</option>
-            <option value="Pattern">Pattern</option>
-          </select>
-        </label> */}
+          <label>
+            Color:
+            <select value={this.state.color} onChange={this.handleColor}>
+              <option value={null}>Select Color</option>
+              <option value="Black">Black</option>
+              <option value="White">White</option>
+              <option value="Red">Red</option>
+              <option value="Purple">Purple</option>
+              <option value="Blue">Blue</option>
+              <option value="Orange">Orange</option>
+              <option value="Yellow">Yellow</option>
+              <option value="Green">Green</option>
+            </select>
+          </label>
+
+          <label>
+            Mood:
+            <select value={this.state.mood} onChange={this.handleMood}>
+              <option value={null}>Select Mood</option>
+              <option value="Happy">Happy</option>
+              <option value="Angry">Angry</option>
+              <option value="Shy">Shy</option>
+              <option value="Sexy">Sexy</option>
+              <option value="Gloomy">Gloomy</option>
+            </select>
+          </label>
           <button
             type="submit"
             onClick={this.props.addClothingItem}
