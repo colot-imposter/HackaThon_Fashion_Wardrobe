@@ -59,7 +59,7 @@
 
 .steps{
   text-decoration: none;
-  font-family: Ubuntu, sans-serif;
+  font-family: 'Josefin Slab', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,6 +97,7 @@ float:right;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     right: 0;
+    font-family: 'Josefin Slab', serif;
 }
 
 .dropdown-content a {
@@ -144,7 +145,8 @@ footer{
    padding-right: 20px;
    justify-content: center;
    color:#837095;
-   font-family: Ubuntu, sans-serif;
+   font-family: 'Josefin Slab', serif;
+   font-weight: 600;
  }
 
 .timeHead{
@@ -157,20 +159,21 @@ footer{
    flex-direction: row;
    justify-content: center;
    margin-right: 10px;
-   padding-bottom: 15px;
    border-width: 1px;
    border-color: #837095;
    border-style: solid;
    width:50px;
    text-align: center;
-   align-self: center;
+   align-content: center;
+   align-items: center;
+   height: 70px;
  }
 
  /*logout page*/
 
  .logoutHead{
    color: #837095;
-   font-family: Ubuntu, sans-serif;
+   font-family: 'Josefin Slab', serif;
    text-align: center;
  }
 
@@ -260,13 +263,14 @@ footer{
 
 
 /*Todays Look*/
-
-.todaysTemp{
+.todaysWeather{
   display: flex;
   flex-direction: row-reverse;
-  justify-content: end;
+}
+.todaysTemp{
+  display: flex;
   color: #837095;
-  font-family: Ubuntu, sans-serif;
+  font-family: 'Josefin Slab', serif;
   padding-top: 20px;
 }
 
@@ -274,13 +278,13 @@ footer{
   display: flex;
   flex-direction: column;
   color: #837095;
-  font-family: Ubuntu, sans-serif;
+  font-family: 'Josefin Slab', serif;
   padding-top: 20px;
 }
 
 .todaysWeatherStyle{
   text-decoration: none;
-  font-family: Ubuntu, sans-serif;
+  font-family: 'Josefin Slab', serif;
   font-size: 25px;
   color: #837095;
 }
@@ -291,12 +295,17 @@ footer{
 }
 .previewbody{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 20px;
   align-items: center;
-  text-align: center;
-  justify-content: center;
 }
+.suggest{
+  justify-content: end;
+  font-family: 'Josefin Slab', serif;
+  font-size: 25px;
+  color: #837095;
+}
+
 .todaypreview{
   display: flex;
   flex-direction: row;
@@ -310,6 +319,7 @@ footer{
   flex-direction: column;
   font-size: 20px;
   justify-content: center;
+  font-family: 'Josefin Slab', serif;
 }
 
 .updateInput{
@@ -331,7 +341,7 @@ justify-content: center;
 font-size: 15px;
 color:#837095;
 width: 170px;
-background-color: white;
+background-color: #c4c5c6;
 border-width: 1px;
 border-radius: 10px;
 margin-top: 10px;
@@ -353,7 +363,7 @@ margin-bottom: 10px;
 
 .dashboard{
   text-decoration: none;
-  font-family: Ubuntu, sans-serif;
+  font-family: 'Josefin Slab', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -379,7 +389,7 @@ margin-bottom: 10px;
 }
 .filters{
   display: flex;
-  font-family: Ubuntu, sans-serif;
+  font-family: 'Josefin Slab', serif;
   flex-direction: column;
   padding-right: 105px;
   color:#837095;
@@ -388,7 +398,7 @@ margin-bottom: 10px;
 }
 
 .wardrobeSelect{
-  font-family: Ubuntu, sans-serif;
+  font-family: 'Josefin Slab', serif;
   color: #837095;
   font-size: 15px;
   width:125px;
