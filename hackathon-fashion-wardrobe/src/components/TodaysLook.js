@@ -66,7 +66,7 @@ export default class TodaysLook extends Component {
 
         this.setState({
           temperature: avgT.toFixed(0),
-          feelsLikeTemp: feelsLikeT,
+          feelsLikeTemp: feelsLikeT.toFixed(0),
           conditions: data.current.condition.text,
           icon: icon
         });
@@ -82,9 +82,8 @@ export default class TodaysLook extends Component {
               Todays Weather
             </a>
             <div>
-              <h2>{this.state.temperature} Degrees</h2>
-              <h3>Feels Like {this.state.feelsLikeTemp}</h3>
-              <h2>{this.state.conditions}</h2>
+              <h2>{this.state.temperature}°</h2>
+              <h3>Feels Like {this.state.feelsLikeTemp}°</h3>
             </div>
           </div>
           <div className="weatherIcon">
@@ -95,12 +94,15 @@ export default class TodaysLook extends Component {
           </div>
         </div>
         <div className="previewbody">
+        <div className="suggest">
+        <h2> Suggested For You</h2>
+        </div>
           <div className="todaypreview">
             <div>
               <img
                 style={{
-                  width: "200px",
-                  height: "200px",
+                  width: "150px",
+                  height: "150px",
                   paddingRight: "40px"
                 }}
                 src={img1}
@@ -111,8 +113,8 @@ export default class TodaysLook extends Component {
             <div>
               <img
                 style={{
-                  width: "200px",
-                  height: "200px",
+                  width: "150px",
+                  height: "150px",
                   paddingRight: "40px"
                 }}
                 src={img2}
@@ -123,8 +125,8 @@ export default class TodaysLook extends Component {
             <div>
               <img
                 style={{
-                  width: "200px",
-                  height: "200px",
+                  width: "150px",
+                  height: "150px",
                   paddingRight: "40px"
                 }}
                 src={img3}
@@ -133,6 +135,9 @@ export default class TodaysLook extends Component {
               <Modal />
             </div>
           </div>
+        </div>
+        <div className="viewWardrobe">
+        <a href="/Wardrobe">View Your Closet</a>
         </div>
       </div>
     );
