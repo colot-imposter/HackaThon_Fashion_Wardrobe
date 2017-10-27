@@ -93,12 +93,18 @@ export default class Weather extends Component {
     return(
       <div className="weather">
       <h2 className="tempstyle"> Weather In {this.state.city},{this.state.state}</h2>
-      <h2 className="tempstyle"> Currnet Temperature: {this.state.temperature}°</h2>
+      <div className="weatherOneTwo">
+      <div className="weatherOne">
+      <h3 className="tempstyle"> Currnet Temperature: {this.state.temperature}°</h3>
       <h3 className="tempstyle">Feels Like:  {this.state.feelsLikeTemp}°</h3>
       <h3 className="tempstyle"> Conditions Outside: {this.state.conditions} </h3>
+      </div>
+      <div className="weatherTwo">
       <h3 className="tempstyle"> Todays High: {this.state.highTemp}°</h3>
       <h3 className="tempstyle"> Todays Low: {this.state.lowTemp}°</h3>
-      <h3 className="tempstyle"> The Sun Will Set at: {this.state.sunset}</h3>
+      <h3 className="tempstyle"> Sun Set: {this.state.sunset}</h3>
+      </div>
+      </div>
       <h3 className="tempstyle"> Hourly forcast </h3>
       <div className="timeHead">
       <h4 className="timestyle"> 6 am<br></br>{this.state.hour6}°</h4>
@@ -115,10 +121,6 @@ export default class Weather extends Component {
       <h4 className="timestyle"> 5 pm<br></br>{this.state.hour17}°</h4>
       <h4 className="timestyle"> 6 pm<br></br>{this.state.hour18}°</h4>
       <h4 className="timestyle"> 7 pm<br></br>{this.state.hour19}°</h4>
-
-
-
-
       </div>
       </div>
     )
