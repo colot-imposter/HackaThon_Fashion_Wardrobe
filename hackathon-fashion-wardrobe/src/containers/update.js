@@ -7,18 +7,14 @@ export default class Update extends Component {
     super(props);
 
     this.state = {
-      name: "",
-      sleeveLength: undefined,
-      fabricWeight: undefined,
-      mood: "",
-      color: ""
+      updateClothingItem:{}
     };
 
   componentDidMount() {
     fetchBlogPost(this.props.params.postId)
       .then(data => {
         this.setState(state => {
-          state.blogPost = data;
+          state.updateClothingItem = data;
           return state;
         });
       })
@@ -28,7 +24,7 @@ export default class Update extends Component {
   },
 
   handleSubmit(data) {
-    updateBlogPost(this.state.blogPost.id, data);
+    updateBlogPost(this.state.updateClothingItem.id, data);
     this.props.router.push("/");
   },
 
@@ -37,8 +33,13 @@ export default class Update extends Component {
       <div>
         <Form
           onSubmit={this.handleSubmit.bind(this)}
-          title={this.state.blogPost.title}
-          body={this.state.blogPost.body}
+          id={this.state.updateClothingItem.title}
+          name={this.state.updateClothingItem.name}
+          sleeveLength={this.state.updateClothingItem.sleeveLength}
+          fabricWeight={this.state.updateClothingItem.fabricWeight}
+          mood={this.state.updateClothingItem.body}
+          color={this.state.updateClothingItem.color}
+          
         />
       </div>
     );
