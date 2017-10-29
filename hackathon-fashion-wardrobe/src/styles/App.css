@@ -205,7 +205,7 @@ footer {
    outline: none;
  }
 
- .closeModal{
+ .closeModalButton{
    display: flex;
    justify-content: center;
    font-size: 15px;
@@ -386,38 +386,7 @@ footer {
   flex-direction: column;
   font-size: 20px;
   justify-content: center;
-
   font-family: 'Josefin Slab', serif;
-}
-
-.updateInput{
-border: none;
-text-align: center;
-display: flex;
-flex-direction: row;
-font-size: 15px;
-color:#837095;
-padding-top: 15px;
-padding-right: 15px;
-padding-bottom: 15px;
-}
-
-.updateButton{
-display: flex;
-flex-direction: row;
-justify-content: center;
-font-size: 15px;
-color:#837095;
-width: 170px;
-background-color: #c4c5c6;
-border-width: 1px;
-border-radius: 10px;
-margin-top: 10px;
-margin-bottom: 10px;
-}
-
-.updateSelect{
-  font-family: "Josefin Slab", serif;
 }
 
 .updateInput {
@@ -439,7 +408,7 @@ margin-bottom: 10px;
   font-size: 15px;
   color: #837095;
   width: 170px;
-  background-color: #c4c5c6;
+  background-color: #e0e0e0;
   border-width: 1px;
   border-radius: 10px;
   margin-top: 10px;
