@@ -215,8 +215,8 @@ footer {
    border-radius: 10px;
    outline: none;
  }
-=======
 
+/*weather page*/
 .weather {
   display: flex;
   flex-direction: column;
@@ -270,30 +270,6 @@ footer {
   border-width: 1px;
   border-radius: 10px;
   margin: 10px 0px;
-  outline: none;
-}
-
-/*modal buttons*/
-
-.updateButtonModal {
-  display: flex;
-  justify-content: center;
-  font-size: 15px;
-  color: #837095;
-  background-color: white;
-  border-width: 1px;
-  border-radius: 10px;
-  outline: none;
-}
-
-.closeModal {
-  display: flex;
-  justify-content: center;
-  font-size: 15px;
-  color: #837095;
-  background-color: white;
-  border-width: 1px;
-  border-radius: 10px;
   outline: none;
 }
 
@@ -359,6 +335,11 @@ footer {
   padding-top: 20px;
 }
 
+.iconLink{
+  display: flex;
+  flex-direction: row;
+}
+
 .todaysWeatherStyle {
   text-decoration: none;
   font-family: "Josefin Slab", serif;
@@ -369,13 +350,12 @@ footer {
 .todaysWeatherStyle:hover{
   color: navy;
   font-size: 30px;
-
 }
 
 .weatherIcon img {
   width: 75px;
-  padding-right: 20px;
 }
+
 .previewbody {
   display: flex;
   flex-direction: column;
@@ -392,6 +372,10 @@ footer {
 .todaypreview {
   display: flex;
   flex-direction: row;
+}
+
+.viewWardrobe a{
+  text-decoration: none;
 }
 
 /*update item page*/
