@@ -77,20 +77,25 @@ export default class TodaysLook extends Component {
     return (
       <div className="todaysWeather">
         <div className="todaysTemp">
-          <div className="header" className="todaysLookHead">
+          <div className="todaysLookHead">
+          <div className="iconLink">
             <a href="/weather" className="todaysWeatherStyle">
               Todays Weather
             </a>
+            <div className="weatherIcon">
+              <img
+                src={this.state.icon}
+                alt={this.state.conditions}
+              />
+            </div>
+            </div>
             <div>
               <h2>{this.state.temperature}°</h2>
               <h3>Feels Like {this.state.feelsLikeTemp}°</h3>
             </div>
+            <div className="viewWardrobe">
+            <a href="/Wardrobe">View Your Closet</a>
           </div>
-          <div className="weatherIcon">
-            <img
-              src={this.state.icon}
-              alt={this.state.conditions}
-            />
           </div>
         </div>
         <div className="previewbody">
@@ -135,9 +140,6 @@ export default class TodaysLook extends Component {
               <Modal />
             </div>
           </div>
-        </div>
-        <div className="viewWardrobe">
-        <a href="/Wardrobe">View Your Closet</a>
         </div>
       </div>
     );
