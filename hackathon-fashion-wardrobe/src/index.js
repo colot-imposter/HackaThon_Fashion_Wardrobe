@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import reduxThunk from "redux-thunk";
-import { Router, BrowserRouter, Route, Switch } from "react-router-dom";
+import { withRouter, BrowserRouter, Route, Switch } from "react-router-dom";
 
 import App from "./components/App";
 import registerServiceWorker from "./registerServiceWorker";
@@ -44,10 +44,7 @@ ReactDOM.render(
             <Route path="/TodaysLook" component={TodaysLook} />
 
             {/* link to render Update components */}
-            <Route
-              path="/posts/update/:postId"
-              component={withRouter(Update)}
-            />
+            <Route path="/update/:postId" component={withRouter(Update)} />
           </Switch>
         </div>
       </BaseLayout>

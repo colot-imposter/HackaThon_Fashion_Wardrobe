@@ -1,3 +1,5 @@
+import request from "../../node_modules/superagent/superagent";
+
 export function fetchClothingitem(id) {
   return fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/" + id, {
     method: "GET",

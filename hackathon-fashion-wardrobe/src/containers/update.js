@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import Form from "../components/form";
-import { fetchBlogPost, updateBlogPost } from "../../actions/blogPostActions";
+import { fetchClothingitem, updateClothingItem } from "../actions/crud";
+import UpdateButton from "../components/updateButton";
 
 export default class Update extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      updateClothingItem:{}
+      updateClothingItem: {}
     };
-
+  }
   componentDidMount() {
-    fetchBlogPost(this.props.params.postId)
+    fetchClothingitem(this.props.params.postId)
       .then(data => {
         this.setState(state => {
           state.updateClothingItem = data;
@@ -21,12 +22,12 @@ export default class Update extends Component {
       .catch(err => {
         console.error("err", err);
       });
-  },
+  }
 
   handleSubmit(data) {
-    updateBlogPost(this.state.updateClothingItem.id, data);
+    updateClothingItem(this.state.updateClothingItem.id, data);
     this.props.router.push("/");
-  },
+  }
 
   render() {
     return (
@@ -39,11 +40,9 @@ export default class Update extends Component {
           fabricWeight={this.state.updateClothingItem.fabricWeight}
           mood={this.state.updateClothingItem.body}
           color={this.state.updateClothingItem.color}
-          
         />
+        <UpdateButton />
       </div>
     );
   }
-});
-
-export default Update;
+}
