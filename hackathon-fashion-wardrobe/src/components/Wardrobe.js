@@ -84,6 +84,19 @@ export default class Wardrobe extends Component {
               <option value="red">Red</option>
             </select>
             <br />
+            <select onChange={this.MoodFilter}
+            id="mood"
+            value={this.state.value}
+            className="wardrobeSelect"
+            >
+            <option value="">Mood</option>
+            <option value="Happy">Blue</option>
+            <option value="Angry">Black</option>
+            <option value="Shy">Gray</option>
+            <option value="Sexy">White</option>
+            <option value="Gloomy">Red</option>
+          </select>
+          <br/>
           </form>
           <div className="viewWardrobe">
           <button className="addButtonWardrobe"><a href="/newitem">Add Item</a></button>
@@ -127,7 +140,9 @@ export default class Wardrobe extends Component {
         </div>
 
         {/* HERE we are bringing in the wardrobe items */}
+        <div className="allWardrobe">
         <GetAllWardrobe />
+        </div>
       </div>
     );
   }
