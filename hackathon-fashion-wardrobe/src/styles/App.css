@@ -473,6 +473,13 @@ footer {
  outline:none;
 }
 
-.addButtonWardrobe:select{
- color: navy;
+/*help*/
+
+.helpSteps{
+color: #837095;
+font-family: "Josefin Slab", serif;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-content: center;
 }
