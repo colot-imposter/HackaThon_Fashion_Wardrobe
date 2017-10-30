@@ -113,7 +113,6 @@ export default class TodaysLook extends Component {
                 src={img1}
                 alt="blue-shortsleeve-light"
               />
-              <Modal />
             </div>
             <div>
               <img
@@ -125,7 +124,6 @@ export default class TodaysLook extends Component {
                 src={img2}
                 alt="white-sleevless-light"
               />
-              <Modal />
             </div>
             <div>
               <img
@@ -137,7 +135,6 @@ export default class TodaysLook extends Component {
                 src={img3}
                 alt="black-shortsleeve-light"
               />
-              <Modal />
             </div>
           </div>
         </div>
