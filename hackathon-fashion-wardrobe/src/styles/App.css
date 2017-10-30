@@ -293,6 +293,7 @@ footer {
   padding-top: 15px;
   justify-content: center;
   border-color: white;
+  outline: none;
 }
 
 .addItemButton {
@@ -303,7 +304,7 @@ footer {
   background-color: white;
   border-color: white;
   box-shadow: 0px;
-  outline: line;
+  outline: none;
 }
 
 .textStyle {
