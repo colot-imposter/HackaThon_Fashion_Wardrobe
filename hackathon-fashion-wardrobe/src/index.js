@@ -18,6 +18,7 @@ import Wardrobe from "./components/Wardrobe";
 import newItem from "./components/newItem";
 import TodaysLook from "./components/TodaysLook";
 import Weather from "./components/weather";
+import help from "./components/help";
 
 const store = createStore(reducer, applyMiddleware(reduxThunk));
 
@@ -40,6 +41,7 @@ ReactDOM.render(
             <Route path="/User_Dashboard" component={User_Dashboard} />
             <Route path="/newItem" component={newItem} />
             <Route path="/TodaysLook" component={TodaysLook} />
+              <Route path="/help" component={help} />
           </Switch>
         </div>
       </BaseLayout>
