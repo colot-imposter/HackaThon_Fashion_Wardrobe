@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Form from "./form";
 
 export default class updateItem extends Component {
   constructor(props) {
@@ -14,15 +15,16 @@ export default class updateItem extends Component {
     return (
       <div className="updateForm">
         <h1>Update Item</h1>
-        <form onSubmit={this.handleSubmit}>
-        <label className="updateSelect">
-          <input
-            className="textStyle"
-            type="text"
-            onChange={this.handleChange}
-            placeholder="Item Name"
-          />
-        </label>
+
+
+        <Form />
+
+        <button>Delete Item</button>
+
+        {/* the form component will render the Form
+
+
+          <form onSubmit={this.handleSubmit}>
 
           <label>
             Sleeve Length:
@@ -46,35 +48,8 @@ export default class updateItem extends Component {
               <option value="Heavy">Heavy Weight</option>
             </select>
           </label>
-          <label className="updateSelect">
-            Color:
-            <select className="updateSelect"
-            value={this.state.color} onChange={this.handleChange}>
-              <option value={null}>Select Color</option>
-              <option value="Black">Black</option>
-              <option value="White">White</option>
-              <option value="Red">Red</option>
-              <option value="Purple">Purple</option>
-              <option value="Blue">Blue</option>
-              <option value="Orange">Orange</option>
-              <option value="Yellow">Yellow</option>
-              <option value="Green">Green</option>
-            </select>
-          </label>
 
-          <label className="updateSelect">
-            Mood:
-            <select className="updateSelect"
-            value={this.state.mood} onChange={this.handleChange}>
-              <option value={null}>Select Mood</option>
-              <option value="Happy">Happy</option>
-              <option value="Angry">Angry</option>
-              <option value="Shy">Shy</option>
-              <option value="Sexy">Sexy</option>
-              <option value="Gloomy">Gloomy</option>
-            </select>
-          </label>
-          {/* <label>
+        <label>
           Color:
           <select value={this.state.value} onChange={this.handleChange}>
             <option value="Black">Black</option>
@@ -86,7 +61,7 @@ export default class updateItem extends Component {
         </label> */}
           <input className="updateButton"type="submit" value="Update"/>
         </form>
-        <button className="updateButton">Delete Item</button>
+        <button className="updateButton">Delete Item</button> */}
       </div>
     );
   }
