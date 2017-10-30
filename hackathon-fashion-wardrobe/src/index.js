@@ -18,6 +18,7 @@ import Wardrobe from "./components/Wardrobe";
 import newItem from "./components/newItem";
 import TodaysLook from "./components/TodaysLook";
 import Weather from "./components/weather";
+import help from "./components/help";
 
 // update component to post to heroku
 import Update from "./containers/update";
@@ -42,9 +43,10 @@ ReactDOM.render(
             <Route path="/User_Dashboard" component={User_Dashboard} />
             <Route path="/newItem" component={newItem} />
             <Route path="/TodaysLook" component={TodaysLook} />
-
             {/* link to render Update components */}
             <Route path="/update/:postId" component={withRouter(Update)} />
+              <Route path="/help" component={help} />
+
           </Switch>
         </div>
       </BaseLayout>

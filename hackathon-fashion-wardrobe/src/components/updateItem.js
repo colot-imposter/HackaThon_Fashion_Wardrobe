@@ -9,11 +9,13 @@ export default class updateItem extends Component {
       sleeveLength: "",
       fabricWeight: ""
     };
+    
   }
   render() {
     return (
       <div className="updateForm">
         <h1>Update Item</h1>
+
 
         <Form />
 
@@ -23,6 +25,7 @@ export default class updateItem extends Component {
 
 
           <form onSubmit={this.handleSubmit}>
+
           <label>
             Sleeve Length:
             <select className="updateSelect"
@@ -45,6 +48,7 @@ export default class updateItem extends Component {
               <option value="Heavy">Heavy Weight</option>
             </select>
           </label>
+
         <label>
           Color:
           <select value={this.state.value} onChange={this.handleChange}>
@@ -54,8 +58,8 @@ export default class updateItem extends Component {
             <option value="Blue">Blue</option>
             <option value="Pattern">Pattern</option>
           </select>
-        </label>
-          <input className="updateButton"type="submit" value="Update" />
+        </label> */}
+          <input className="updateButton"type="submit" value="Update"/>
         </form>
         <button className="updateButton">Delete Item</button> */}
       </div>
