@@ -85,6 +85,9 @@ export default class Wardrobe extends Component {
             </select>
             <br />
           </form>
+          <div className="viewWardrobe">
+          <button className="addButtonWardrobe"><a href="/newitem">Add Item</a></button>
+        </div>
         </div>
         <div className="clothingpreview">
           {/* map over the data to filter out the desired selection */}
