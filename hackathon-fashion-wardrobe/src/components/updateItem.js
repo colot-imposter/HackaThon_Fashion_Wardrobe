@@ -8,6 +8,7 @@ export default class updateItem extends Component {
       sleeveLength: "",
       fabricWeight: ""
     };
+    
   }
   render() {
     return (
