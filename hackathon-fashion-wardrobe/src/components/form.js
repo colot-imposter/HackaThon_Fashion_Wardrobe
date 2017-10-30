@@ -5,19 +5,22 @@ export default class Form extends Component {
     super(props);
 
     this.state = {
-      name: "",
-      sleeveLength: undefined,
-      fabricWeight: undefined,
-      mood: "",
-      color: ""
+      name: this.props.name,
+      sleeveLength: this.props.sleeveLength,
+      fabricWeight: this.props.fabricWeight,
+      mood: this.props.mood,
+      color: this.props.color
     };
 
-    this.addClothingItem = this.addClothingItem.bind(this);
+    //this.addClothingItem = this.addClothingItem.bind(this);
     this.handleName = this.handleName.bind(this);
     this.handleSleeveLength = this.handleSleeveLength.bind(this);
     this.handleFabricWeight = this.handleFabricWeight.bind(this);
     this.handleMood = this.handleMood.bind(this);
     this.handleColor = this.handleColor.bind(this);
+  }
+  componentWillReceiveProps(props) {
+    this.setState(props);
   }
 
   componentWillReceiveProps(props) {
