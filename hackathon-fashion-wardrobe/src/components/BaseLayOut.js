@@ -21,14 +21,13 @@ export default class BaseLayout extends Component {
               <nav className="row navbar navbar-inverse">
                 <div className="container-fluid">
                 <div style={border} className="navbar-header">
-                  <a href="/User_Dashboard"><img src={logo} alt="logo" className="logoimg"></img></a>
+                  <a href="/TodaysLook"><img src={logo} alt="logo" className="logoimg"></img></a>
                     <div className="dropdown">
                       <button className="dropbtn"><img src={hamPic} alt="Menu"></img></button>
                       <div className="dropdown-content">
-                        <a href="/User_Dashboard">Dashboard</a>
                         <a href="/TodaysLook">Todays Look</a>
                         <a href="/Wardrobe">Wardrobe</a>
-                        <a href="/UpdateAccount">Your Profile</a>
+                        <a href="/newItem">Add Item</a>
                         <a href="/Login">Login</a>
                         <a href="/Logout">Logout</a>
                     </div>
@@ -39,7 +38,10 @@ export default class BaseLayout extends Component {
 
           {this.props.children}
           <div>
-            <footer>Tunic inc.</footer>
+            <footer>
+            <p>Tunic inc.</p>
+            <p><a href="/help">Help</a></p>
+            </footer>
           </div>
           </div>
           </div>

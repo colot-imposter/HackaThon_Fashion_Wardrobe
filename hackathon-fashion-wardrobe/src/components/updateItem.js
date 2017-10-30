@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Form from "./form";
 
 export default class updateItem extends Component {
   constructor(props) {
@@ -8,15 +9,26 @@ export default class updateItem extends Component {
       sleeveLength: "",
       fabricWeight: ""
     };
+    
   }
   render() {
     return (
-      <div>
+      <div className="updateForm">
         <h1>Update Item</h1>
-        <form onSubmit={this.handleSubmit}>
+
+
+        <Form />
+
+        <button>Delete Item</button>
+
+        {/* the form component will render the Form
+
+
+          <form onSubmit={this.handleSubmit}>
+
           <label>
             Sleeve Length:
-            <select
+            <select className="updateSelect"
               value={this.state.sleeveLength}
               onChange={this.handleChange}
             >
@@ -27,7 +39,7 @@ export default class updateItem extends Component {
           </label>
           <label>
             Weight:
-            <select
+            <select className="updateSelect"
               value={this.state.fabricWeight}
               onChange={this.handleChange}
             >
@@ -36,7 +48,8 @@ export default class updateItem extends Component {
               <option value="Heavy">Heavy Weight</option>
             </select>
           </label>
-          {/* <label>
+
+        <label>
           Color:
           <select value={this.state.value} onChange={this.handleChange}>
             <option value="Black">Black</option>
@@ -46,9 +59,9 @@ export default class updateItem extends Component {
             <option value="Pattern">Pattern</option>
           </select>
         </label> */}
-          <input type="submit" value="Update" />
+          <input className="updateButton"type="submit" value="Update"/>
         </form>
-        <button>Delete Item</button>
+        <button className="updateButton">Delete Item</button> */}
       </div>
     );
   }

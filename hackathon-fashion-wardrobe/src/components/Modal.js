@@ -25,7 +25,7 @@ export default class Modal extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleOpenModal}>Update Item</button>
+        <button className="updateButtonModal" onClick={this.handleOpenModal}>Update Item</button>
         {/* <this.props.IMAGESOURCE>
           will be mapping over our data and */}
         <ReactModal
