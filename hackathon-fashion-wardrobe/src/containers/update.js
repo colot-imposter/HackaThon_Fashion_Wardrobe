@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+
 import FormUpdate from "../components/formUpdate";
 import { fetchClothingItem, updateClothingItem } from "../actions/crud";
+
 
 export default class Update extends Component {
   constructor(props) {
@@ -11,8 +13,8 @@ export default class Update extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   componentWillMount() {
-    console.log("this.props.params", this.props.match.params.postId);
     fetchClothingItem(this.props.match.params.postId)
       .then(data => {
         this.setState(state => {
@@ -38,9 +40,11 @@ export default class Update extends Component {
   render() {
     return (
       <div>
-        <FormUpdate
-          //onSubmit={this.handleSubmit.bind(this)}
+
+        <FormUpdate className="updateInput"
+          
           id={this.state.updateClothingItem.id}
+
           name={this.state.updateClothingItem.name}
           sleeveLength={this.state.updateClothingItem.sleeveLength}
           fabricWeight={this.state.updateClothingItem.fabricWeight}

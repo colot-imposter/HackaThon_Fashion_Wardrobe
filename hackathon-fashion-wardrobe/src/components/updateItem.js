@@ -32,7 +32,10 @@ export default class UpdateItem extends Component {
   render() {
     return (
       <div>
-        <FormUpdate
+
+      <h1 className="updateForm">Update Item</h1>
+        <FormUpdate className="updateForm"
+
           onSubmit={this.handleSubmit.bind(this)}
           id={this.state.updateClothingItem.title}
           name={this.state.updateClothingItem.name}

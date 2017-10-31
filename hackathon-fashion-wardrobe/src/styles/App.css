@@ -226,6 +226,8 @@ footer a{
    border-width: 1px;
    border-radius: 10px;
    outline: none;
+   width:100px;
+   margin-left: 10px
  }
 
  .closeModalButton{
@@ -460,5 +462,4 @@ list-style-type: none;
 display: flex;
 flex-direction: row;
 justify-content: center;
-width: 300px;
 }
