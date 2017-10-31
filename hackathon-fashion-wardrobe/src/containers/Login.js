@@ -32,18 +32,8 @@ class Login extends Component {
   };
 
   render() {
-    let style={
-      color:"#837095",
 
-    }
-    let formStyle={
-      border: "none",
-      webkitBoxShadow: "none ",
-      mozBoxShadow: "none ",
-      boxShadow: "none",
-      color:"#837095",
-      paddingRight:"60px"
-    }
+
     let inputStyle={
       border:"none",
       borderBottomColor:"#837095",
@@ -55,27 +45,17 @@ class Login extends Component {
       alignContent:"center",
       fontSize:"20px"
     }
-    let fontStyle={
-      fontSize:"30px",
-      paddingBottom:"10px",
-      paddingTop:"10px"
-    }
-    let allStyle ={
-      display:"flex",
-      flexDirection:"row",
-      justifyContent:"center",
-      alignContent:"center",
-      paddingTop:"40px",
-    }
+
+
 
     return (
-      <div style = {allStyle}className="Login">
+      <div className="login">
         <div>
           <UserInfo />
         </div>
         <form onSubmit={this.login}>
-          <fieldset style={formStyle}>
-            <legend style={fontStyle}>
+          <fieldset className="loginForm">
+            <legend  className="loginFont">
               {this.props.loggedIn ? "Log in as a different user" : "Log in"}
             </legend>
             <div className="input-single">
@@ -95,7 +75,7 @@ class Login extends Component {
               />
             </div>
 
-            <button style={style} type="submit">Login</button>
+            <button className="loginButton" type="submit">Login</button>
           </fieldset>
         </form>
         <div>

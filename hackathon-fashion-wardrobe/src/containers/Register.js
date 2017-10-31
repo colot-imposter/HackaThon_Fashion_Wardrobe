@@ -34,17 +34,8 @@ class Register extends Component {
   };
 
   render() {
-    let style={
-      color:"#837095",
 
-    }
-    let formStyle={
-      border: "none",
-      webkitBoxShadow: "none ",
-      mozBoxShadow: "none ",
-      boxShadow: "none",
-      color:"#837095",
-    }
+
     let inputStyle={
       border:"none",
       borderBottomColor:"#837095",
@@ -62,10 +53,10 @@ class Register extends Component {
       paddingTop:"10px"
     }
     return (
-      <div style={formStyle} className="Register">
-        <form style={formStyle} onSubmit={this.register}>
-          <fieldset style={formStyle}>
-            <legend style={fontStyle}>
+      <div className="loginForm">
+        <form className="loginForm" onSubmit={this.register}>
+          <fieldset className="loginForm">
+            <legend className="loginFont">
               {this.props.loggedIn
                 ? "Register as a different user"
                 : "Register"}
@@ -103,7 +94,7 @@ class Register extends Component {
               />
             </div>
 
-            <button style={style} type="submit">Register</button>
+            <button className="loginButton" type="submit">Register</button>
           </fieldset>
         </form>
       </div>
