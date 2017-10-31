@@ -35,13 +35,8 @@ export function updateClothingItem(formInfo, data) {
 }
 
 export function deleteClothingItem(id) {
-  return fetch(
-    "https://tunic-wardrobe-api.herokuapp.com/clothing/delete/" + id,
-    {
-      method: "DELETE",
-      mode: "CORS"
-    }
-  )
+  request
+    .del("https://tunic-wardrobe-api.herokuapp.com/clothing/delete/" + id)
     .then(res => {
       return res;
     })
