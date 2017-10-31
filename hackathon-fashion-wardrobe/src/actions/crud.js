@@ -47,3 +47,17 @@ export function deleteClothingItem(id) {
     })
     .catch(err => err);
 }
+
+export function fetchTodaysLook(temp) {
+  return fetch(
+    "https://tunic-wardrobe-api.herokuapp.com/clothing/todayslook/" + temp,
+    {
+      method: "GET",
+      mode: "CORS"
+    }
+  )
+    .then(res => res.json())
+    .catch(function(err, res) {
+      console.log("error", res);
+    });
+}
