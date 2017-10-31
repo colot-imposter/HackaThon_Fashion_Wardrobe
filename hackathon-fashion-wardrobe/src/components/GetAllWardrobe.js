@@ -32,10 +32,8 @@ export default class GetAllWardrobe extends Component {
   render() {
     let Items = this.state.wardrobeItems.map((item, index) => {
       return (
-        <div key={index}>
-          <li>{item.name}</li>
+          <li>{item.name}<br></br>{item.color}</li>
           {console.log(item)}
-
           <Modal index={item} />
         </div>
       );
