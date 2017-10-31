@@ -70,15 +70,16 @@ export default class TodaysLook extends Component {
 
         this.setState({
           temperature: avgT.toFixed(0),
-          feelsLikeTemp: feelsLikeT.toFixed(0),
+          feelsLikeTemp: parseInt(feelsLikeT.toFixed(0)),
           conditions: data.current.condition.text,
           icon: icon
         });
       });
-    fetchTodaysLook(50).then(data => {
+    fetchTodaysLook("50").then(data => {
       this.setState({
         todaysLook: data
       });
+      console.log("tjossdsd", data);
     });
   }
 
@@ -110,21 +111,29 @@ export default class TodaysLook extends Component {
           </div>
           <div className="todaypreview">
             {this.state.todaysLook.map(pop => {
-              console.log("winPop", pop);
-              return (
-                <div className="suggestedItem">
-                  <h3>{pop.name}</h3>
-                  <img
-                    style={{
-                      width: "150px",
-                      height: "150px",
-                      paddingRight: "40px"
-                    }}
-                    src={img1}
-                    alt="blue-shortsleeve-light"
-                  />
-                </div>
+              console.log(
+                "type of feels like",
+                typeof this.state.feelsLikeTemp
               );
+              if (!pop) {
+                return (
+                  <h1>Go Shopping! You have no suitable clothes, darling!</h1>
+                );
+              } else
+                return (
+                  <div className="suggestedItem">
+                    <h3>{pop.name}</h3>
+                    <img
+                      style={{
+                        width: "150px",
+                        height: "150px",
+                        paddingRight: "40px"
+                      }}
+                      src={img1}
+                      alt="blue-shortsleeve-light"
+                    />
+                  </div>
+                );
             })}
           </div>
         </div>
