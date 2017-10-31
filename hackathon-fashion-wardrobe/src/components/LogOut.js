@@ -14,13 +14,13 @@ export default class LogOut extends Component {
 
   render() {
     return (
-      <div className="BaseLayout">
-        <div>
+      <div className="baseLayout">
+        <div className="logoutButton">
           <h1 className="logoutHead">You are logged out, log back in to see your look!</h1>
           <div className="buttonHead">
-            <button type="submit" onClick={this.logOutHandler} className="logoutButton">
+            <a href="/login">
               Login
-            </button>
+            </a>
           </div>
         </div>
         {this.props.childeren}

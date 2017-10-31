@@ -32,12 +32,10 @@ ReactDOM.render(
       <BaseLayout>
         <div>
           <Switch>
-            <Route exact path="/" component={App} />
+            <Route exact path="/" component={TodaysLook} />
             <Route path="/home" component={UserInfo} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-
-            <Route path="/todayslook" component={TodaysLook} />
             <Route path="/Wardrobe" component={Wardrobe} />
             <Route path="/weather" component={Weather} />
             <Route path="/logout" component={LogOut} />

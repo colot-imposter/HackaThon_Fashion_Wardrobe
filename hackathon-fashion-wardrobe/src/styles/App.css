@@ -146,12 +146,14 @@ footer a{
 /*weather page*/
 
 .tempstyle {
+  font-family: 'Josefin Slab', serif;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
  .timestyle{
+   font-family: 'Josefin Slab', serif;
    display: flex;
    flex-direction: row;
    justify-content: center;
@@ -211,29 +213,35 @@ footer a{
  }
  /*logout page*/
 
+.logoutButton{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
  .logoutHead{
    color: #837095;
    font-family: 'Josefin Slab', serif;
    text-align: center;
+   justify-content: center;
  }
 
  .buttonHead{
-   display: flex;
+   background-color: #837095;
    justify-content: center;
- }
-
- .logoutButton{
-   display: flex;
-   justify-content: center;
-   font-size: 15px;
-   color: #837095;
-   width: 170px;
-   background-color: white;
    border-width: 1px;
    border-radius: 10px;
-   margin: 10px 0px;
-   outline: none;
+   border-style: solid;
+   border-color:#837095;
+   width: 100px;
+   font-family: 'Josefin Slab', serif;
  }
+ .buttonHead a{
+   text-decoration: none;
+   color:white;
+   font-size: 20px;
+ }
+
 
  /*modal buttons*/
 
@@ -247,7 +255,8 @@ footer a{
    border-radius: 10px;
    outline: none;
    width:100px;
-   margin-left: 10px
+   margin-left: 10px;
+   font-family: 'Josefin Slab', serif;
  }
 
  .closeModalButton{
@@ -259,7 +268,8 @@ footer a{
    border-width: 1px;
    border-radius: 10px;
    outline: none;
-   margin-top: 10px
+   margin-top: 10px;
+   font-family: 'Josefin Slab', serif;
  }
 
 /*new item*/
@@ -270,6 +280,7 @@ footer a{
   font-size: 20px;
   justify-content: center;
   color: #837095;
+  font-family: 'Josefin Slab', serif;
 }
 
 .newItemInput {
@@ -283,6 +294,7 @@ footer a{
   justify-content: center;
   border-color: white;
   outline: none;
+  font-family: 'Josefin Slab', serif;
 }
 
 .addItemButton {
@@ -294,9 +306,11 @@ footer a{
   border-color: white;
   box-shadow: 0px;
   outline: none;
+  font-family: 'Josefin Slab', serif;
 }
 
 .textStyle {
+  font-family: 'Josefin Slab', serif;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -311,6 +325,7 @@ footer a{
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
+  font-family: 'Josefin Slab', serif;
 }
 .todaysTemp {
   display: flex;
@@ -363,6 +378,7 @@ footer a{
   padding-right: 30px;
   padding-top:20px;
   align-items: center;
+  font-family: "Josefin Slab", serif;
 }
 .suggest {
   justify-content: end;
@@ -372,6 +388,7 @@ footer a{
 }
 
 .todaypreview {
+  font-family: "Josefin Slab", serif;
   display: flex;
   flex-direction: column;
 }
@@ -382,6 +399,7 @@ footer a{
   color: #837095;
 }
 .viewWardrobe a{
+  font-family: "Josefin Slab", serif;
   text-decoration: none;
 }
 .viewWardrobe:hover{
@@ -395,9 +413,11 @@ footer a{
   text-align: center;
 }
 .suggestedItem h3{
+  font-family: "Josefin Slab", serif;
   padding-right: 10px
 }
 .suggest{
+  font-family: "Josefin Slab", serif;
 text-align: center;
 }
 /*update item page*/
@@ -422,6 +442,7 @@ text-align: center;
   padding-top: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
+  font-family: 'Josefin Slab', serif;
 }
 
 .updateButton {
@@ -435,6 +456,7 @@ text-align: center;
   border-radius: 10px;
   margin-top: 10px;
   justify-content: center;
+  font-family: 'Josefin Slab', serif;
 }
 
 .updateSelect {
@@ -445,6 +467,7 @@ text-align: center;
   color: #837095;
   width: 170px;
   background-color: white;
+  font-family: 'Josefin Slab', serif;
 }
 
 
@@ -485,6 +508,7 @@ text-align: center;
 }*/
 
 .addButtonWardrobe{
+  font-family: 'Josefin Slab', serif;
  color: white;
  border-radius: 10px;
  background-color: #837095;
@@ -507,7 +531,8 @@ width: 750px;
 }
 
 .wardrobeItems {
-margin-top: 10px
+margin-top: 10px;
+font-family: 'Josefin Slab', serif;
 }
 /*help*/
 
@@ -528,6 +553,54 @@ display: flex;
 flex-direction: column;
 flex-wrap: wrap;
 justify-content: center;
+font-family: 'Josefin Slab', serif;
+}
+
+/*login page*/
+
+.login{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-top:40px;
+  font-size: 20px;
+  font-family: "Josefin Slab", serif;
+}
+
+.loginForm{
+  border: none;
+  webkit-box-shadow: none;
+  moz-box-shadow: none;
+  box-shadow: none;
+  color:#837095;
+}
+
+.inputLogin{
+  border:none;
+  border-bottom-color:#837095;
+  border-bottom-style:solid;
+  margin-bottom:15px;
+  text-align:center;
+  display:flex;
+  justify-content:center;
+  align-content:center;
+  font-size:20px;
+}
+
+.loginFont{
+  font-size: 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: "Josefin Slab", serif;
+}
+
+.loginButton{
+  color:white;
+  background-color: #837095;
+  border-radius: 10px;
+  width: 100px;
+  font-size: 18px;
+  font-family: "Josefin Slab", serif;
 }
 @media screen and (min-width: 650px){
 
@@ -547,6 +620,9 @@ justify-content: center;
 text-align: center;
 }
 
+.login{
+  flex-direction: row;
+}
 }
 @media screen and (min-width: 920px){
 
