@@ -50,7 +50,8 @@ export function deleteClothingItem(id) {
 
 export function fetchTodaysLook(temp) {
   return fetch(
-    "https://tunic-wardrobe-api.herokuapp.com/clothing/todayslook/" + temp,
+    "https://tunic-wardrobe-api.herokuapp.com/clothing/todayslook/" +
+      parseInt(temp),
     {
       method: "GET",
       mode: "CORS"
