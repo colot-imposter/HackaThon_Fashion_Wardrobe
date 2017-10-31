@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Form from "../components/form";
-import { fetchClothingitem, updateClothingItem } from "../actions/crud";
+import { fetchClothingItem, updateClothingItem } from "../actions/crud";
 import UpdateButton from "../components/updateButton";
 
 export default class Update extends Component {
@@ -12,7 +12,7 @@ export default class Update extends Component {
     };
   }
   componentDidMount() {
-    fetchClothingitem(this.props.params.postId)
+    fetchClothingItem(this.props.params.postId)
       .then(data => {
         this.setState(state => {
           state.updateClothingItem = data;
@@ -32,7 +32,7 @@ export default class Update extends Component {
   render() {
     return (
       <div>
-        <Form
+        <Form className="updateInput"
           onSubmit={this.handleSubmit.bind(this)}
           id={this.state.updateClothingItem.title}
           name={this.state.updateClothingItem.name}

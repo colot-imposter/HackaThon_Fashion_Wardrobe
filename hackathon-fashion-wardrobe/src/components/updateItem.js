@@ -32,8 +32,8 @@ export default class updateItem extends Component {
   render() {
     return (
       <div>
-        <h1>Update Item</h1>
-        <Form
+        <h1 className="updateForm">Update Item</h1>
+        <Form className="updateForm"
           onSubmit={this.handleSubmit.bind(this)}
           title={this.state.clothingItem.name}
           body={this.state.clothingItem.fabricWeight}
