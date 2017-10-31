@@ -22,6 +22,7 @@ import help from "./components/help";
 
 // update component to post to heroku
 import Update from "./containers/update";
+import Modal from "./components/Modal";
 
 const store = createStore(reducer, applyMiddleware(reduxThunk));
 
@@ -44,7 +45,7 @@ ReactDOM.render(
             <Route path="/newItem" component={newItem} />
             <Route path="/TodaysLook" component={TodaysLook} />
             {/* link to render Update components */}
-            <Route path="/posts/update/:postId" component={Update} />
+            <Route path="/posts/update/:postId" component={Modal} />
             <Route path="/help" component={help} />
           </Switch>
         </div>

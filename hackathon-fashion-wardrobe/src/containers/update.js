@@ -12,14 +12,16 @@ export default class Update extends Component {
     super(props);
 
     this.state = {
-      updateClothingItem: {}
+      updateClothingItem: {},
+      index: this.props.index
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentWillMount() {
-    fetchClothingItem(this.props.match.params.postId)
+    console.log("this.props.paramsPPPPPPP", this.state.index);
+    fetchClothingItem(this.props.index.id)
       .then(data => {
         this.setState(state => {
           state.updateClothingItem = data;
@@ -42,11 +44,8 @@ export default class Update extends Component {
   }
 
   handleDelete(data) {
-    console.log(
-      "this.props.match.params.postId",
-      this.props.match.params.postId
-    );
-    deleteClothingItem(this.props.match.params.postId);
+    console.log("this.props.match.params.postId", this.state.index.id);
+    deleteClothingItem(this.state.index.id);
   }
 
   render() {
@@ -66,7 +65,7 @@ export default class Update extends Component {
           onClick={this.handleSubmit}
           className="addItemButton"
         >
-          Button
+          Update
         </button>
         <button
           type="submit"

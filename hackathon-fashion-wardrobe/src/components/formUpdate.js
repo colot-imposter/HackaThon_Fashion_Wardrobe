@@ -142,13 +142,6 @@ export default class FormUpdate extends Component {
             <option value="Gloomy">Gloomy</option>
           </select>
         </label>
-        <button
-          type="submit"
-          onClick={this.props.handleSubmit}
-          className="addItemButton"
-        >
-          Button
-        </button>
       </form>
     );
   }
