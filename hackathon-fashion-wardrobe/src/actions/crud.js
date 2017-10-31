@@ -1,6 +1,6 @@
 import request from "../../node_modules/superagent/superagent";
 
-export function fetchClothingitem(id) {
+export function fetchClothingItem(id) {
   return fetch("https://tunic-wardrobe-api.herokuapp.com/clothing/item/" + id, {
     method: "GET",
     mode: "CORS"
