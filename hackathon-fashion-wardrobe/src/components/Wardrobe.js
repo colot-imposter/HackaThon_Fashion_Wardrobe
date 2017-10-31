@@ -114,7 +114,7 @@ export default class Wardrobe extends Component {
               pop.sleeves === this.state.sleeves &&
               pop.weight === this.state.weight
             ) {
-              console.log("popooooooo", this.state.color);
+              console.log("poppooooooo", this.state.color);
 
               return (
                 <div style={{ width: "100px", padding: "10px" }}>

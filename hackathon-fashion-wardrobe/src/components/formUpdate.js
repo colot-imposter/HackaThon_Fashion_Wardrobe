@@ -6,6 +6,7 @@ export default class FormUpdate extends Component {
     super(props);
 
     this.state = {
+      clothingItem: this.props.clothingItem,
       name: this.props.name,
       sleeveLength: this.props.sleeveLength,
       fabricWeight: this.props.fabricWeight,
@@ -22,9 +23,9 @@ export default class FormUpdate extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(data) {
-    console.log("handleSubbbmit");
-    updateClothingItem(this.state.updateClothingItem.id, data);
-    this.props.router.push("/update");
+    data.preventDefault();
+    console.log("handleSubbbmit", this.state);
+    updateClothingItem(this.state, data);
   }
 
   componentWillReceiveProps(props) {
@@ -35,9 +36,15 @@ export default class FormUpdate extends Component {
     this.setState(props);
   }
 
-  handleSubmit(e) {
+  handleClothingItem(e) {
     e.preventDefault();
-    this.props.onSubmit(this.state);
+    this.setState({
+      mood: e.target.value,
+      color: e.target.value,
+      fabricWeight: parseInt(e.target.value),
+      sleeveLength: parseInt(e.target.value),
+      name: e.target.value
+    });
   }
 
   handleMood(e) {
@@ -142,6 +149,13 @@ export default class FormUpdate extends Component {
             <option value="Gloomy">Gloomy</option>
           </select>
         </label>
+        <button
+          type="submit"
+          onClick={this.handleSubmit}
+          className="addItemButton"
+        >
+          Update
+        </button>
       </form>
     );
   }
