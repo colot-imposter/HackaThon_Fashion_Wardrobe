@@ -133,6 +133,10 @@ footer a{
   color: white;
   justify-content:left;
 }
+.help{
+  z-index: 1;
+  right: 0;
+}
 
 /*weather page*/
 
@@ -221,8 +225,8 @@ footer a{
    display: flex;
    justify-content: center;
    font-size: 15px;
-   color: #837095;
-   background-color: white;
+   color: white;
+   background-color: #837095;
    border-width: 1px;
    border-radius: 10px;
    outline: none;
@@ -234,11 +238,12 @@ footer a{
    display: flex;
    justify-content: center;
    font-size: 15px;
-   color: #837095;
-   background-color: white;
+   color: white;
+   background-color: #837095;
    border-width: 1px;
    border-radius: 10px;
    outline: none;
+   margin-top: 10px
  }
 
 /*new item*/
@@ -266,10 +271,10 @@ footer a{
 
 .addItemButton {
   font-size: 18px;
-  color: #837095;
+  color: white;
   margin-top: 20px;
   border-radius: 30px;
-  background-color: white;
+  background-color: #837095;
   border-color: white;
   box-shadow: 0px;
   outline: none;
@@ -304,6 +309,7 @@ footer a{
   color: #837095;
   font-family: "Josefin Slab", serif;
   padding-top: 20px;
+  padding-left: 30px;
   justify-content: center;
 }
 
@@ -331,7 +337,8 @@ footer a{
 .previewbody {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding-right: 30px;
+  padding-top:20px;
   align-items: center;
 }
 .suggest {
@@ -343,13 +350,33 @@ footer a{
 
 .todaypreview {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
+.viewWardrobe{
+  font-family: "Josefin Slab", serif;
+  font-size: 18px;
+  color: #837095;
+}
 .viewWardrobe a{
   text-decoration: none;
 }
+.viewWardrobe:hover{
+  color:navy;
+  font-size: 22px
+}
 
+.suggestedItem{
+  font-family: "Josefin Slab", serif;
+  color: #837095;
+  text-align: center;
+}
+.suggestedItem h3{
+  padding-right: 10px
+}
+.suggest{
+text-align: center;
+}
 /*update item page*/
 
 .updateForm {
@@ -376,16 +403,15 @@ footer a{
 
 .updateButton {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  text-align: center;
   font-size: 15px;
-  color: #837095;
-  width: 170px;
-  background-color: #e0e0e0;
+  color: white;
+  width: 100px;
+  background-color: #837095;
   border-width: 1px;
   border-radius: 10px;
   margin-top: 10px;
-  margin-bottom: 10px;
+  justify-content: center;
 }
 
 .updateSelect {
@@ -413,7 +439,7 @@ footer a{
   display: flex;
   font-family: "Josefin Slab", serif;
   flex-direction: column;
-  padding-right: 105px;
+  /*padding-right: 105px;*/
   color: #837095;
   font-size: 20px;
   outline: none;
@@ -427,20 +453,27 @@ footer a{
   outline:none;
 }
 
-.clothingpreview {
+/*.clothingpreview {
   display: flex;
   flex-direction: row;
   width: 600px;
   flex-wrap: wrap;
   padding: 20px;
-}
+}*/
 
 .addButtonWardrobe{
- color: #837095;
+ color: white;
  border-radius: 10px;
- background-color: white;
+ background-color: #837095;
  margin-top: 20px;
  outline:none;
+ width:100%
+}
+
+.addButtonWardrobe a{
+  color: white;
+  font-family: "Josefin Slab", serif;
+  font-size: 20px
 }
 
 .allWardrobe{
@@ -448,6 +481,9 @@ color: #837095;
 font-family: "Josefin Slab", serif;
 }
 
+.wardrobeItems {
+margin-top: 10px
+}
 /*help*/
 
 .helpSteps{
@@ -464,6 +500,17 @@ align-content: center;
 .wardrobeItems ul{
 list-style-type: none;
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: center;
+}
+@media screen and (min-width: 650px){
+.wardrobeItems ul{
+  flex-direction: row;
+}
+.page{
+  justify-content: left;
+}
+.todaypreview {
+  flex-direction: row;
+}
 }

@@ -105,42 +105,7 @@ export default class Wardrobe extends Component {
             </button>
           </div>
         </div>
-        <div className="clothingpreview">
-          {/* map over the data to filter out the desired selection */}
-
-          {users.map(pop => {
-            if (
-              pop.color === this.state.color &&
-              pop.sleeves === this.state.sleeves &&
-              pop.weight === this.state.weight
-            ) {
-              console.log("poppooooooo", this.state.color);
-
-              return (
-                <div style={{ width: "100px", padding: "10px" }}>
-                  <WardrobeDisplay key={pop.image} clothingItem={pop} />
-                </div>
-              );
-            } else if (pop.sleeves === this.state.sleeves) {
-              return (
-                <div style={{ width: "100px", padding: "10px" }}>
-                  <WardrobeDisplay key={pop.image} clothingItem={pop} />
-                </div>
-              );
-            } else if (pop.weight === this.state.weight) {
-              return (
-                <div style={{ width: "100px", padding: "10px" }}>
-                  <WardrobeDisplay key={pop.image} clothingItem={pop} />
-                </div>
-              );
-            } else if (this.state.weight === "") {
-              return;
-              <div style={{ width: "100px", padding: "10px" }}>
-                <WardrobeDisplay key={pop.image} clothingItem={pop} />
-              </div>;
-            }
-          })}
-        </div>
+    
 
         {/* HERE we are bringing in the wardrobe items */}
         <div className="allWardrobe">
