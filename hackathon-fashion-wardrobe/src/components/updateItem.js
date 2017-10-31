@@ -11,8 +11,8 @@ export default class UpdateItem extends Component {
     };
   }
   componentWillMount() {
-    console.log("this.props.params", this.props.match.params.postId);
-    fetchClothingItem(this.props.match.params.postId)
+    console.log("this.props.params", this.props.index);
+    fetchClothingItem(this.props.index.id)
       .then(data => {
         this.setState(state => {
           state.updateClothingItem = data;
@@ -25,17 +25,16 @@ export default class UpdateItem extends Component {
   }
 
   handleSubmit(data) {
-    updateClothingItem(this.state.updateClothingItem.id, data);
+    updateClothingItem(this.props.index.id, data);
     this.props.router.push("/");
   }
 
   render() {
     return (
       <div>
-
-      <h1 className="updateForm">Update Item</h1>
-        <FormUpdate className="updateForm"
-
+        <h1 className="updateForm">Update Item</h1>
+        <FormUpdate
+          className="updateForm"
           onSubmit={this.handleSubmit.bind(this)}
           id={this.state.updateClothingItem.title}
           name={this.state.updateClothingItem.name}

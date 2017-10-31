@@ -84,23 +84,26 @@ export default class Wardrobe extends Component {
               <option value="red">Red</option>
             </select>
             <br />
-            <select onChange={this.MoodFilter}
-            id="mood"
-            value={this.state.value}
-            className="wardrobeSelect"
+            <select
+              onChange={this.MoodFilter}
+              id="mood"
+              value={this.state.value}
+              className="wardrobeSelect"
             >
-            <option value="">Mood</option>
-            <option value="Happy">Blue</option>
-            <option value="Angry">Black</option>
-            <option value="Shy">Gray</option>
-            <option value="Sexy">White</option>
-            <option value="Gloomy">Red</option>
-          </select>
-          <br/>
+              <option value="">Mood</option>
+              <option value="Happy">Blue</option>
+              <option value="Angry">Black</option>
+              <option value="Shy">Gray</option>
+              <option value="Sexy">White</option>
+              <option value="Gloomy">Red</option>
+            </select>
+            <br />
           </form>
           <div className="viewWardrobe">
-          <button className="addButtonWardrobe"><a href="/newitem">Add Item</a></button>
-        </div>
+            <button className="addButtonWardrobe">
+              <a href="/newItem">Add Item</a>
+            </button>
+          </div>
         </div>
         <div className="clothingpreview">
           {/* map over the data to filter out the desired selection */}
@@ -111,7 +114,7 @@ export default class Wardrobe extends Component {
               pop.sleeves === this.state.sleeves &&
               pop.weight === this.state.weight
             ) {
-              console.log("popooooooo", this.state.color);
+              console.log("poppooooooo", this.state.color);
 
               return (
                 <div style={{ width: "100px", padding: "10px" }}>
@@ -141,7 +144,7 @@ export default class Wardrobe extends Component {
 
         {/* HERE we are bringing in the wardrobe items */}
         <div className="allWardrobe">
-        <GetAllWardrobe />
+          <GetAllWardrobe />
         </div>
       </div>
     );

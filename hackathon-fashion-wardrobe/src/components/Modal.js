@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import ReactModal from "react-modal";
 
-import UpdateItem from "./updateItem";
+import UpdateItem from "../containers/update";
 
 export default class Modal extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showModal: false
     };
@@ -25,7 +25,9 @@ export default class Modal extends React.Component {
   render() {
     return (
       <div>
-        <button className="updateButtonModal" onClick={this.handleOpenModal}>Update Item</button>
+        <button className="updateButtonModal" onClick={this.handleOpenModal}>
+          Update Item
+        </button>
         {/* <this.props.IMAGESOURCE>
           will be mapping over our data and */}
         <ReactModal
@@ -33,7 +35,8 @@ export default class Modal extends React.Component {
           contentLabel="Minimal Modal Example"
         >
           <div className="updateItem">
-            <UpdateItem />
+            {" "}
+            <UpdateItem index={this.props.index} />
           </div>
           <button className="closeModalButton" onClick={this.handleCloseModal}>
             Close Modal

@@ -34,13 +34,9 @@ export default class GetAllWardrobe extends Component {
       return (
         <div key={index}>
           <li>{item.name}</li>
-          <Link
-            to={`/posts/update/${item.id}`}
-            className="btn btn-default btn-sm"
-          >
-            Edit
-          </Link>
-          <Modal />
+          {console.log(item)}
+
+          <Modal index={item} />
         </div>
       );
     });

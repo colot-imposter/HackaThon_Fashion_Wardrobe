@@ -1,21 +1,27 @@
 import React, { Component } from "react";
 
 import FormUpdate from "../components/formUpdate";
-import { fetchClothingItem, updateClothingItem } from "../actions/crud";
-
+import {
+  fetchClothingItem,
+  updateClothingItem,
+  deleteClothingItem
+} from "../actions/crud";
 
 export default class Update extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      updateClothingItem: {}
+      updateClothingItem: {},
+      index: this.props.index
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentWillMount() {
-    fetchClothingItem(this.props.match.params.postId)
+    console.log("this.props.paramsPPPPPPP", this.state.index);
+    fetchClothingItem(this.props.index.id)
       .then(data => {
         this.setState(state => {
           state.updateClothingItem = data;
@@ -34,29 +40,34 @@ export default class Update extends Component {
 
   handleSubmit(data) {
     console.log("this.state.updateClothingItem", this.state.updateClothingItem);
-    updateClothingItem(this.state.updateClothingItem, data);
+    updateClothingItem(this.state.updateClothingItem);
+  }
+
+  handleDelete(data) {
+    console.log("this.props.match.params.postId", this.state.index.id);
+    deleteClothingItem(this.state.index.id);
   }
 
   render() {
     return (
       <div>
-
-        <FormUpdate className="updateInput"
-          
+        <FormUpdate
+          className="updateInput"
+          clothingItem={this.state.updateClothingItem}
           id={this.state.updateClothingItem.id}
-
           name={this.state.updateClothingItem.name}
           sleeveLength={this.state.updateClothingItem.sleeveLength}
           fabricWeight={this.state.updateClothingItem.fabricWeight}
           mood={this.state.updateClothingItem.body}
           color={this.state.updateClothingItem.color}
         />
+
         <button
           type="submit"
-          onClick={this.handleSubmit}
-          className="addItemButton"
+          onClick={this.handleDelete}
+          className="deleteItemButton"
         >
-          Button
+          Delete
         </button>
       </div>
     );

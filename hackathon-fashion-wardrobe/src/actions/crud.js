@@ -13,7 +13,7 @@ export function fetchClothingItem(id) {
 
 export function updateClothingItem(formInfo, data) {
   console.log("updating item", formInfo.id);
-  console.log("updating item", formInfo.name);
+  console.log("updating item", formInfo.mood);
   request
     .post(
       "https://tunic-wardrobe-api.herokuapp.com/clothing/update/" + formInfo.id
@@ -35,13 +35,8 @@ export function updateClothingItem(formInfo, data) {
 }
 
 export function deleteClothingItem(id) {
-  return fetch(
-    "https://tunic-wardrobe-api.herokuapp.com/clothing/delete/" + id,
-    {
-      method: "DELETE",
-      mode: "CORS"
-    }
-  )
+  request
+    .del("https://tunic-wardrobe-api.herokuapp.com/clothing/delete/" + id)
     .then(res => {
       return res;
     })
