@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import Form from "./form";
+import FormUpdate from "../components/formUpdate";
 import { fetchClothingItem, updateClothingItem } from "../actions/crud";
 
-export default class updateItem extends Component {
+export default class UpdateItem extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      clothingItem: {}
+      updateClothingItem: {}
     };
   }
-
-  componentDidMount() {
-    fetchClothingItem(this.props.params.postId)
+  componentWillMount() {
+    console.log("this.props.params", this.props.index);
+    fetchClothingItem(this.props.index.id)
       .then(data => {
         this.setState(state => {
-          state.clothingItem = data;
+          state.updateClothingItem = data;
           return state;
         });
       })
@@ -25,7 +25,7 @@ export default class updateItem extends Component {
   }
 
   handleSubmit(data) {
-    updateClothingItem(this.state.blogPost.id, data);
+    updateClothingItem(this.props.index.id, data);
     this.props.router.push("/");
   }
 
@@ -33,28 +33,17 @@ export default class updateItem extends Component {
     return (
       <div>
         <h1 className="updateForm">Update Item</h1>
-        <Form className="updateForm"
+        <FormUpdate
+          className="updateForm"
           onSubmit={this.handleSubmit.bind(this)}
-          title={this.state.clothingItem.name}
-          body={this.state.clothingItem.fabricWeight}
+          id={this.state.updateClothingItem.title}
+          name={this.state.updateClothingItem.name}
+          sleeveLength={this.state.updateClothingItem.sleeveLength}
+          fabricWeight={this.state.updateClothingItem.fabricWeight}
+          mood={this.state.updateClothingItem.body}
+          color={this.state.updateClothingItem.color}
         />
       </div>
     );
   }
 }
-
-// {this.props.clothingItem && this.props.clothingItem.map((post, i) => {
-//                 return (
-//                     <tr key={post.id}>
-//                         <td>{post.id}</td>
-//                         <td>{post.title}</td>
-//                         <td>
-//                             <Link to={`/posts/update/${post.id}`} className="btn btn-default btn-sm">Edit
-//                           </Link>
-//
-//                             <btn onClick={this.deleteHandler.bind(this, i)}>
-//                             Delete
-//                           </btn>
-//
-//                         );
-// })}

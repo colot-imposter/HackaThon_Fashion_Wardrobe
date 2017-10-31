@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import Modal from "./Modal";
 
@@ -31,10 +32,9 @@ export default class GetAllWardrobe extends Component {
   render() {
     let Items = this.state.wardrobeItems.map((item, index) => {
       return (
-        <div key={index}>
-          <li>{item.name}<br></br>{item.color}</li>
-
-          <Modal />
+          <li>{item.name}</li>
+          {console.log(item)}
+          <Modal index={item} />
         </div>
       );
     });

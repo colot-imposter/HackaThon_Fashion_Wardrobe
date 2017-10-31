@@ -13,6 +13,8 @@ import Modal from "./Modal";
 import newItem from "./newItem";
 import UpdateItem from "./updateItem";
 
+import { fetchTodaysLook } from "../actions/crud";
+
 import { loadTokenFromCookie } from "../actions/actions";
 
 const API_KEY = apiKey;
@@ -39,15 +41,17 @@ export default class TodaysLook extends Component {
     super(props);
 
     this.state = {
-      temperature: "",
+      temperature: undefined,
+      feelsLikeTemp: undefined,
       conditions: "",
-      icon: ""
+      icon: "",
+      todaysLook: []
     };
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount() {
     let url = `https://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${zipcode}`;
-
     fetch(url)
       .then(r => r.json())
       .then(data => {
@@ -66,11 +70,17 @@ export default class TodaysLook extends Component {
 
         this.setState({
           temperature: avgT.toFixed(0),
-          feelsLikeTemp: feelsLikeT.toFixed(0),
+          feelsLikeTemp: parseInt(feelsLikeT.toFixed(0)),
           conditions: data.current.condition.text,
           icon: icon
         });
       });
+    fetchTodaysLook("50").then(data => {
+      this.setState({
+        todaysLook: data
+      });
+      console.log("tjossdsd", data);
+    });
   }
 
   render() {
@@ -78,64 +88,53 @@ export default class TodaysLook extends Component {
       <div className="todaysWeather">
         <div className="todaysTemp">
           <div className="todaysLookHead">
-          <div className="iconLink">
-            <a href="/weather" className="todaysWeatherStyle">
-              Todays Weather
-            </a>
-            <div className="weatherIcon">
-              <img
-                src={this.state.icon}
-                alt={this.state.conditions}
-              />
-            </div>
+            <div className="iconLink">
+              <a href="/weather" className="todaysWeatherStyle">
+                Todays Weather
+              </a>
+              <div className="weatherIcon">
+                <img src={this.state.icon} alt={this.state.conditions} />
+              </div>
             </div>
             <div>
               <h2>{this.state.temperature}°</h2>
               <h3>Feels Like {this.state.feelsLikeTemp}°</h3>
             </div>
             <div className="viewWardrobe">
-            <a href="/Wardrobe">View Your Closet</a>
-          </div>
+              <a href="/Wardrobe">View Your Closet</a>
+            </div>
           </div>
         </div>
         <div className="previewbody">
-        <div className="suggest">
-        <h2> Suggested For You</h2>
-        </div>
+          <div className="suggest">
+            <h2> Suggested For You</h2>
+          </div>
           <div className="todaypreview">
-            <div>
-              <img
-                style={{
-                  width: "150px",
-                  height: "150px",
-                  paddingRight: "40px"
-                }}
-                src={img1}
-                alt="blue-shortsleeve-light"
-              />
-            </div>
-            <div>
-              <img
-                style={{
-                  width: "150px",
-                  height: "150px",
-                  paddingRight: "40px"
-                }}
-                src={img2}
-                alt="white-sleevless-light"
-              />
-            </div>
-            <div>
-              <img
-                style={{
-                  width: "150px",
-                  height: "150px",
-                  paddingRight: "40px"
-                }}
-                src={img3}
-                alt="black-shortsleeve-light"
-              />
-            </div>
+            {this.state.todaysLook.map(pop => {
+              console.log(
+                "type of feels like",
+                typeof this.state.feelsLikeTemp
+              );
+              if (!pop) {
+                return (
+                  <h1>Go Shopping! You have no suitable clothes, darling!</h1>
+                );
+              } else
+                return (
+                  <div className="suggestedItem">
+                    <h3>{pop.name}</h3>
+                    <img
+                      style={{
+                        width: "150px",
+                        height: "150px",
+                        paddingRight: "40px"
+                      }}
+                      src={img1}
+                      alt="blue-shortsleeve-light"
+                    />
+                  </div>
+                );
+            })}
           </div>
         </div>
       </div>

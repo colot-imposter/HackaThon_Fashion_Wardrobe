@@ -11,17 +11,20 @@ export function fetchClothingItem(id) {
     });
 }
 
-export function updateClothingItem(id, data) {
-  console.log("updating item");
+export function updateClothingItem(formInfo, data) {
+  console.log("updating item", formInfo.id);
+  console.log("updating item", formInfo.mood);
   request
-    .post("https://tunic-wardrobe-api.herokuapp.com/clothing/update/" + id)
+    .post(
+      "https://tunic-wardrobe-api.herokuapp.com/clothing/update/" + formInfo.id
+    )
     .set("Content-Type", "application/x-www-form-urlencoded")
     .send({
-      name: this.state.name,
-      sleeveLength: this.state.sleeveLength,
-      fabricWeight: this.state.fabricWeight,
-      mood: this.state.mood,
-      color: this.state.color
+      name: formInfo.name,
+      sleeveLength: formInfo.sleeveLength,
+      fabricWeight: formInfo.fabricWeight,
+      mood: formInfo.mood,
+      color: formInfo.color
     })
     .then(res => {
       return res;
@@ -32,15 +35,25 @@ export function updateClothingItem(id, data) {
 }
 
 export function deleteClothingItem(id) {
-  return fetch(
-    "https://tunic-wardrobe-api.herokuapp.com/clothing/delete/" + id,
-    {
-      method: "DELETE",
-      mode: "CORS"
-    }
-  )
+  request
+    .del("https://tunic-wardrobe-api.herokuapp.com/clothing/delete/" + id)
     .then(res => {
       return res;
     })
     .catch(err => err);
+}
+
+export function fetchTodaysLook(temp) {
+  return fetch(
+    "https://tunic-wardrobe-api.herokuapp.com/clothing/todayslook/" +
+      parseInt(temp),
+    {
+      method: "GET",
+      mode: "CORS"
+    }
+  )
+    .then(res => res.json())
+    .catch(function(err, res) {
+      console.log("error", res);
+    });
 }
