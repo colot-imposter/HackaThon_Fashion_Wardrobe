@@ -53,6 +53,7 @@ export default class Update extends Component {
       <div>
         <FormUpdate
           className="updateInput"
+          clothingItem={this.state.updateClothingItem}
           id={this.state.updateClothingItem.id}
           name={this.state.updateClothingItem.name}
           sleeveLength={this.state.updateClothingItem.sleeveLength}
@@ -60,13 +61,7 @@ export default class Update extends Component {
           mood={this.state.updateClothingItem.body}
           color={this.state.updateClothingItem.color}
         />
-        <button
-          type="submit"
-          onClick={this.handleSubmit}
-          className="addItemButton"
-        >
-          Update
-        </button>
+
         <button
           type="submit"
           onClick={this.handleDelete}
