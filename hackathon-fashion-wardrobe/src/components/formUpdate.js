@@ -150,6 +150,7 @@ export default class FormUpdate extends Component {
             <option value="Gloomy">Gloomy</option>
           </select>
         </label>
+        <div className="bodyButton">
         <button
           type="submit"
           onClick={this.handleSubmit}
@@ -157,6 +158,7 @@ export default class FormUpdate extends Component {
         >
           Update
         </button>
+        </div>
       </form>
     );
   }
