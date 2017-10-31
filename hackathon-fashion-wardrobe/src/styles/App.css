@@ -134,8 +134,8 @@ footer a{
   justify-content:left;
 }
 .help{
-  z-index: 1;
-  right: 0;
+  display: flex;
+  justify-content: right;
 }
 
 /*weather page*/
@@ -180,7 +180,8 @@ footer a{
  .weather {
    display: flex;
    flex-direction: column;
-   padding-right: 20px;
+   padding-right: 10px;
+   padding-left: 10px;
    justify-content: center;
    color: #837095;
    font-family: "Josefin Slab", serif;
@@ -189,10 +190,20 @@ footer a{
 
  .timeHead {
    display: flex;
+   flex-direction: column;
+   justify-content: center;
+ }
+ .morning{
+   display: flex;
    flex-direction: row;
    justify-content: center;
  }
 
+ .afternoon{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+ }
  /*logout page*/
 
  .logoutHead{
@@ -504,6 +515,7 @@ flex-direction: column;
 justify-content: center;
 }
 @media screen and (min-width: 650px){
+
 .wardrobeItems ul{
   flex-direction: row;
 }
@@ -513,4 +525,15 @@ justify-content: center;
 .todaypreview {
   flex-direction: row;
 }
+.helpSteps{
+text-align: center;
+}
+
+}
+@media screen and (min-width: 920px){
+
+  .timeHead{
+    flex-direction: row;
+  }
+  
 }

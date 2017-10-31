@@ -107,13 +107,17 @@ export default class Weather extends Component {
       </div>
       <h3 className="tempstyle"> Hourly forcast </h3>
       <div className="timeHead">
+      <div className="morning">
       <h4 className="timestyle"> 6 am<br></br>{this.state.hour6}°</h4>
       <h4 className="timestyle"> 7 am<br></br>{this.state.hour7}°</h4>
       <h4 className="timestyle"> 8 am<br></br>{this.state.hour8}°</h4>
       <h4 className="timestyle"> 9 am<br></br>{this.state.hour9}°</h4>
       <h4 className="timestyle"> 10 am<br></br>{this.state.hour10}°</h4>
       <h4 className="timestyle"> 11 am<br></br>{this.state.hour11}°</h4>
-      <h4 className="timestyle"> 12 pm<br></br>{this.state.hour12}°</h4>
+      <h4 className="timestyle"> 12
+      pm<br></br>{this.state.hour12}°</h4>
+      </div>
+      <div className="afternoon">
       <h4 className="timestyle"> 1 pm<br></br>{this.state.hour13}°</h4>
       <h4 className="timestyle"> 2 pm<br></br>{this.state.hour14}°</h4>
       <h4 className="timestyle"> 3 pm<br></br>{this.state.hour15}°</h4>
@@ -121,6 +125,7 @@ export default class Weather extends Component {
       <h4 className="timestyle"> 5 pm<br></br>{this.state.hour17}°</h4>
       <h4 className="timestyle"> 6 pm<br></br>{this.state.hour18}°</h4>
       <h4 className="timestyle"> 7 pm<br></br>{this.state.hour19}°</h4>
+      </div>
       </div>
       </div>
     )
