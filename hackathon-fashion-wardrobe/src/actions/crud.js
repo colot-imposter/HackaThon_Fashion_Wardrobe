@@ -11,17 +11,20 @@ export function fetchClothingItem(id) {
     });
 }
 
-export function updateClothingItem(id, data) {
-  console.log("updating item");
+export function updateClothingItem(formInfo, data) {
+  console.log("updating item", formInfo.id);
+  console.log("updating item", formInfo.name);
   request
-    .post("https://tunic-wardrobe-api.herokuapp.com/clothing/update/" + id)
+    .post(
+      "https://tunic-wardrobe-api.herokuapp.com/clothing/update/" + formInfo.id
+    )
     .set("Content-Type", "application/x-www-form-urlencoded")
     .send({
-      name: this.state.name,
-      sleeveLength: this.state.sleeveLength,
-      fabricWeight: this.state.fabricWeight,
-      mood: this.state.mood,
-      color: this.state.color
+      name: formInfo.name,
+      sleeveLength: formInfo.sleeveLength,
+      fabricWeight: formInfo.fabricWeight,
+      mood: formInfo.mood,
+      color: formInfo.color
     })
     .then(res => {
       return res;

@@ -44,9 +44,8 @@ ReactDOM.render(
             <Route path="/newItem" component={newItem} />
             <Route path="/TodaysLook" component={TodaysLook} />
             {/* link to render Update components */}
-            <Route path="/update/:postId" component={withRouter(Update)} />
-              <Route path="/help" component={help} />
-
+            <Route path="/posts/update/:postId" component={Update} />
+            <Route path="/help" component={help} />
           </Switch>
         </div>
       </BaseLayout>
