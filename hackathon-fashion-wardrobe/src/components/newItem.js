@@ -152,6 +152,7 @@ export default class newItem extends Component {
               <option value="Gloomy">Gloomy</option>
             </select>
           </label>
+          <div className="bodyButton">
           <button
             type="submit"
             onClick={this.props.addClothingItem}
@@ -159,6 +160,7 @@ export default class newItem extends Component {
           >
             Add Item
           </button>
+          </div>
         </form>
       </div>
     );

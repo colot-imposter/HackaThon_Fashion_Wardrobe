@@ -38,9 +38,11 @@ export default class Modal extends React.Component {
             {" "}
             <UpdateItem index={this.props.index} />
           </div>
+          <div className="bodyButton">
           <button className="closeModalButton" onClick={this.handleCloseModal}>
             Close Modal
           </button>
+          </div>
         </ReactModal>
       </div>
     );

@@ -61,7 +61,7 @@ export default class Update extends Component {
           mood={this.state.updateClothingItem.body}
           color={this.state.updateClothingItem.color}
         />
-
+        <div className="bodyButton">
         <button
           type="submit"
           onClick={this.handleDelete}
@@ -69,6 +69,7 @@ export default class Update extends Component {
         >
           Delete
         </button>
+        </div>
       </div>
     );
   }

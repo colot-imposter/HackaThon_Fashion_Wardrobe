@@ -213,11 +213,10 @@ footer a{
  }
  /*logout page*/
 
-.logoutButton{
+.bodyButton{
   display: flex;
   justify-content: center;
   text-align: center;
-  flex-direction: column;
 }
  .logoutHead{
    color: #837095;
@@ -227,13 +226,15 @@ footer a{
  }
 
  .buttonHead{
+   display: flex;
    background-color: #837095;
    justify-content: center;
+   text-align: center;
    border-width: 1px;
    border-radius: 10px;
+   width:100px;
    border-style: solid;
    border-color:#837095;
-   width: 100px;
    font-family: 'Josefin Slab', serif;
  }
  .buttonHead a{
@@ -304,6 +305,7 @@ footer a{
   border-radius: 30px;
   background-color: #837095;
   border-color: white;
+  width: 150px;
   box-shadow: 0px;
   outline: none;
   font-family: 'Josefin Slab', serif;
@@ -528,6 +530,8 @@ color: #837095;
 font-family: "Josefin Slab", serif;
 flex-wrap: wrap;
 width: 750px;
+display: flex;
+justify-content: center;
 }
 
 .wardrobeItems {
