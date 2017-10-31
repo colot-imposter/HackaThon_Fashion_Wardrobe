@@ -16,10 +16,10 @@ export default class LogOut extends Component {
     return (
       <div className="BaseLayout">
         <div>
-          <h1 className="logoutHead">You are logged out, log back in to see your profile</h1>
+          <h1 className="logoutHead">You are logged out, log back in to see your look!</h1>
           <div className="buttonHead">
             <button type="submit" onClick={this.logOutHandler} className="logoutButton">
-              Dirty Secrets
+              Login
             </button>
           </div>
         </div>
