@@ -39,8 +39,8 @@ export default class BaseLayout extends Component {
           {this.props.children}
           <div>
             <footer>
-            <p>Tunic inc.</p>
-            <p><a href="/help">Help</a></p>
+            <p className="name">Tunic inc.</p>
+            <p className="help"><a href="/help">Help</a></p>
             </footer>
           </div>
           </div>

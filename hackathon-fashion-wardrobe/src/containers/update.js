@@ -65,7 +65,7 @@ export default class Update extends Component {
         <button
           type="submit"
           onClick={this.handleDelete}
-          className="deleteItemButton"
+          className="updateButton"
         >
           Delete
         </button>

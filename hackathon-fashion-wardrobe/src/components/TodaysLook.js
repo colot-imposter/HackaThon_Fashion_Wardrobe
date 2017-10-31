@@ -122,16 +122,7 @@ export default class TodaysLook extends Component {
               } else
                 return (
                   <div className="suggestedItem">
-                    <h3>{pop.name}</h3>
-                    <img
-                      style={{
-                        width: "150px",
-                        height: "150px",
-                        paddingRight: "40px"
-                      }}
-                      src={img1}
-                      alt="blue-shortsleeve-light"
-                    />
+                    <h3>{pop.name} <br></br> {pop.color}</h3>
                   </div>
                 );
             })}

@@ -88,9 +88,10 @@ export default class FormUpdate extends Component {
 
   render() {
     return (
-      <form onSubmit={this.addClothingItem}>
-        <label>
-          <input
+      <form className="updateForm" onSubmit={this.addClothingItem}>
+        <label className="updateInput">
+          Name:
+          <input className="updateSelect"
             type="text"
             value={this.state.name}
             onChange={this.handleName}
@@ -98,9 +99,9 @@ export default class FormUpdate extends Component {
           />
         </label>
 
-        <label>
+        <label className="updateInput">
           Sleeve Length:
-          <select
+          <select className="updateSelect"
             value={this.state.sleeveLength}
             onChange={this.handleSleeveLength}
           >
@@ -110,9 +111,9 @@ export default class FormUpdate extends Component {
             <option value="1">No Sleeve</option>
           </select>
         </label>
-        <label>
+        <label className="updateInput">
           Weight:
-          <select
+          <select className="updateSelect"
             value={this.state.fabricWeight}
             onChange={this.handleFabricWeight}
           >
@@ -123,9 +124,9 @@ export default class FormUpdate extends Component {
           </select>
         </label>
 
-        <label>
+        <label className="updateInput">
           Color:
-          <select value={this.state.color} onChange={this.handleColor}>
+          <select className="updateSelect" value={this.state.color} onChange={this.handleColor}>
             <option value={null}>Select Color</option>
             <option value="Black">Black</option>
             <option value="White">White</option>
@@ -138,9 +139,9 @@ export default class FormUpdate extends Component {
           </select>
         </label>
 
-        <label>
+        <label className="updateInput">
           Mood:
-          <select value={this.state.mood} onChange={this.handleMood}>
+          <select className="updateSelect" value={this.state.mood} onChange={this.handleMood}>
             <option value={null}>Select Mood</option>
             <option value="Happy">Happy</option>
             <option value="Angry">Angry</option>
@@ -152,7 +153,7 @@ export default class FormUpdate extends Component {
         <button
           type="submit"
           onClick={this.handleSubmit}
-          className="addItemButton"
+          className="updateButton"
         >
           Update
         </button>
