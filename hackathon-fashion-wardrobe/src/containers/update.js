@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Form from "../components/form";
+
+import FormUpdate from "../components/formUpdate";
 import { fetchClothingItem, updateClothingItem } from "../actions/crud";
-import UpdateButton from "../components/updateButton";
+
 
 export default class Update extends Component {
   constructor(props) {
@@ -10,14 +11,21 @@ export default class Update extends Component {
     this.state = {
       updateClothingItem: {}
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  componentDidMount() {
-    fetchClothingItem(this.props.params.postId)
+
+  componentWillMount() {
+    fetchClothingItem(this.props.match.params.postId)
       .then(data => {
         this.setState(state => {
           state.updateClothingItem = data;
           return state;
         });
+        console.log("data", data);
+        console.log(
+          "this.state.updateClothingItem",
+          this.state.updateClothingItem
+        );
       })
       .catch(err => {
         console.error("err", err);
@@ -25,23 +33,31 @@ export default class Update extends Component {
   }
 
   handleSubmit(data) {
-    updateClothingItem(this.state.updateClothingItem.id, data);
-    this.props.router.push("/");
+    console.log("this.state.updateClothingItem", this.state.updateClothingItem);
+    updateClothingItem(this.state.updateClothingItem, data);
   }
 
   render() {
     return (
       <div>
-        <Form className="updateInput"
-          onSubmit={this.handleSubmit.bind(this)}
-          id={this.state.updateClothingItem.title}
+
+        <FormUpdate className="updateInput"
+          
+          id={this.state.updateClothingItem.id}
+
           name={this.state.updateClothingItem.name}
           sleeveLength={this.state.updateClothingItem.sleeveLength}
           fabricWeight={this.state.updateClothingItem.fabricWeight}
           mood={this.state.updateClothingItem.body}
           color={this.state.updateClothingItem.color}
         />
-        <UpdateButton />
+        <button
+          type="submit"
+          onClick={this.handleSubmit}
+          className="addItemButton"
+        >
+          Button
+        </button>
       </div>
     );
   }
