@@ -139,6 +139,9 @@ footer a{
   padding-right: 10px;
   right:0;
 }
+.help a:hover{
+  color:navy;
+}
 
 /*weather page*/
 
@@ -492,6 +495,8 @@ text-align: center;
 .allWardrobe{
 color: #837095;
 font-family: "Josefin Slab", serif;
+flex-wrap: wrap;
+width: 750px;
 }
 
 .wardrobeItems {
@@ -514,6 +519,7 @@ align-content: center;
 list-style-type: none;
 display: flex;
 flex-direction: column;
+flex-wrap: wrap;
 justify-content: center;
 }
 @media screen and (min-width: 650px){
@@ -526,6 +532,9 @@ justify-content: center;
 }
 .todaypreview {
   flex-direction: row;
+  width:500px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .helpSteps{
 text-align: center;
