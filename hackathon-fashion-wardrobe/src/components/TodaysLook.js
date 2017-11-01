@@ -6,9 +6,6 @@ import Register from "../containers/Register.js";
 import UserInfo from "../containers/UserInfo.js";
 import apiKey from "./apiKey";
 import MatchTodaysLook from "./MatchTodaysLook.js";
-import img1 from "../styles/imgs/shirts/blue-shortsleeve-light.jpeg";
-import img2 from "../styles/imgs/shirts/white-sleevless-light.jpeg";
-import img3 from "../styles/imgs/shirts/black-shortsleeve-light.jpeg";
 import Modal from "./Modal";
 import newItem from "./newItem";
 import UpdateItem from "./updateItem";
@@ -16,6 +13,29 @@ import UpdateItem from "./updateItem";
 import { fetchTodaysLook } from "../actions/crud";
 
 import { loadTokenFromCookie } from "../actions/actions";
+
+import img1 from "../styles/imgs/shirts/img1.JPG";
+import img2 from "../styles/imgs/shirts/img2.JPG";
+import img3 from "../styles/imgs/shirts/img3.JPG";
+import img4 from "../styles/imgs/shirts/img4.JPG";
+import img5 from "../styles/imgs/shirts/img5.JPG";
+import img6 from "../styles/imgs/shirts/img6.JPG";
+import img7 from "../styles/imgs/shirts/img7.JPG";
+import img8 from "../styles/imgs/shirts/img8.JPG";
+import img9 from "../styles/imgs/shirts/img9.JPG";
+import img10 from "../styles/imgs/shirts/img10.JPG";
+const shirtImage = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10
+];
 
 const API_KEY = apiKey;
 console.log(API_KEY);
@@ -122,7 +142,12 @@ export default class TodaysLook extends Component {
               } else
                 return (
                   <div className="suggestedItem">
-                    <h3>{pop.name} <br></br> {pop.color}</h3>
+                    <h3>
+                      {pop.name} <br /> {pop.color}
+                    </h3>
+                    <div>
+                      {/* <img className="wardrobeImages" src={shirtImage[pop.key} /> */}
+                    </div>
                   </div>
                 );
             })}

@@ -1,7 +1,31 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import img1 from "../styles/imgs/shirts/img1.JPG";
+import img2 from "../styles/imgs/shirts/img2.JPG";
+import img3 from "../styles/imgs/shirts/img3.JPG";
+import img4 from "../styles/imgs/shirts/img4.JPG";
+import img5 from "../styles/imgs/shirts/img5.JPG";
+import img6 from "../styles/imgs/shirts/img6.JPG";
+import img7 from "../styles/imgs/shirts/img7.JPG";
+import img8 from "../styles/imgs/shirts/img8.JPG";
+import img9 from "../styles/imgs/shirts/img9.JPG";
+import img10 from "../styles/imgs/shirts/img10.JPG";
+
 import Modal from "./Modal";
+
+const shirtImage = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10
+];
 
 export default class GetAllWardrobe extends Component {
   constructor(props) {
@@ -32,8 +56,15 @@ export default class GetAllWardrobe extends Component {
   render() {
     let Items = this.state.wardrobeItems.map((item, index) => {
       return (
-          <div>
-          <li>{item.name}<br></br>{item.color}</li>
+        <div>
+          <li>
+            {item.name}
+            <br />
+            {item.color}
+          </li>
+          <li>
+            <img className="wardrobeImages" src={shirtImage[index]} />
+          </li>
           <Modal index={item} />
         </div>
       );
