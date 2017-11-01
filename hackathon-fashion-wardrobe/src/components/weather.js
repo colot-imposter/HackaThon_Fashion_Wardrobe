@@ -106,12 +106,12 @@ export default class Weather extends Component {
             </h3>
           </div>
           <div className="weatherTwo">
-            <h3 className="tempstyle"> Todays High: {this.state.highTemp}°</h3>
-            <h3 className="tempstyle"> Todays Low: {this.state.lowTemp}°</h3>
-            <h3 className="tempstyle"> Sun Set: {this.state.sunset}</h3>
+            <h3 className="tempstyle"> Today's High: {this.state.highTemp}°</h3>
+            <h3 className="tempstyle"> Today's Low: {this.state.lowTemp}°</h3>
+            <h3 className="tempstyle"> Sunset: {this.state.sunset}</h3>
           </div>
         </div>
-        <h3 className="tempstyle"> Hourly forcast </h3>
+        <h3 className="tempstyle"> Hourly Forecast </h3>
         <div className="timeHead">
           <div className="morning">
             <h4 className="timestyle">

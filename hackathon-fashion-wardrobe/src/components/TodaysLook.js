@@ -110,7 +110,7 @@ export default class TodaysLook extends Component {
           <div className="todaysLookHead">
             <div className="iconLink">
               <a href="/weather" className="todaysWeatherStyle">
-                Todays Weather
+                Today's Weather
               </a>
               <div className="weatherIcon">
                 <img src={this.state.icon} alt={this.state.conditions} />
