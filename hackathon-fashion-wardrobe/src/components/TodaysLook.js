@@ -130,7 +130,7 @@ export default class TodaysLook extends Component {
             <h2> Suggested For You</h2>
           </div>
           <div className="todaypreview">
-            {this.state.todaysLook.map(pop => {
+            {this.state.todaysLook.map((pop, index) => {
               console.log(
                 "type of feels like",
                 typeof this.state.feelsLikeTemp
@@ -146,7 +146,8 @@ export default class TodaysLook extends Component {
                       {pop.name} <br /> {pop.color}
                     </h3>
                     <div>
-                      {/* <img className="wardrobeImages" src={shirtImage[pop.key} /> */}
+                      {console.log("pop on todaysLook", pop)}
+                      <img className="wardrobeImages" src={shirtImage[index]} />
                     </div>
                   </div>
                 );
