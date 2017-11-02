@@ -35,50 +35,52 @@ class UpdateAccount extends Component {
 
   render() {
     return (
-      <div className="Register">
-        <form onSubmit={this.register}>
-          <fieldset>
-            <legend>
-              {this.props.loggedIn
-                ? "Register as a different user"
-                : "Register"}
-            </legend>
-            <div className="input-single">
-              <label>Email</label>
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.updateState("email")}
-              />
-            </div>
-            <div className="input-single">
-              <label>Full Name</label>
-              <input
-                type="text"
-                value={this.state.full_name}
-                onChange={this.updateState("full_name")}
-              />
-            </div>
-            <div className="input-single">
-              <label>Message</label>
-              <input
-                type="text"
-                value={this.state.message}
-                onChange={this.updateState("message")}
-              />
-            </div>
-            <div className="input-single">
-              <label>Password</label>
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.updateState("password")}
-              />
-            </div>
+      <div className="container">
+        <div className="Register card">
+          <form onSubmit={this.register}>
+            <fieldset>
+              <legend>
+                {this.props.loggedIn
+                  ? "Register as a different user"
+                  : "Register"}
+              </legend>
+              <div className="input-single">
+                <label>Email</label>
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.updateState("email")}
+                />
+              </div>
+              <div className="input-single">
+                <label>Full Name</label>
+                <input
+                  type="text"
+                  value={this.state.full_name}
+                  onChange={this.updateState("full_name")}
+                />
+              </div>
+              <div className="input-single">
+                <label>Message</label>
+                <input
+                  type="text"
+                  value={this.state.message}
+                  onChange={this.updateState("message")}
+                />
+              </div>
+              <div className="input-single">
+                <label>Password</label>
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.updateState("password")}
+                />
+              </div>
 
-            <button type="submit">Register</button>
-          </fieldset>
-        </form>
+              <button type="submit">Register</button>
+            </fieldset>
+          </form>
+        </div>
       </div>
     );
   }
