@@ -1,1 +1,791 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*reset ends, dev team code starts */
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  background: #fbfaea;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+button {
+  font-family: "Josefin Sans", sans-serif;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #837095;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* navbar */
+.navbar {
+  background: white;
+}
+
+/* wardrobeItems */
+.wardrobeImages {
+  max-width: 100%;
+}
+
+/* Photo Banner */
+
+.scrollPics div {
+  display: flex;
+  align-content: center;
+  width: 800px;
+  height: 500px;
+  padding-top: 15px;
+  overflow: auto;
+  align-items: center;
+}
+.scrollPics h2 {
+  padding: 20%;
+}
+.scrollPics img {
+  height: 200px;
+}
+
+.photobanner {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.steps {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/*baselayout style*/
+
+.dropbtn {
+  background: transparent;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropbtn img {
+  height: 60px;
+}
+.dropdown {
+  float: right;
+}
+.logoimg {
+  padding-top: 15px;
+  padding-left: 30px;
+  float: left;
+  height: 80px;
+}
+
+.card {
+  box-shadow: 1px 1px 1px #c8c7b7, -1px -1px 1px #c8c7b7;
+  background: white;
+  padding: 2em;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 95px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #837095;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+footer {
+  padding: 20px 0px 20px 15px;
+  display: flex;
+  justify-content: flex-start;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  width: 100%;
+  z-index: 2;
+  background-color: #837095;
+  color: white;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+  justify-content: left;
+}
+.help {
+  display: flex;
+  position: fixed;
+  padding-right: 10px;
+  right: 0;
+}
+.help a:hover {
+  color: navy;
+}
+
+/*weather page*/
+
+.tempstyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.timestyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 10px;
+  border-width: 1px;
+  border-color: #837095;
+  border-style: solid;
+  width: 50px;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  height: 70px;
+}
+.weatherOne {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+.weatherTwo {
+  display: flex;
+  flex-direction: column;
+}
+.weatherOneTwo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/*weather page*/
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  padding-left: 10px;
+  justify-content: center;
+
+  font-weight: 600;
+}
+
+.timeHead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.morning {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.afternoon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+/*logout page*/
+
+.bodyButton {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.logoutHead {
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.buttonHead {
+  display: flex;
+  background-color: #837095;
+  justify-content: center;
+  text-align: center;
+  border-width: 1px;
+  border-radius: 5px;
+  width: 100px;
+  border-style: solid;
+  border-color: #837095;
+}
+.buttonHead a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+/*modal buttons*/
+
+.updateButtonModal {
+  font-size: 15px;
+  color: white;
+  background-color: #837095;
+  border: none;
+  width: 100px;
+  margin: 0 auto;
+  padding: 5px 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.closeModalButton {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  color: white;
+  background-color: #837095;
+  border-width: 1px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+}
+
+/*new item*/
+
+.newItemForm {
+  max-width: 500px;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.newItemInput input {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.newItemForm label {
+  font-weight: 700;
+}
+.newItemInput {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  padding-top: 15px;
+  justify-content: center;
+  border-color: white;
+  font-family: "Josefin Sans", serif;
+}
+
+.addItemButton {
+  font-size: 18px;
+  color: white;
+  margin-top: 20px;
+
+  width: 150px;
+  box-shadow: 0px;
+  border: none;
+}
+
+.textStyle {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+}
+
+/*Todays Look*/
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2em 0;
+  margin-bottom: 80px;
+}
+.todaysWeather {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.todaysTemp {
+}
+
+.todaysLookHead {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.todaysLookHead h3 {
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Josefin Slab", serif;
+}
+
+.weatherIcon img {
+  width: 75px;
+  float: left;
+}
+
+.todaysLookHead p {
+  font-size: 1.2em;
+}
+
+.viewWardrobe {
+  margin-top: 2em;
+}
+.viewWardrobe a {
+  font-size: 0.8em;
+}
+
+.weatherIcon h2 {
+  float: left;
+  margin-left: 15px;
+  font-size: 2.7em;
+  margin-top: 20px;
+}
+
+.previewbody {
+}
+.suggest {
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-family: "Josefin Slab", serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.todaypreview {
+}
+
+.viewWardrobe {
+  font-size: 18px;
+}
+.viewWardrobe a {
+  text-decoration: none;
+}
+.viewWardrobe:hover {
+  color: navy;
+}
+
+.suggestedItem {
+  text-align: center;
+  padding-bottom: 3em;
+}
+
+.suggestedItem h3,
+.allWardrobe h3 {
+  font-weight: 700;
+  display: block;
+  padding-bottom: 5px;
+}
+.suggestedItem span,
+.allWardrobe span {
+  font-weight: 700;
+  text-transform: none;
+  font-size: 0.7em;
+  display: block;
+}
+
+.suggestedItem span:before,
+.allWardrobe span:before {
+  content: "Color: ";
+  font-weight: 400;
+}
+
+.suggest {
+}
+/*update item page*/
+
+.updateForm {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.updateInput {
+  border: none;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  font-family: "Josefin Sans", serif;
+}
+
+.updateButton {
+  display: flex;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  width: 100px;
+  background-color: #837095;
+  border: none;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.updateSelect {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 15px;
+  font-family: "Josefin Sans", sans-serif;
+  max-width: 170px;
+}
+
+/*wardrobe page*/
+
+.page {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.filters {
+  display: flex;
+  flex-direction: column;
+  /*padding-right: 105px;*/
+  font-size: 20px;
+}
+
+.filters select {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.wardrobeSelect {
+  font-size: 15px;
+  width: 125px;
+  outline: none;
+}
+
+/*.clothingpreview {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  flex-wrap: wrap;
+  padding: 20px;
+}*/
+
+.addButtonWardrobe {
+  color: white;
+  border-radius: 5px;
+  background-color: #837095;
+  margin-top: 20px;
+  border: none;
+  width: 100%;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.addButtonWardrobe a {
+  color: white;
+
+  font-size: 20px;
+}
+/*
+.allWardrobe {
+
+
+  flex-wrap: wrap;
+  max-width: 750px;
+  display: flex;
+  justify-content: center;
+}*/
+
+.wardrobeItems,
+.allWardrobe {
+  margin-top: 20px;
+}
+/*help*/
+.helpHeader {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.helpSteps {
+}
+
+.helpSteps p {
+  margin-bottom: 20px;
+}
+
+/*get all wardobe*/
+
+.wardrobeItems {
+}
+
+/*login page*/
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 40px;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.loginForm {
+  border: none;
+  webkit-box-shadow: none;
+  moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.registerForm {
+  margin-left: 40px;
+}
+
+.inputLogin {
+  border: none;
+  border-bottom-color: #837095;
+  border-bottom-style: solid;
+  margin-bottom: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 20px;
+}
+
+.loginFont {
+  font-size: 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.loginButton {
+  color: white;
+  background-color: #837095;
+  border-radius: 5px;
+  width: 100px;
+  font-size: 18px;
+  border: none;
+}
+@media screen and (min-width: 650px) {
+  .container {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .suggestedItem,
+  .item {
+    text-align: center;
+    width: 33.3333%;
+    box-sizing: border-box;
+    padding: 7px;
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  .todaysLookHead {
+    margin-top: 0;
+    margin-left: 40px;
+  }
+
+  .allWardrobe {
+    margin-top: 0;
+    margin-left: 40px;
+  }
+
+  .wardrobeItems ul {
+    flex-direction: row;
+  }
+  .page {
+    justify-content: left;
+  }
+  .todaypreview {
+    max-width: 500px;
+  }
+  .helpSteps {
+    text-align: center;
+  }
+
+  .login {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 920px) {
+  .timeHead {
+    flex-direction: row;
+  }
+}
