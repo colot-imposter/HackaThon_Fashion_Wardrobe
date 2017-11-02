@@ -30,6 +30,7 @@ export default class BaseLayout extends Component {
                     <a href="/TodaysLook">Todays Look</a>
                     <a href="/Wardrobe">Wardrobe</a>
                     <a href="/newItem">Add Item</a>
+                    <a href="/help">Help</a>
                     <a href="/Login">Login</a>
                     <a href="/Logout">Logout</a>
                   </div>
