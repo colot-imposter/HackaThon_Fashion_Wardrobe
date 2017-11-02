@@ -36,13 +36,15 @@ export default class Modal extends React.Component {
           contentLabel="Minimal Modal Example"
         >
           <div className="updateItem">
-            {" "}
-            <UpdateItem index={this.props.index} />
+            <h2>Update Item</h2> <UpdateItem index={this.props.index} />
           </div>
           <div className="bodyButton">
-          <button className="closeModalButton" onClick={this.handleCloseModal}>
-            Close Modal
-          </button>
+            <button
+              className="closeModalButton"
+              onClick={this.handleCloseModal}
+            >
+              Close
+            </button>
           </div>
         </ReactModal>
       </div>
