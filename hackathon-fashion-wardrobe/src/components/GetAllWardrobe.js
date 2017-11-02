@@ -56,16 +56,14 @@ export default class GetAllWardrobe extends Component {
   render() {
     let Items = this.state.wardrobeItems.map((item, index) => {
       return (
-        <div>
+        <div className="item">
           <li>
-            {item.name}
-            <br />
-            {item.color}
-          </li>
-          <li>
+            <h3>{item.name}</h3>
+            <span>{item.color}</span>
             <img className="wardrobeImages" src={shirtImage[index]} />
+
+            <Modal index={item} />
           </li>
-          <Modal index={item} />
         </div>
       );
     });
