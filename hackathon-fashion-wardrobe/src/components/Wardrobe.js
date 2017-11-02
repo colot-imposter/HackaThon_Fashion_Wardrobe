@@ -42,8 +42,8 @@ export default class Wardrobe extends Component {
     // })
 
     return (
-      <div className="page">
-        <div className="filters">
+      <div className="container">
+        <div className="filters card">
           <h3>Filter</h3>
           <form>
             <select
@@ -105,10 +105,10 @@ export default class Wardrobe extends Component {
             </button>
           </div>
         </div>
-    
 
         {/* HERE we are bringing in the wardrobe items */}
-        <div className="allWardrobe">
+        <div className="allWardrobe card">
+          <h2>Wardrobe</h2>
           <GetAllWardrobe />
         </div>
       </div>

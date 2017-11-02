@@ -89,7 +89,7 @@ export default class Weather extends Component {
       <div className="weather">
         <h2 className="tempstyle">
           {" "}
-          Weather In {this.state.city},{this.state.state}
+          Weather in {this.state.city},{this.state.state}
         </h2>
         <div className="weatherOneTwo">
           <div className="weatherOne">

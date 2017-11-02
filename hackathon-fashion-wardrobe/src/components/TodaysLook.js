@@ -105,29 +105,10 @@ export default class TodaysLook extends Component {
 
   render() {
     return (
-      <div className="todaysWeather">
-        <div className="todaysTemp">
-          <div className="todaysLookHead">
-            <div className="iconLink">
-              <a href="/weather" className="todaysWeatherStyle">
-                Today's Weather
-              </a>
-              <div className="weatherIcon">
-                <img src={this.state.icon} alt={this.state.conditions} />
-              </div>
-            </div>
-            <div>
-              <h2>{this.state.temperature}°</h2>
-              <h3>Feels Like {this.state.feelsLikeTemp}°</h3>
-            </div>
-            <div className="viewWardrobe">
-              <a href="/Wardrobe">View Your Closet</a>
-            </div>
-          </div>
-        </div>
-        <div className="previewbody">
+      <div className="container">
+        <div className="previewbody card">
           <div className="suggest">
-            <h2> Suggested For You</h2>
+            <h2>Suggestions</h2>
           </div>
           <div className="todaypreview">
             {this.state.todaysLook.map((pop, index) => {
@@ -142,16 +123,33 @@ export default class TodaysLook extends Component {
               } else
                 return (
                   <div className="suggestedItem">
-                    <h3>
-                      {pop.name} <br /> {pop.color}
-                    </h3>
-                    <div>
-                      {console.log("pop on todaysLook", pop)}
-                      <img className="wardrobeImages" src={shirtImage[index]} />
+                    <div className="wardrobetext">
+                      <h3>{pop.name}</h3>
+                      <span>{pop.color}</span>
                     </div>
+                    {console.log("pop on todaysLook", pop)}
+
+                    <img className="wardrobeImages" src={shirtImage[index]} />
                   </div>
                 );
             })}
+          </div>
+        </div>
+
+        <div className="todaysLookHead card">
+          <div className="iconLink">
+            <h3>Today’s Weather</h3>
+            <div className="weatherIcon">
+              <img src={this.state.icon} alt={this.state.conditions} />
+              <h2>{this.state.temperature}°</h2>
+            </div>
+          </div>
+          <div>
+            <p>Feels Like {this.state.feelsLikeTemp}°</p>
+          </div>
+          <div className="viewWardrobe">
+            <a href="/weather">Daily Details</a> |&nbsp;
+            <a href="/Wardrobe">View Your Closet</a>
           </div>
         </div>
       </div>
@@ -159,6 +157,7 @@ export default class TodaysLook extends Component {
   }
 }
 
+//TODO redux implement when Back End makes login
 // class App extends Component {
 //   componentWillMount() {
 //     const loadToken = this.props.loadToken;

@@ -18,7 +18,7 @@ import Wardrobe from "./components/Wardrobe";
 import newItem from "./components/newItem";
 import TodaysLook from "./components/TodaysLook";
 import Weather from "./components/weather";
-import help from "./components/help";
+import Help from "./components/help";
 
 // update component to post to heroku
 import Update from "./containers/update";
@@ -38,13 +38,13 @@ ReactDOM.render(
             <Route path="/register" component={Register} />
             <Route path="/Wardrobe" component={Wardrobe} />
             <Route path="/weather" component={Weather} />
+            <Route path="/help" component={Help} />
             <Route path="/logout" component={LogOut} />
             <Route path="/User_Dashboard" component={User_Dashboard} />
             <Route path="/newItem" component={newItem} />
             <Route path="/TodaysLook" component={TodaysLook} />
             {/* link to render Update components */}
             <Route path="/posts/update/:postId" component={Modal} />
-            <Route path="/help" component={help} />
           </Switch>
         </div>
       </BaseLayout>
