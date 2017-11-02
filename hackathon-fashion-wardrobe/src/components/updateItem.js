@@ -31,7 +31,7 @@ export default class UpdateItem extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1 className="updateForm">Update Item</h1>
         <FormUpdate
           className="updateForm"
