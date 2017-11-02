@@ -101,7 +101,7 @@ export default class Wardrobe extends Component {
           </form>
           <div className="viewWardrobe">
             <button className="addButtonWardrobe">
-              <a href="/newItem">Add Item</a>
+              <a href="/newItem">Filter</a>
             </button>
           </div>
         </div>
