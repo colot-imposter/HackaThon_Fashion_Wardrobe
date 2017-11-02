@@ -15,14 +15,19 @@ export default class LogOut extends Component {
   render() {
     return (
       <div className="baseLayout">
-          <h1 className="logoutHead">You are logged out, log back in to see your look!</h1>
-          <div className="bodyButton">
-          <div className="buttonHead">
-            <a href="/login">
-              Login
-            </a>
+        <div className="container">
+          <div className="card logoutHead">
+            <h1 className="logoutHead">
+              You are logged out, log back in to see your look!
+            </h1>
+            <div className="bodyButton">
+              <div className="buttonHead">
+                <a href="/login">Login</a>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
+
         {this.props.childeren}
       </div>
     );
